@@ -57,7 +57,6 @@
   </div>
   </header>
   <!--home section start-->
-  
    <!--third child-->
    <div class="bg-light">
     <h3 class=" text-center">All Categories</h3>
