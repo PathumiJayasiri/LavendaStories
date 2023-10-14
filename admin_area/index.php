@@ -54,12 +54,23 @@
 <div class="button text-center">
     <button><a href="#" class="nav-link text-black  my-1">View Categories</a>
 </button>
-<button><a href="#" class="nav-link text-black  my-1">Insert Category</a>
+<button><a href="index.php?insert_category" class="nav-link text-black  my-1">Insert Category</a>
 </button>
 <button><a href="#" class="nav-link text-black my-1">Insert new story</a></button>
 </div>
     </div>
 </div>
+
+
+  <!--4 child-->
+<div class="container my-5">
+    <?php
+    if(isset($_GET['insert_category'])){
+        include('insert_categories.php');
+    }
+    ?>
+</div>
+
 
   </div>
 <!--footer-->
