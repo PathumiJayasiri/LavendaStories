@@ -33,6 +33,7 @@ html::-webkit-scrollbar-thumb {
   background: #fff;
   border-radius: 5rem;
 }
+
 section {
   padding: 2rem 7%;
 }
@@ -163,6 +164,20 @@ section {
 .category .card-container .card:hover {
   color: var(--black);
 }
+
+.dettail-row {
+  background: var(--black);
+  padding: 5%;
+}
+.dettail-row button {
+  background: var(--main-color);
+  padding: 2rem;
+  width: 20%;
+  text-transform: capitalize;
+  font-size: medium;
+  margin: 2rem;
+}
+
 .footer {
   background: var(--black);
   text-align: center;
