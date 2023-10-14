@@ -28,7 +28,9 @@
       <ul class="navbar-nav">
         <li class="nav-item">
             
-          <a class="nav-link-home active"  href="#">Welcome guest</a>
+          <a class="nav-link-home active"  href="#">Welcome guest
+  <a href="#" class="btn btn-secondary">Log Out</a>
+</a>
         </li>
         
 
@@ -50,7 +52,9 @@
 <div class="row">
     <div class="dettail-row col-md-12  ">
 <div class="button text-center">
-    <button><a href="#" class="nav-link text-black  my-1">View Story</a>
+    <button><a href="#" class="nav-link text-black  my-1">View Categories</a>
+</button>
+<button><a href="#" class="nav-link text-black  my-1">Insert Category</a>
 </button>
 <button><a href="#" class="nav-link text-black my-1">Insert new story</a></button>
 </div>
@@ -58,7 +62,23 @@
 </div>
 
   </div>
+<!--footer-->
+ <section class="footer">
+ <div class="share">
+  <a href="#" class="fab fa-facebook"></a>
+   <a href="#" class="fab fa-twitter"></a>
+    <a href="#" class="fab fa-instagram"></a>
+     <a href="#" class="fab fa-linkedin"></a>
+ </div>
+ <div class="links">
+  <a href="#">home</a>
+  <a href="#">category</a>
+  <a href="#">about us</a>
+  <a href="#">contact us</a>
+ </div>
+   <div class="credit">created by <span>IMAGINATION web designer</span> |all rights reserved</div>
 
+ </section>
 
 
 
