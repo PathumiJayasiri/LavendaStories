@@ -1,3 +1,7 @@
+<?php
+include('./DbConnector/connect.php');
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -110,80 +114,87 @@
  <!--category  section-->
  
 <h1 class="heading">Our <span>Categories</span> </h1>
+
+ <!--row start-->
+ <div class="row">
+  
+
+   <!--fetching cate-->
+<?php
+$select_query="Select * from `categories`";
+$result_query=mysqli_query($con,$select_query);
+//$row=mysqli_fetch_assoc($result_query);
+//echo $row['category_title'];
+while($row=mysqli_fetch_assoc($result_query)){
+  $category_id=$row['category_id'];
+ $category_title=$row['category_title'];
+   $category_image=$row['category_image'];
+echo "<div class='col-md-3 mb-2 m-5 card-container'>
+    <div class='card'>
+  <img src='./admin_area/category_images/$category_image' class='card-img-top' alt='...'>
+  <div class='card-body'>
+    <h3 class='card-title'>$category_title</h5>
+
+     <a href='#' class='btn btn-secondary'>Read more</a>
+  </div>
+</div>
+  </div>";
+}
+?>
  
- 
-<div class="row">
-  <div class="col-md-4 mb-2 card-container">
-    <div class="card">
-  <img src="./images/ts1.jpeg" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h3 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-     <a href="#" class="btn btn-secondary">Read more</a>
-  </div>
-</div>
-  </div>
-  <div class="col-md-4 mb-2 card-container">
-    <div class="card">
-  <img src="./images/ts1.jpeg" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h3 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-     <a href="#" class="btn btn-secondary">Read more</a>
 
-  </div>
-</div>
-  </div>
-
-    <div class="col-md-4 mb-2 card-container"><div class="card" >
-  <img src="./images/ts3.jpeg" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h3 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-     <a href="#" class="btn btn-secondary">Read more</a>
-
-  </div>
-</div>
-</div>
-</div>
-<!--row2-->
-<div class="row">
-  <div class="col-md-4 mb-2 card-container">
-    <div class="card" >
-  <img src="./images/ts1.jpeg" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h3 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-     <a href="#" class="btn btn-secondary">Read more</a>
-
-  </div>
-</div>
-  </div>
-   <div class="col-md-4 card-container"><div class="card" >
-  <img src="./images/ts2.jpeg" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h3 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-     <a href="#" class="btn btn-secondary">Read more</a>
-
-  </div>
-</div>
-</div>
-    <div class="col-md-4 card-container"><div class="card" >
-  <img src="./images/ts3.jpeg" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h3 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-       <a href="#" class="btn btn-secondary">Read more</a>
-
-  </div>
-</div>
 </div>
 </div>
     
-   
-    </div>
-    </div>
+ <!--row end-->
+
+
+     </section>
+
+         <!--all stories-->
+     <section class="category" id="category">
+    <div class="row">
+
+ <!--story  section-->
+ 
+<h1 class="heading">all <span>stories</span> </h1>
+
+ <!--row start-->
+ <div class="row">
+  
+
+   <!--fetching cate-->
+<?php
+$select_query="Select * from `story` order by rand() limit 0,8";
+$result_query=mysqli_query($con,$select_query);
+//$row=mysqli_fetch_assoc($result_query);
+//echo $row['category_title'];
+while($row=mysqli_fetch_assoc($result_query)){
+  $story_id=$row['story_id'];
+ $story_title=$row['story_title'];
+  $story_description=$row['story_description'];
+ $story_id=$row['category_id'];
+   $story_image=$row['cover_image'];
+echo "<div class='col-md-3 mb-2 m-5 card-container'>
+    <div class='card'>
+  <img src='./admin_area/story_cover_images/$story_image' class='card-img-top' alt='...'>
+  <div class='card-body'>
+    <h3 class='card-title'>$story_title</h5>
+<p class='card-text'>$story_description</p>
+     <a href='#' class='btn btn-secondary'>Read more</a>
+  </div>
+</div>
+  </div>";
+}
+?>
+ 
+
+</div>
+</div>
+    
+ <!--row end-->
+
+
      </section>
  <!--footer-->
  <section class="footer">
@@ -202,6 +213,7 @@
    <div class="credit">created by <span>IMAGINATION web designer</span> |all rights reserved</div>
 
  </section>
+ 
   <!--boostrap css link-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 <!--custom js file link--> 
