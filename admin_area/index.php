@@ -56,7 +56,7 @@
 </button>
 <button><a href="index.php?insert_category" class="nav-link text-black  my-1">Insert Category</a>
 </button>
-<button><a href="#" class="nav-link text-black my-1">Insert new story</a></button>
+<button><a href="insert_story.php" class="nav-link text-black my-1">Insert new story</a></button>
 </div>
     </div>
 </div>
