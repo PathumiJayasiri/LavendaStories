@@ -3,7 +3,7 @@ include('../DbConnector/connect.php');
 
 
 if(isset($_POST['insert_cat'])){
-            $message=null;
+            
     $category_title=$_POST['cat_title'];
     
     // File handling for image upload
@@ -18,6 +18,7 @@ if(isset($_POST['insert_cat'])){
 $select_query="Select * from `categories` where category_title='$category_title'";
 $rs_select=mysqli_query($con,$select_query);
 $number=mysqli_num_rows($rs_select);
+$message=null;
 if($number>0){
             $message="<h6 class='text-warning'>!!!This category is already inside the database</h6>";
 }

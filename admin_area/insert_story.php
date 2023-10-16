@@ -49,39 +49,12 @@ if(isset($_POST['insert_infor'])){
 
 
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
-    <!--style css link-->
-<link rel="stylesheet" href="../style.css">
-    
-    <!--boostrap css link-->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <!--font auwsom link-->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
- <!--add CKEDITOR library-->
-<script src="https://cdn.ckeditor.com/4.16.2/full/ckeditor.js"></script>
 
 
-</head>
-<body class="bg-light">
-    <title>Insert story admin</title>
-</head>
-<body>
-    <div class="container mt-3">
-       
-
-
-
-        <h1 class="text-center">Write your Story</h1>
+        <h1 class="text-center bg-info">Write your Story</h1>
 
         <!--writing story-->
-         <form action="" method="POST" enctype="multipart/form-data" class="border">
+         <form action="" method="POST" enctype="multipart/form-data" class="border" style="color: wheat;">
 
 <div class="form-outline mb-4 w-50 m-auto">
       <!--title-->
@@ -110,7 +83,7 @@ $select_query="SELECT * FROM `categories`";
 $result_query=mysqli_query($con,$select_query);
 while($row=mysqli_fetch_assoc($result_query)){
     $category_title=$row['category_title'];
-    $category_id=$row['category_id '];
+    $category_id=$row['category_id'];
     echo "   <option value='$category_id'> $category_title</option>";
 }
 
@@ -138,9 +111,7 @@ while($row=mysqli_fetch_assoc($result_query)){
             
    </div>
          </form>
-    </div>
+    
 
            
    
-</body>
-</html>

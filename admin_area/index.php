@@ -28,9 +28,7 @@
       <ul class="navbar-nav">
         <li class="nav-item">
             
-          <a class="nav-link-home active"  href="#">Welcome guest
-  <a href="#" class="btn btn-secondary">Log Out</a>
-</a>
+         
         </li>
         
 
@@ -56,7 +54,7 @@
 </button>
 <button><a href="index.php?insert_category" class="nav-link text-black  my-1">Insert Category</a>
 </button>
-<button><a href="insert_story.php" class="nav-link text-black my-1">Insert new story</a></button>
+<button><a href="index.php?insert_story" class="nav-link text-black my-1">Insert new story</a></button>
 </div>
     </div>
 </div>
@@ -67,6 +65,13 @@
     <?php
     if(isset($_GET['insert_category'])){
         include('insert_categories.php');
+    }
+    ?>
+</div>
+<div class="container my-5">
+    <?php
+    if(isset($_GET['insert_story'])){
+        include('insert_story.php');
     }
     ?>
 </div>
