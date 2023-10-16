@@ -5,6 +5,7 @@ include('../DbConnector/connect.php');
 
 //if form is submitted
 if(isset($_POST['insert_infor'])){
+    $writter_name=$_POST['writter_name'];
     $story_tit = $_POST['story_title']; // Corrected to 'story_title'
     $story_descri = $_POST['story_description']; // Corrected to 'story_descri'
     $story_cat = $_POST['story_category'];
@@ -20,11 +21,11 @@ if(isset($_POST['insert_infor'])){
     }
 
 //check where empty
-    if(!empty($story_tit)||!empty($story_descri)||!empty($story_cat)||!empty($story_img1)){
+    if(!empty($writer_name)||!empty($story_tit)||!empty($story_descri)||!empty($story_cat)||!empty($story_img1)){
 
 //move_uploaded_file($tem_story_img,"./story_cover_images/$story_img");
 
-        $insert_story=("INSERT INTO `story` (story_title,story_description,category_id,cover_image,date) VALUES ('$story_tit','$story_descri','$story_cat','$story_img1',NOW()) ");
+        $insert_story=("INSERT INTO `story` (writter_name,story_title,story_description,category_id,cover_image,date) VALUES ('$writter_name','$story_tit','$story_descri','$story_cat','$story_img1',NOW()) ");
         $result_query=mysqli_query($con,$insert_story);
 
         if($result_query){
@@ -45,17 +46,17 @@ if(isset($_POST['insert_infor'])){
 ?>
 
 
-
-
-
-
-
-
         <h1 class="text-center bg-info">Write your Story</h1>
 
         <!--writing story-->
          <form action="" method="POST" enctype="multipart/form-data" class="border" style="color: wheat;">
-
+<div class="form-outline mb-4 w-50 m-auto">
+      <!--title-->
+    <label for="writter_name" class="form-label">
+        Writter Name
+    </label>
+    <input type="text" name="writter_name" id="writter_name" class="form-control" placeholder="Enter Story Title" autocomplete="off" required>
+</div>
 <div class="form-outline mb-4 w-50 m-auto">
       <!--title-->
     <label for="story_title" class="form-label">

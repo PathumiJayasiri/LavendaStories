@@ -63,77 +63,8 @@ include('./functions/common_function.php');
 </nav>
   </div>
   </header>
-  <!--home section start-->
-<section class="home" id="home">
-  <div class="content">
-    <h3>Imagination</h3>
-    <p>Free your self and share your story with the world</p>
-   <a href="#" class="btn bg-info">View more</a>
-  </div>
-</section>
-   <!--home section end-->
-     <!--about section start-->
-<section class="about" id="about">
-  <h1 class="heading">
-    <span>about</span> us
-  </h1>
-  <div class="row">
-  <div class="image">
-    <img src="./images/bg1.jpg" alt="">
-
-  </div>
-  <div class="content">
-    <h3>Why IMAGINATION?</h3>
-    <p>"This website is dedicated to reaching out to individuals who are grappling with loneliness and engage in crafting creative, imaginative stories as a means to release their inner emotions and share them with the world. It serves as a safe haven where they can transform their feelings into words, allowing their unique narratives to resonate with a global audience. This platform empowers them to express themselves and connect with others who may appreciate their creativity and experiences."</p>
-  </div>
-  </div>
-</section>
-  <!--about section ends-->
-    <!--fourth child-->
-     <section class="category" id="category">
-    <div class="row">
-          <!--sidenav-->
-<!--<div class="col-md-2 bg-secondary">
-  <ul class="navbar-nav me-auto">
-    <li class="nav-item bg-info">
-      <a href="" class="nav-link text-light"><h4>Family</h4></a>
-    </li>
-      <li class="nav-item bg-info">
-      <a href="" class="nav-link text-light"><h4>Fantacy</h4></a>
-    </li>
-      <li class="nav-item bg-info">
-      <a href="" class="nav-link text-light"><h4>Comedy</h4></a>
-    </li>
-      <li class="nav-item bg-info">
-      <a href="" class="nav-link text-light"><h4>Thirller</h4></a>
-    </li>
-      <li class="nav-item bg-info">
-      <a href="" class="nav-link text-light"><h4>Horror</h4></a>
-    </li>
-  </ul>
-</div>-->
-      
- <!--category  section-->
- 
-<h1 class="heading">Our <span>Categories</span> </h1>
-
- <!--row start-->
- <div class="row">
-  
-
-   <!--fetching cate-->
-<?php
-getcategory();
-?>
  
 
-</div>
-</div>
-    
- <!--row end-->
-
-
-     </section>
 
          <!--all stories-->
      <section class="category" id="category">
