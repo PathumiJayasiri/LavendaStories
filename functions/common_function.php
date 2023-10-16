@@ -30,8 +30,12 @@ function get_unique_cat(){
     global $con;
     if(isset($_GET['category'])){
         $category_id=$_GET['category'];
-$select_query="Select * from `story` order by rand() limit 0,8 where category_id=$category_id";
+$select_query="Select * from `story` where category_id=$category_id";
 $result_query=mysqli_query($con,$select_query);
+$num_row=mysqli_num_rows($result_query);
+if(empty($num_row)){
+    echo "<h2 class='text-center text-danger'>No Stories under this category!!</h2>";
+}
 //$row=mysqli_fetch_assoc($result_query);
 //echo $row['category_title'];
 while($row=mysqli_fetch_assoc($result_query)){
