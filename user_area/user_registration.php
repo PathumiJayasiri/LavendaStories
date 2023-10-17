@@ -16,8 +16,27 @@
 </head>
 <body class="bg-black">
   <!--navbar-->
+  <!--navbar--> 
+  
+  <header class="header">
+  
+    <!--first child-->
+    <nav class="navbar">
+  <div class="container-fluid">
+   <img src="../images/Logo.jpeg" alt="" class="logo">
+    
+   
+  </div>
+</nav>
+
+  </header>
+
+<!--navbar ends-->
+
+
   <!--home section start-->
-<div class="container-fluid">
+<div class="container-fluid" style="margin-bottom: 10%;margin-top: 0%;  padding-top: 10%;
+">
 
     <h2 class="text-center">
         User Registration
