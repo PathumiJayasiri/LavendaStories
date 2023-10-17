@@ -17,7 +17,7 @@ echo "<div class='col-md-3 mb-2 m-5 card-container'>
   <div class='card-body'>
     <h3 class='card-title'>$category_title</h5>
 
-     <a href='#' class='btn btn-secondary'>Read more</a>
+     <a href='display_category_stories.php?category_id=$category_id' class='btn btn-secondary'>Read more</a>
   </div>
 </div>
   </div>";
@@ -30,7 +30,7 @@ function get_unique_cat(){
     global $con;
     if(isset($_GET['category'])){
         $category_id=$_GET['category'];
-$select_query="Select * from `story` where category_id=$category_id order by rand() limit 0,6";
+$select_query="Select * from `view_stories` where category_id=$category_id order by rand() limit 0,6";
 $result_query=mysqli_query($con,$select_query);
 $num_row=mysqli_num_rows($result_query);
 if(empty($num_row)){
@@ -40,17 +40,20 @@ if(empty($num_row)){
 //echo $row['category_title'];
 while($row=mysqli_fetch_assoc($result_query)){
   $story_id=$row['story_id'];
+  $writter_name=$row['writter_name'];
  $story_title=$row['story_title'];
   $story_description=$row['story_description'];
-  $category_id=$row['category_id'];
+ $category_id=$row['category_id'];
    $story_image=$row['cover_image'];
+   $content=$row['content'];
+$date=$row['created'];
 echo "<div class='col-md-3 mb-2 m-5 card-container'>
     <div class='card'>
   <img src='./admin_area/story_cover_images/$story_image' class='card-img-top' alt='...'>
   <div class='card-body'>
     <h3 class='card-title'>$story_title</h5>
 <p class='card-text'>$story_description</p>
-     <a href='#' class='btn btn-secondary'>Read more</a>
+     <a href='display_category_stories.php?category_id=$category_id' class='btn btn-secondary'>Read more</a>
   </div>
 </div>
   </div>";
@@ -69,18 +72,21 @@ echo "<div class='col-md-3 mb-2 m-5 card-container'>
 function getstory(){
     global $con;
     if(!isset($_GET['category'])){
-$select_query="Select * from `story` order by rand() limit 0,3";
+$select_query="Select * from `view_stories` order by rand() limit 0,3";
 $result_query=mysqli_query($con,$select_query);
 //$row=mysqli_fetch_assoc($result_query);
 //echo $row['category_title'];
 while($row=mysqli_fetch_assoc($result_query)){
   $story_id=$row['story_id'];
+  $writter_name=$row['writter_name'];
  $story_title=$row['story_title'];
   $story_description=$row['story_description'];
  $category_id=$row['category_id'];
    $story_image=$row['cover_image'];
+   $content=$row['content'];
+$date=$row['created'];
 echo "<div class='col-md-3 mb-2 m-5 card-container'>
-    <div class='card'>
+    <div class='card ' >
   <img src='./admin_area/story_cover_images/$story_image' class='card-img-top' alt='...'>
   <div class='card-body'>
     <h3 class='card-title'>$story_title</h5>
@@ -98,16 +104,19 @@ echo "<div class='col-md-3 mb-2 m-5 card-container'>
 function getting_all_story(){
     global $con;
     if(!isset($_GET['category'])){
-$select_query="Select * from `story` order by rand()";
+$select_query="Select * from `view_stories` order by rand()";
 $result_query=mysqli_query($con,$select_query);
 //$row=mysqli_fetch_assoc($result_query);
 //echo $row['category_title'];
 while($row=mysqli_fetch_assoc($result_query)){
-  $story_id=$row['story_id'];
+   $story_id=$row['story_id'];
+  $writter_name=$row['writter_name'];
  $story_title=$row['story_title'];
   $story_description=$row['story_description'];
-  $category_id=$row['category_id'];
+ $category_id=$row['category_id'];
    $story_image=$row['cover_image'];
+   $content=$row['content'];
+$date=$row['created'];
 echo "<div class='col-md-3 mb-2 m-5 card-container'>
     <div class='card'>
   <img src='./admin_area/story_cover_images/$story_image' class='card-img-top' alt='...'>
@@ -129,17 +138,20 @@ function search_story(){
      global $con;
     if(isset($_GET['search_data_story'])){
         $search_value=$_GET['search_data'];
-$search_query="Select * from `story` where story_title like '%$search_value%'";
+$search_query="Select * from `view_stories` where story_title like '%$search_value%'";
 $result_query=mysqli_query($con,$search_query);
 if(empty($num_row)){
     echo "<h2 class='text-center text-danger'>Sorry!! No Result match</h2>";
 }
 while($row=mysqli_fetch_assoc($result_query)){
-  $story_id=$row['story_id'];
+   $story_id=$row['story_id'];
+  $writter_name=$row['writter_name'];
  $story_title=$row['story_title'];
   $story_description=$row['story_description'];
  $category_id=$row['category_id'];
    $story_image=$row['cover_image'];
+   $content=$row['content'];
+$date=$row['created'];
 echo "<div class='col-md-3 mb-2 m-5 card-container'>
     <div class='card'>
   <img src='./admin_area/story_cover_images/$story_image' class='card-img-top' alt='...'>
@@ -153,5 +165,89 @@ echo "<div class='col-md-3 mb-2 m-5 card-container'>
 
 }
     }
+}function view_story_details(){
+   global $con;
+if(isset($_GET['story_id'])){
+    if(!isset($_GET['category'])){
+      $story_id=$_GET['story_id'];
+$select_query="Select * from `view_stories` where story_id=$story_id";
+$result_query=mysqli_query($con,$select_query);
+while($row=mysqli_fetch_assoc($result_query)){
+  $story_id=$row['story_id'];
+  $writter_name=$row['writter_name'];
+ $story_title=$row['story_title'];
+  $story_description=$row['story_description'];
+ $category_id=$row['category_id'];
+   $story_image=$row['cover_image'];
+   $content=$row['content'];
+$date=$row['created'];
+echo "
+<form>
+<section class='about' id='about'>
+   <div class='tab'>
+
+  <div class='row'>
+   <div class='card' style='width: 18rem;'>
+  <img src='./admin_area/story_cover_images/$story_image' class='card-img-top'>
+  <div class='card-body'>
+    <h5 class='card-title'>Card title</h5>
+    <p class='card-text'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+</div>
+  <div class='content'>
+<div class='form-outline mb-4 w-50 m-auto'>
+      
+    <label for='writter_name' class='form-label bg-info'>
+        Writter Name: <h3 class='card-title'>$writter_name</h5> 
+  
+    </label>
+</div>
+<div class='form-outline mb-4 w-50 m-auto'>
+      <!--title-->
+    <label for='story_title' class='form-label bg-info'>
+        Story Title: <h3 class='card-title'>$story_title</h5>
+
+    </label>
+</div>
+    <!--description-->
+    <div class='form-outline mb-4 w-50 m-auto'>
+    <label for='story_description' class='form-label bg-info'>
+        Story description: <div>$story_description</div>
+    </label>
+    </div>  </div>
+  </div>
+   </div>
+</section>
+<div style='overflow: hidden;'>
+      <div style='float: right;'>
+        <div style='overflow:auto;'>
+          <div style='float:right;'>
+            <button type='button' id='nextBtn' onclick='nextPrev(1)'>Next</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='tab'>
+
+<div class='form-outline mb-4 w-50 m-auto'>
+$content
+       
+        
+</div>
+
+  </form>
+  
+  
+  
+  
+  ";
 }
+    }
+}
+}
+
+
+//view story details
+
+
 ?>

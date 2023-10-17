@@ -77,8 +77,51 @@ include('./functions/common_function.php');
  <!--row start-->
  <div class="row px-1">
  <!--view card details-->
+ <form action="">
+     <!--about section start-->
+     
+<section class="about" id="about">
+   <div class="tab">
 
-
+  <div class="row">
+   <div class="card" style="width: 18rem;">
+  <img src="./images/ts1.jpeg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-info">Add to cart</a>
+     <a href="#" class="btn btn-secondary">View more</a>
+  </div>
+</div>
+  <div class="content">
+<div class="form-outline mb-4 w-50 m-auto">
+      <!--title-->
+    <label for="writter_name " class="form-label bg-info">
+        Writter Name:     <label for="story_title " class="form-label bg-info">
+        Story Title
+    </label>
+    </label>
+    <input type="text" name="writter_name" id="writter_name" class="form-control" placeholder="Enter Story Title" autocomplete="off" required>
+</div>bg-info
+<div class="form-outline mb-4 w-50 m-auto">
+      <!--title-->
+    <label for="story_title " class="form-label bg-info">
+        Story Title
+    </label>
+    <input type="text" name="story_title" id="story_title" class="form-control" placeholder="Enter Story Title" autocomplete="off" required>
+</div>
+    <!--description-->
+    <div class="form-outline mb-4 w-50 m-auto">
+    <label for="story_description" class="form-label bg-info">
+        Story description
+    </label>
+    <input type="text" name="story_description" id="story_description" class="form-control" placeholder="Enter Story Description" autocomplete="off" required>
+    </div>  </div>
+  </div>
+   </div>
+</section>
+      
+ </form>
    <!--fetching cate-->
 <?php
 //call function
@@ -115,41 +158,7 @@ get_unique_cat();
   <!--boostrap css link-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 <!--custom js file link--> 
-<script>
-var currentTab = 0;
-showTab(currentTab);
-
-function showTab(n) {
-  var x = document.getElementsByClassName("tab");
-  for (var i = 0; i < x.length; i++) {
-    x[i].style.display = "none";
-  }
-  x[n].style.display = "block";
-
-  // Update button visibility based on the current tab
-  if (n === 0) {
-   
-    document.getElementById("nextBtn").style.display = "inline";
-
-  } else if (n === x.length - 1) {
-    document.getElementById("nextBtn").style.display = "none";
-  
-  } else {
-    document.getElementById("nextBtn").style.display = "inline";
-   
-  }
-
-}
-
-function nextPrev(n) {
-  var x = document.getElementsByClassName("tab");
-  x[currentTab].style.display = "none";
-  currentTab = currentTab + n;
-  showTab(currentTab);
-}
-
-</script>
-
+<script src="script.js"></script>
 
 
 </body>

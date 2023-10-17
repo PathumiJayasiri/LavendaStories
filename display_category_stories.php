@@ -53,10 +53,9 @@ include('./functions/common_function.php');
 
         
       </ul>
-      <form class="d-flex search-form" role="search" action="search_story.php" method="get"> 
-        <input class="form-control me-2 search-item" type="search" placeholder="Search" aria-label="Search" name="search_data">
-        <!--button class="btn btn-outline-light" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button-->
-        <input type="submit" value="Search" class="btn bg-info" name="search_data_story">
+      <form class="d-flex search-form" role="search">
+        <input class="form-control me-2 search-item" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-light" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
       </form>
     </div>
   </div>
@@ -64,25 +63,22 @@ include('./functions/common_function.php');
   </div>
   </header>
  
-
-
+   
          <!--all stories-->
      <section class="category" id="category">
     <div class="row">
-
+ 
  <!--story  section-->
  
-<h1 class="heading">all <span>stories</span> </h1>
+<h1 class="heading" style="margin-top: 10%;">all <span>stories</span> </h1>
 
  <!--row start-->
- <div class="row px-1">
- <!--view card details-->
-
+ <div class="row">
+  
 
    <!--fetching cate-->
 <?php
 //call function
-view_story_details();
 get_unique_cat();
 ?>
  
@@ -94,62 +90,14 @@ get_unique_cat();
 
 
      </section>
- <!--footer-->
- <section class="footer">
- <div class="share">
-  <a href="#" class="fab fa-facebook"></a>
-   <a href="#" class="fab fa-twitter"></a>
-    <a href="#" class="fab fa-instagram"></a>
-     <a href="#" class="fab fa-linkedin"></a>
- </div>
- <div class="links">
-  <a href="#">home</a>
-  <a href="#">category</a>
-  <a href="#">about us</a>
-  <a href="#">contact us</a>
- </div>
-   <div class="credit">created by <span>IMAGINATION web designer</span> |all rights reserved</div>
-
- </section>
+ <!--include footer-->
+<?php include ("./DbConnector/footer.php")
+?>
  
   <!--boostrap css link-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 <!--custom js file link--> 
-<script>
-var currentTab = 0;
-showTab(currentTab);
-
-function showTab(n) {
-  var x = document.getElementsByClassName("tab");
-  for (var i = 0; i < x.length; i++) {
-    x[i].style.display = "none";
-  }
-  x[n].style.display = "block";
-
-  // Update button visibility based on the current tab
-  if (n === 0) {
-   
-    document.getElementById("nextBtn").style.display = "inline";
-
-  } else if (n === x.length - 1) {
-    document.getElementById("nextBtn").style.display = "none";
-  
-  } else {
-    document.getElementById("nextBtn").style.display = "inline";
-   
-  }
-
-}
-
-function nextPrev(n) {
-  var x = document.getElementsByClassName("tab");
-  x[currentTab].style.display = "none";
-  currentTab = currentTab + n;
-  showTab(currentTab);
-}
-
-</script>
-
+<script src="script.js"></script>
 
 
 </body>
