@@ -75,7 +75,6 @@ include('./functions/common_function.php');
  <!--row start-->
  <div class="row">
   
-
    <!--fetching cate-->
 <?php
 //call function

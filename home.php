@@ -19,50 +19,8 @@ include('./functions/common_function.php');
 </head>
 <body class="bg-black">
   <!--navbar-->
-  <header class="header">
-  <div class="container-fluid p-0">
-    <!--first child-->
-    <nav class="navbar navbar-expand-lg">
-  <div class="container-fluid ">
-   <img src="./images/Logo.jpeg" alt="" class="logo">
-    <button class="navbar-toggler bg-info" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link-home active" aria-current="page" href="home.php">Home</a>
-        </li>
-        
-        <li class="nav-item">
-          <a class="nav-link" href="#about">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#category">categories</a>
-        </li>
-                <li class="nav-item">
-          <a class="nav-link" href="display_all_stories.php">Stories</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#contact">Contact</a>
-        </li>
+    <?php include("./DbConnector/header_nav.php");?>
 
-        <li class="nav-item">
-          <a class="nav-link" href="#"><i class="fa-solid fa-cart-shopping"></i><sup>1</sup></a>
-        </li>
-
-        
-      </ul>
-      <form class="d-flex search-form" role="search" action="search_story.php" method="get"> 
-        <input class="form-control me-2 search-item" type="search" placeholder="Search" aria-label="Search" name="search_data">
-        <!--button class="btn btn-outline-light" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button-->
-        <input type="submit" value="Search" class="btn bg-info" name="search_data_story">
-      </form>
-    </div>
-  </div>
-</nav>
-  </div>
-  </header>
   <!--home section start-->
 <section class="home" id="home">
   <div class="content">
@@ -123,7 +81,29 @@ include('./functions/common_function.php');
 
    <!--fetching cate-->
 <?php
-getcategory();
+//getting category in home page
+
+    global $con;
+$select_query="Select * from `categories`";
+$result_query=mysqli_query($con,$select_query);
+//$row=mysqli_fetch_assoc($result_query);
+//echo $row['category_title'];
+while($row=mysqli_fetch_assoc($result_query)){
+  $category_id=$row['category_id'];
+ $category_title=$row['category_title'];
+   $category_image=$row['category_image'];
+echo "<div class='col-md-3 mb-2 m-5 card-container'>
+    <div class='card'>
+  <img src='./admin_area/category_images/$category_image' class='card-img-top' alt='...'>
+  <div class='card-body'>
+    <h3 class='card-title'>$category_title</h5>
+
+     <a href='./user_area/checkout.php' class='btn btn-secondary'>Read more</a>
+  </div>
+</div>
+  </div>";
+}
+
 ?>
  
 
@@ -163,22 +143,8 @@ get_unique_cat();
 
      </section>
  <!--footer-->
- <section class="footer">
- <div class="share">
-  <a href="#" class="fab fa-facebook"></a>
-   <a href="#" class="fab fa-twitter"></a>
-    <a href="#" class="fab fa-instagram"></a>
-     <a href="#" class="fab fa-linkedin"></a>
- </div>
- <div class="links">
-  <a href="#">home</a>
-  <a href="#">category</a>
-  <a href="#">about us</a>
-  <a href="#">contact us</a>
- </div>
-   <div class="credit">created by <span>IMAGINATION web designer</span> |all rights reserved</div>
+  <?php include("./DbConnector/footer.php");?>
 
- </section>
  
   <!--boostrap css link-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>

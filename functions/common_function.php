@@ -1,7 +1,11 @@
 <?php
 include './DbConnector/connect.php';
+
+
+
+
 //getting category
-function getcategory(){
+/*function getcategory(){
     global $con;
 $select_query="Select * from `categories`";
 $result_query=mysqli_query($con,$select_query);
@@ -22,7 +26,7 @@ echo "<div class='col-md-3 mb-2 m-5 card-container'>
 </div>
   </div>";
 }
-}
+}*/
 
 
 //getting unique categories

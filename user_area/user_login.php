@@ -47,53 +47,44 @@
 
 
 <!--2 child-->
-  <h1 class="heading">
-    <span>manage</span> details
-  </h1>
-  <!--3 child-->
-<div class="row">
-    <div class="dettail-row col-md-12  ">
-<div class="button text-center">
-    <button><a href="#" class="nav-link text-black  my-1">View Categories</a>
-</button>
-<button><a href="index.php?insert_category" class="nav-link text-black  my-1">Insert Category</a>
-</button>
-<button><a href="index.php?insert_story" class="nav-link text-black my-1">Insert new story</a></button>
-</div>
-    </div>
+<div class="container-fluid">
+
+        <h2 class="text-center">
+        User Login
+    </h2>
+    <div class="row d-flex align-items-center justify-content-center">
+        <div class="col-lg-10 col-xl-6">
+            <form action="" method="post" enctype="multipart/form-data" style="background: #eee;">
+<div class="form-outline mb-4">
+<label for="user_username" class="form-label">Username</label>
+<input type="text" id="user_username" class="form-control" placeholder="Enter your username" autocomplete="off" name="user_username" required>
 </div>
 
-
-  <!--4 child-->
-<div class="container my-5">
-    <?php
-    if(isset($_GET['insert_category'])){
-        include('insert_categories.php');
-    }
-    ?>
+<!--passowrd-->
+<div class="form-outline mb-4">
+<label for="user_password" class="form-label">Password</label>
+<input type="password" id="user_password" class="form-control" placeholder="Enter password" autocomplete="off" name="user_password" required>
 </div>
-<div class="container my-5">
-    <?php
-    if(isset($_GET['insert_story'])){
-
-       include('insert_story.php');
-    }
-    ?>
+<!--passowrd-->
+<div class="form-outline mb-4">
+<label for="user_password" class="form-label">Password</label>
+<input type="password" id="user_password" class="form-control" placeholder="Enter password" autocomplete="off" name="user_password" required>
 </div>
 
+<div class="text-center mt-4 pt-2">
+    <input type="submit" value="Login" class="bg-info py-2 px-3 border-0" name="user_register">
+</div>
 
-  </div>
-<!--footer-->
+<p class="small mt-2 pt-1 pb-4">Don't have an account?<a href="user_registration.php">Sign up</p>
+            </form>
+        </div>
+    
+
+</div>
+</div>
+<div>
   <?php include("../DbConnector/footer.php");?>
-
-
-
-
-
-
-
-
-
+<div>
 
 
       <!--boostrap css link-->

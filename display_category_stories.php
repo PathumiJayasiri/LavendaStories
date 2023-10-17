@@ -79,6 +79,7 @@ include('./functions/common_function.php');
    <!--fetching cate-->
 <?php
 //call function
+getting_all_story();
 get_unique_cat();
 ?>
  

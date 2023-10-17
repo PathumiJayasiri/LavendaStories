@@ -1,6 +1,6 @@
 <?php
-include('./DbConnector/connect.php');
-include('./functions/common_function.php');
+include('../DbConnector/connect.php');
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,7 +10,7 @@ include('./functions/common_function.php');
     <title>Imagination</title>
      <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
     <!--style css link-->
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="../style.css">
     
     <!--boostrap css link-->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -24,7 +24,7 @@ include('./functions/common_function.php');
     <!--first child-->
     <nav class="navbar navbar-expand-lg">
   <div class="container-fluid ">
-   <img src="./images/Logo.jpeg" alt="" class="logo">
+   <img src="../images/Logo.jpeg" alt="" class="logo">
     <button class="navbar-toggler bg-info" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -47,13 +47,11 @@ include('./functions/common_function.php');
           <a class="nav-link" href="#contact">Contact</a>
         </li>
 
-        <li class="nav-item">
-          <a class="nav-link" href="#"><i class="fa-solid fa-cart-shopping"></i><sup>1</sup></a>
-        </li>
+        
 
         
       </ul>
-      <form class="d-flex search-form" role="search" action="search_story.php" method="get">
+      <form class="d-flex search-form" role="search" action="search_story.php" method="get"> 
         <input class="form-control me-2 search-item" type="search" placeholder="Search" aria-label="Search" name="search_data">
         <!--button class="btn btn-outline-light" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button-->
         <input type="submit" value="Search" class="btn bg-info" name="search_data_story">
@@ -63,7 +61,24 @@ include('./functions/common_function.php');
 </nav>
   </div>
   </header>
- 
+<div class="row px-1">
+    <div class="col-md-12">
+        <div class="row">
+            <?php
+if(!isset($_SESSION['username'])){
+include('user_login.php');
+}else{
+include('./display_category_stories.php');
+}
+
+            ?>
+        </div>
+    </div>
+</div>
+  
+
+
+     </section>
 
          <!--all stories-->
      <section class="category" id="category">
@@ -71,18 +86,7 @@ include('./functions/common_function.php');
 
  <!--story  section-->
  
-<h1 class="heading">all <span>stories</span> </h1>
 
- <!--row start-->
- <div class="row">
-  
-
-   <!--fetching cate-->
-<?php
-//call function
-search_story();
-get_unique_cat();
-?>
  
 
 </div>
@@ -92,13 +96,7 @@ get_unique_cat();
 
 
      </section>
- <!--footer-->
-  <?php include("./DbConnector/footer.php");?>
-
-  <!--boostrap css link-->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-<!--custom js file link--> 
-<script src="script.js"></script>
+ 
 
 
 </body>
