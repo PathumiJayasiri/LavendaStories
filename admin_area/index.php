@@ -7,8 +7,7 @@
      <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
     <!--style css link-->
 <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="style_insert_story.css">
-
+   
 
 <!--add CKEDITOR library-->
 <script src="https://cdn.ckeditor.com/4.16.2/full/ckeditor.js"></script>
