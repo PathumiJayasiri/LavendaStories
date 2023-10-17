@@ -20,15 +20,23 @@
 <body class="bg-black">
 
 <!--navbar--> 
-  
   <header class="header">
-  
+  <div class="container-fluid p-0">
     <!--first child-->
-    <nav class="navbar">
-  <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg">
+  <div class="container-fluid ">
    <img src="../images/Logo.jpeg" alt="" class="logo">
     
-   
+    <nav class="navbar navbar-expand-lg">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+            
+         
+        </li>
+        
+
+      </ul>
+    </nav>
   </div>
 </nav>
 
@@ -36,9 +44,11 @@
 
 <!--navbar ends-->
 
+<!--navbar ends-->
+
 
 <!--2 child-->
-<div class="container-fluid" style="margin-bottom: 10%;margin-top: 0%;  padding-top: 10%;
+<div class="container-fluid " style="margin-bottom: 10%;margin-top: 0%;  padding-top: 10%;
 ">
 
         <h2 class="text-center">

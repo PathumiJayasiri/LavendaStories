@@ -52,7 +52,7 @@ else{
   <input type="submit" name="insert_cat" value="Insert Category" class="form-control bg-info border-o my-3" placeholder="Category" aria-label="Category" aria-describedby="basic-addon1">
 </div>
 <div class="input-group  w-50 mb-2 m-auto">
-<?= $message ?></div>
+<?php if (isset($message)) { echo $message; } ?></div>
 <!--<button class="bg-info p-2 border-0 ">
     Insert Category
 </button>-->
