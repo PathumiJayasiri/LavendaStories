@@ -55,22 +55,21 @@ echo "
 ?>
  
 
-
                         </ul>
             <li class="list-items"><a href=""><i class="fa-solid fa-list"></i><span>All Stories</span></a></li>
             <li class="list-items"><a href=""><i class="fa-solid fa-folder-open"></i><span>My Stories</span></a></li>
             <li class="list-items"><a href=""><i class="fa-solid fa-pen-to-square"></i><span>Write Story</span></a></li>
             <li class="list-items"><a href=""><i class="fa-regular fa-user-pen"></i><span>Edit Account</span></a></li>
             <li class="list-items"><a href=""><i class="fa-solid fa-delete-left"></i><span>Delete Account</span></a></li>
-            <li class="list-items"><a href=""><i class="fa-solid fa-right-from-bracket"></i><span>Logout</span></a></li>
+            <li class="list-items"><a href=""><i class="fa-solid fa-right-from-bracket"></i><span>Log out</span></a></li>
 
         </ul>
     </div>
 </div>
 
   <!--navbar-->
-  <div class="main-content">
-  <header class="">
+  
+  <header class="nav-user">
     <h1>
         <label for="nav-toggle">
 <i class="fa-solid fa-bars" style="cursor: pointer;"></i>
