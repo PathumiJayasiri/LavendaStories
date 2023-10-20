@@ -38,8 +38,7 @@
         <input type="submit" value="Search" class="btn bg-info " name="search_data_story">
       </form>
               <li class="nav-item">
-          <a class="btn bg-info" href="./user_area/user_login.php">Sign in</a>
-                    <a class="btn bg-info" href="./user_area/user_registration.php">Sign up</a>
+          <a class="btn bg-info" href="./user_area/user_login.php">Login</a>
 
         </li>
     </div>

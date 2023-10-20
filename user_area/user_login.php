@@ -32,6 +32,14 @@ $message="<h6 class='text-danger'>Invalid username or password<h6>";
     <!--style css link-->
 <link rel="stylesheet" href="../style.css">
    
+<style>
+  body{
+    overflow-y: hidden;
+  }
+  
+
+
+</style>
 
 <!--add CKEDITOR library-->
 <script src="https://cdn.ckeditor.com/4.16.2/full/ckeditor.js"></script>
@@ -42,11 +50,6 @@ $message="<h6 class='text-danger'>Invalid username or password<h6>";
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
-<style>
-  body{
-    overflow-y: hidden;
-  }
-</style>
 
 <body class="bg-black">
 
@@ -57,20 +60,47 @@ $message="<h6 class='text-danger'>Invalid username or password<h6>";
     <nav class="navbar navbar-expand-lg">
   <div class="container-fluid ">
    <img src="../images/Logo.jpeg" alt="" class="logo">
-    
-    <nav class="navbar navbar-expand-lg">
-      <ul class="navbar-nav">
+    <button class="navbar-toggler bg-info" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-            
-         
+          <a class="nav-link-home active" aria-current="page" href="../home.php">Home</a>
         </li>
         
+        <li class="nav-item">
+          <a class="nav-link" href="../home.php?#about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../home.php?#category">categories</a>
+        </li>
+                <li class="nav-item">
+          <a class="nav-link" href="../display_all_stories.php">Stories</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../home.php?#contact">Contact</a>
+        </li>
 
+        <li class="nav-item">
+          <a class="nav-link" href="#"><i class="fa-solid fa-cart-shopping"></i><sup>1</sup></a>
+        </li>
+
+        
       </ul>
-    </nav>
+      <form class="d-flex search-form" role="search" action="search_story.php" method="get"> 
+        <input class="form-control me-2 search-item" type="search" placeholder="Search" aria-label="Search" name="search_data">
+        <!--button class="btn btn-outline-light" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button-->
+        <input type="submit" value="Search" class="btn bg-info " name="search_data_story">
+      </form>
+              <li class="nav-item">
+          <a class="btn bg-info" href="./user_area/user_login.php">LOgin</a>
+
+        </li>
+    </div>
   </div>
 </nav>
-
+  </div>
   </header>
 
 <!--navbar ends-->
@@ -121,6 +151,8 @@ $message="<h6 class='text-danger'>Invalid username or password<h6>";
 
       <!--boostrap css link-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<!--custom js file link--> 
+<script src="script.js"></script>
 
 </body>
 </html>
