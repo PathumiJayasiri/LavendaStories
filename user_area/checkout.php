@@ -1,5 +1,6 @@
 <?php
 include('../DbConnector/connect.php');
+session_start();
 
 ?>
 <!DOCTYPE html>
@@ -56,6 +57,25 @@ include('../DbConnector/connect.php');
         <!--button class="btn btn-outline-light" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button-->
         <input type="submit" value="Search" class="btn bg-info" name="search_data_story">
       </form>
+                    
+                      <?php
+                      if(!isset($_SESSION['username'])){
+                        
+                        echo "<li class='nav-item'>      
+                            <a class='btn bg-info' href='user_login.php'>Logout</a>
+                             </li>
+                            ";
+
+                      }else{
+                                                echo "<li class='nav-item'>      
+                            <a class='btn bg-info' href='logout.php'>Login</a>
+                             </li>
+                            ";
+
+                      }
+                      ?>
+
+       
     </div>
   </div>
 </nav>
@@ -68,7 +88,7 @@ include('../DbConnector/connect.php');
 if(!isset($_SESSION['username'])){
 include('user_login.php');
 }else{
-include('./display_category_stories.php');
+include('user_index.php');
 }
 
             ?>
