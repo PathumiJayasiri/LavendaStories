@@ -1,5 +1,7 @@
 <?php
+
 include('../DbConnector/connect.php');
+
 
 ?>
 <!DOCTYPE html>
@@ -9,7 +11,7 @@ include('../DbConnector/connect.php');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Side Menu Design By Future Web </title>
+    <title>User dashboard</title>
     <link rel='stylesheet' href="user_style.css" />
     <link rel="stylesheet" href="../style.css">
 
@@ -25,10 +27,11 @@ include('../DbConnector/connect.php');
 </head>
 
 <body>
+    
     <div class="menu-wrapper">
         <div class="sidebar-header">
             <div class="sideBar">
-                <div><img src=https://drive.google.com/uc?export=view&id=1aWmbSZADIAOqZZ-TZ6IxTcCO72rDiUn1 /></div>
+                <div><img src=https://drive.google.com/uc?export=view&id=1aWmbSZADIAOqZZ-TZ6IxTcCO72rDiUn1 class="user-img"/></div>
                 <ul>
             <li class="list-items"><a href="" class="active"><i class="fa-regular fa-user"></i><label>My Account</label></a></li>
                     <li><a class="sub-btn"><i class="fa-solid fa-book"></i><label>Categories<i class="fa-solid fa-angle-right dropdown"></i></label></a>
@@ -71,7 +74,7 @@ echo "
             </div>
             <div class="backdrop"></div>
             <div class="content">
-                <header>
+                <header class="user-nav">
                     <div class="menu-button" id='desktop'>
                         <div></div>
                         <div></div>
@@ -82,13 +85,44 @@ echo "
                         <div></div>
                         <div></div>
                     </div>
-                    <h1> <form class="d-flex search-form" role="search" action="search_story.php" method="get"> 
+                    <h1> <form class="d-flex search-form" role="search" action="../search_story.php" method="get"> 
         <input class="form-control me-2 search-item" type="search" placeholder="Search" aria-label="Search" name="search_data">
         <!--button class="btn btn-outline-light" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button-->
         <input type="submit" value="Search" class="btn bg-info " name="search_data_story">
-      </form></h1> <img src=../images/bg1.jpg />
+      </form></h1> <img src=../images/bg1.jpg class="user-img"/>
                 </header>
                         <main>
+                            <?php
+                    global $con;
+    if(isset($_GET['search_data_story'])){
+        $search_value=$_GET['search_data'];
+$search_query="Select * from `view_stories` where story_title like '%$search_value%'";
+$result_query=mysqli_query($con,$search_query);
+if($num_row==0){
+    echo "<h2 class='text-center text-danger'>Sorry!! No Result match</h2>";
+}else{
+while($row=mysqli_fetch_assoc($result_query)){
+   $story_id=$row['story_id'];
+       $user_id=$row['user_id'];
+
+  $writter_name=$row['writter_name'];
+ $story_title=$row['story_title'];
+  $story_description=$row['story_description'];
+ $category_id=$row['category_id'];
+   $story_image=$row['cover_image'];
+   $content=$row['content'];
+$date=$row['created'];
+echo "<div class='col-md-3 mb-2 m-5 card-container'>
+    <div class='card'>
+  <img src='./admin_area/story_cover_images/$story_image' class='card-img-top' alt='...'>
+  <div class='card-body'>
+    <h3 class='card-title'>$story_title</h5>
+<p class='card-text'>$story_description</p>
+     <a href='full_story.php?story_id=$story_id' class='btn btn-secondary'>Read more</a>
+  </div>
+</div>
+  </div>";   
+}}}?>     
     <!--footer-->
   <?php include("../DbConnector/footer.php");?>
 

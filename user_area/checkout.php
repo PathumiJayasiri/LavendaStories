@@ -62,13 +62,13 @@ session_start();
                       if(!isset($_SESSION['username'])){
                         
                         echo "<li class='nav-item'>      
-                            <a class='btn bg-info' href='user_login.php'>Logout</a>
+                            <a class='btn bg-info' href='user_login.php'>Login</a>
                              </li>
                             ";
 
                       }else{
                                                 echo "<li class='nav-item'>      
-                            <a class='btn bg-info' href='logout.php'>Login</a>
+                            <a class='btn bg-info' href='logout.php'>Logout</a>
                              </li>
                             ";
 
@@ -88,7 +88,7 @@ session_start();
 if(!isset($_SESSION['username'])){
 include('user_login.php');
 }else{
-include('user_index.php');
+  header('Location: user_index.php');
 }
 
             ?>
@@ -98,24 +98,6 @@ include('user_index.php');
   
 
 
-     </section>
-
-         <!--all stories-->
-     <section class="category" id="category">
-    <div class="row">
-
- <!--story  section-->
- 
-
- 
-
-</div>
-</div>
-    
- <!--row end-->
-
-
-     </section>
  
 
 
