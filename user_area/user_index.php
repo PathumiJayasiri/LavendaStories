@@ -22,6 +22,8 @@ include('../DbConnector/connect.php');
     <!--font auwsom link-->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+<!--add CKEDITOR library-->
+<script src="https://cdn.ckeditor.com/4.16.2/full/ckeditor.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
@@ -61,7 +63,7 @@ echo "
                     </li>
                                 <li class="list-items"><a href=""><i class="fa-solid fa-list"></i><label>All Stories</label></a></li>
             <li class="list-items"><a href=""><i class="fa-solid fa-folder-open"></i><label>My Stories</label></a></li>
-            <li class="list-items"><a href=""><i class="fa-solid fa-pen-to-square"></i><label>Write Story</label></a></li>
+            <li class="list-items"><a href="user_index.php?insert_story"><i class="fa-solid fa-pen-to-square"></i><label>Write Story</label></a></li>
             <li class="list-items"><a href=""><i class="fa-regular fa-user-pen"></i><label>Edit Account</label></a></li>
             <li class="list-items"><a href=""><i class="fa-solid fa-delete-left"></i><label>Delete Account</label></a></li>
             <li class="list-items"><a href="logout.php"><i class="fa-solid fa-right-from-bracket"></i><label>Log out</label></a></li>
@@ -85,22 +87,25 @@ echo "
                         <div></div>
                         <div></div>
                     </div>
-                    <h1> <form class="d-flex search-form" role="search" action="../search_story.php" method="get"> 
+                    <h1> <form class="d-flex search-form" role="search" action="user_index.php" method="get"> 
         <input class="form-control me-2 search-item" type="search" placeholder="Search" aria-label="Search" name="search_data">
         <!--button class="btn btn-outline-light" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button-->
         <input type="submit" value="Search" class="btn bg-info " name="search_data_story">
       </form></h1> <img src=../images/bg1.jpg class="user-img"/>
                 </header>
                         <main>
+                             <div class="row">
+
                             <?php
                     global $con;
     if(isset($_GET['search_data_story'])){
         $search_value=$_GET['search_data'];
 $search_query="Select * from `view_stories` where story_title like '%$search_value%'";
 $result_query=mysqli_query($con,$search_query);
-if($num_row==0){
-    echo "<h2 class='text-center text-danger'>Sorry!! No Result match</h2>";
-}else{
+$num_row=mysqli_num_rows($result_query);
+if(empty($num_row)){
+    echo "<h2 class='text-center text-danger'>No Stories under this category!!</h2>";
+}
 while($row=mysqli_fetch_assoc($result_query)){
    $story_id=$row['story_id'];
        $user_id=$row['user_id'];
@@ -114,7 +119,7 @@ while($row=mysqli_fetch_assoc($result_query)){
 $date=$row['created'];
 echo "<div class='col-md-3 mb-2 m-5 card-container'>
     <div class='card'>
-  <img src='./admin_area/story_cover_images/$story_image' class='card-img-top' alt='...'>
+  <img src='story_cover_images/$story_image' class='card-img-top' alt='...'>
   <div class='card-body'>
     <h3 class='card-title'>$story_title</h5>
 <p class='card-text'>$story_description</p>
@@ -122,13 +127,24 @@ echo "<div class='col-md-3 mb-2 m-5 card-container'>
   </div>
 </div>
   </div>";   
-}}}?>     
+}}?>   
+                             </div>
+<!--write story-->
+ <!--4 child-->
+
+<div class="container my-5">
+    <?php
+    if(isset($_GET['insert_story'])){
+
+       include('insert_story.php');
+    }
+    ?>
+</div>
     <!--footer-->
   <?php include("../DbConnector/footer.php");?>
 
 </main>
 
-                <div class="content-data"> </div>
             </div>
         
 

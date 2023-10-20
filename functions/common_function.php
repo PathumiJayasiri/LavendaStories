@@ -150,8 +150,9 @@ function search_story(){
         $search_value=$_GET['search_data'];
 $search_query="Select * from `view_stories` where story_title like '%$search_value%'";
 $result_query=mysqli_query($con,$search_query);
+$num_row=mysqli_num_rows($result_query);
 if(empty($num_row)){
-    echo "<h2 class='text-center text-danger'>Sorry!! No Result match</h2>";
+    echo "<h2 class='text-center text-danger'>No Stories under this category!!</h2>";
 }
 while($row=mysqli_fetch_assoc($result_query)){
    $story_id=$row['story_id'];
