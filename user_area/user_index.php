@@ -64,7 +64,7 @@ echo "
             <li class="list-items"><a href=""><i class="fa-solid fa-pen-to-square"></i><label>Write Story</label></a></li>
             <li class="list-items"><a href=""><i class="fa-regular fa-user-pen"></i><label>Edit Account</label></a></li>
             <li class="list-items"><a href=""><i class="fa-solid fa-delete-left"></i><label>Delete Account</label></a></li>
-            <li class="list-items"><a href=""><i class="fa-solid fa-right-from-bracket"></i><label>Log out</label></a></li>
+            <li class="list-items"><a href="logout.php"><i class="fa-solid fa-right-from-bracket"></i><label>Log out</label></a></li>
 
                     <!--li><i class="fas fa-cogs"></i><label>Services</label></li>
                     <li><i class="fas fa-phone-alt"></i><label>Contact</label></li>
