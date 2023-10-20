@@ -6,6 +6,7 @@ include('../DbConnector/connect.php');
 //if form is submitted
 if(isset($_POST['submit'])){
     $writter_name=$_POST['writter_name'];
+    
     $story_tit = $_POST['story_title']; // Corrected to 'story_title'
     $story_descri = $_POST['story_description']; // Corrected to 'story_descri'
     $story_cat = $_POST['story_category'];

@@ -44,6 +44,8 @@ if(empty($num_row)){
 //echo $row['category_title'];
 while($row=mysqli_fetch_assoc($result_query)){
   $story_id=$row['story_id'];
+    $user_id=$row['user_id'];
+
   $writter_name=$row['writter_name'];
  $story_title=$row['story_title'];
   $story_description=$row['story_description'];
@@ -82,6 +84,8 @@ $result_query=mysqli_query($con,$select_query);
 //echo $row['category_title'];
 while($row=mysqli_fetch_assoc($result_query)){
   $story_id=$row['story_id'];
+      $user_id=$row['user_id'];
+
   $writter_name=$row['writter_name'];
  $story_title=$row['story_title'];
   $story_description=$row['story_description'];
@@ -114,6 +118,8 @@ $result_query=mysqli_query($con,$select_query);
 //echo $row['category_title'];
 while($row=mysqli_fetch_assoc($result_query)){
    $story_id=$row['story_id'];
+       $user_id=$row['user_id'];
+
   $writter_name=$row['writter_name'];
  $story_title=$row['story_title'];
   $story_description=$row['story_description'];
@@ -149,6 +155,8 @@ if(empty($num_row)){
 }
 while($row=mysqli_fetch_assoc($result_query)){
    $story_id=$row['story_id'];
+       $user_id=$row['user_id'];
+
   $writter_name=$row['writter_name'];
  $story_title=$row['story_title'];
   $story_description=$row['story_description'];
@@ -178,6 +186,8 @@ $select_query="Select * from `view_stories` where story_id=$story_id";
 $result_query=mysqli_query($con,$select_query);
 while($row=mysqli_fetch_assoc($result_query)){
   $story_id=$row['story_id'];
+      $user_id=$row['user_id'];
+
   $writter_name=$row['writter_name'];
  $story_title=$row['story_title'];
   $story_description=$row['story_description'];
