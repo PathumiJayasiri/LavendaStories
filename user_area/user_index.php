@@ -68,15 +68,26 @@ echo "
             <li class="list-items"><a href=""><i class="fa-solid fa-delete-left"></i><label>Delete Account</label></a></li>
             <li class="list-items"><a href="logout.php"><i class="fa-solid fa-right-from-bracket"></i><label>Log out</label></a></li>
 
-                    <!--li><i class="fas fa-cogs"></i><label>Services</label></li>
-                    <li><i class="fas fa-phone-alt"></i><label>Contact</label></li>
-                    <li><i class="fas fa-user"></i><label>About us</label></li>
-                    <li><i class="fas fa-cog"></i><label>Setting</label></li-->
-                </ul> <span class="cross-icon"><i class="fas fa-times"></i></span>
+                </ul>
+                <ul>
+                    <hr>
+                    <div style="justify-content: left;">
+                   <?php
+      $username=$_SESSION['username'];
+      $user_img="select * from `user` where username='$username'";
+      $user_img=mysqli_query($con,$user_img);
+      $row_img=mysqli_fetch_array($user_img);
+      $user_img=$row_img['user_image'];
+      echo "
+        <img src='./user_images/$user_img' class='user-img' style='width:40px;height: 40px;border-radius:50%'/>
+      ";
+      ?></div>
+                </ul> 
+                <span class="cross-icon"><i class="fas fa-times"></i></span>
             </div>
             <div class="backdrop"></div>
             <div class="content">
-                <header class="user-nav">
+                <header class="user-nav d-flex m-auto">
                     <div class="menu-button" id='desktop'>
                         <div></div>
                         <div></div>
@@ -87,22 +98,25 @@ echo "
                         <div></div>
                         <div></div>
                     </div>
+            <div class=""></div>
+      <div class=""></div>
+      <div class=""></div>
+            <div class=""></div>
+
+<div class="d-flex m-5">
                     <h1> <form class="d-flex search-form" role="search" action="user_index.php" method="get"> 
         <input class="form-control me-2 search-item" type="search" placeholder="Search" aria-label="Search" name="search_data">
         <!--button class="btn btn-outline-light" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button-->
         <input type="submit" value="Search" class="btn bg-info " name="search_data_story">
-      </form></h1> 
+      </form></h1>
+      
       <!--img src=../images/bg1.jpg class="user-img"/-->
-      <?php
-      $username=$_SESSION['username'];
-      $user_img="select * from `user` where username='$username'";
-      $user_img=mysqli_query($con,$user_img);
-      $row_img=mysqli_fetch_array($user_img);
-      $user_img=$row_img['user_image'];
-      echo "
-      <img src='./user_images/$user_img' class='user-img'/>
-      ";
-      ?>
+     
+      </div>
+      <div class=""></div>
+      <div class=""></div>
+            
+
                 </header>
                         <main>
 <!--write story-->

@@ -17,9 +17,10 @@
         
      </div>   
 
-          <div class="form-outline mb-4">
-        <input type="file" class="form-control w-50 m-auto" name="user_img">
-        <img src="./user_images/<?php $u?>" alt="">
+          <div class="form-outline mb-4 d-flex w-50 m-auto">
+        <input type="file" class="form-control " name="user_img">
+        <img src="./user_images/<?php echo $user_img;?>" alt="" style="width: 100px;height: 100px; object-fit: contain;
+ " class="profile-img">
      </div>   
      <div class="form-outline mb-4">
         <input type="text" class="form-control w-50 m-auto" name="user_mobile">

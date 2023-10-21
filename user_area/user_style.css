@@ -1,5 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+}
+
 body {
   background-color: #eff2f5;
   overflow: hidden;
@@ -110,6 +117,7 @@ header {
   width: 100%;
   display: flex;
 
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -150,11 +158,15 @@ header {
   background-color: #c7c7c7;
   width: 100%;
 }
-
+.profile-img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
 header img {
   height: 40px;
   width: 40px;
-  border-radius: 50%;
+  border-radius: 100%;
 }
 
 header h1 {
@@ -236,10 +248,6 @@ main {
       100vh - 10%
     ); /* Subtract header height from viewport height */
     overflow-y: auto;
-  }
-  .footer {
-    width: 100%;
-    height: fit-content;
   }
 }
 
