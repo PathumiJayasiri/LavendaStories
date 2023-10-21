@@ -8,6 +8,29 @@ $user_id =$row_fetch['user_id'];
 $username =$row_fetch['username'];
 $user_email =$row_fetch['user_email'];
 $user_mobile =$row_fetch['user_mobile'];
+
+if(isset($_POST['user_update'])){
+   $update_id=$user_id;
+   $username=$_POST['user_username'];
+      $user_email=$_POST['user_email'];
+
+         $user_mobile=$_POST['user_mobile'];
+
+            $user_img=$_FILES['user_img']['name'];
+                        $user_tem_img=$_FILES['user_img']['tmp_name'];
+                        move_uploaded_file($user_tem_img,"./user_images/$user_img");
+
+                        $update_data="update `user` set username='$username',user_email='$user_email',user_image='$user_img',user_mobile='$user_mobile' 
+                        where user_id='$update_id'";
+                        $rs_query_update=mysqli_query($con,$update_data);
+                        if($rs_query_update){
+                           echo "<script>alert('Data updated')</script>";
+                                                      echo "<script>window.open('logout.php','_self')</script>";
+
+                        }
+
+
+}
 }
 ?>
 <!DOCTYPE html>
