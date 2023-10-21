@@ -34,10 +34,10 @@ session_start();
         <div class="sidebar-header">
             <div class="sideBar">
                 <div><img src=https://drive.google.com/uc?export=view&id=1aWmbSZADIAOqZZ-TZ6IxTcCO72rDiUn1 class="user-img"/></div>
-                <ul>
+                <ul style="list-style: none;">
             <li class="list-items"><a href="" class="active"><i class="fa-regular fa-user"></i><label>My Account</label></a></li>
                     <li><a class="sub-btn"><i class="fa-solid fa-book"></i><label>Categories<i class="fa-solid fa-angle-right dropdown"></i></label></a>
-                    <ul class="sub-menu">
+                    <ul class="sub-menu" style="list-style: none;">
                         
     <?php
 //getting category in home page
@@ -64,7 +64,7 @@ echo "
                                 <li class="list-items"><a href=""><i class="fa-solid fa-list"></i><label>All Stories</label></a></li>
             <li class="list-items"><a href="user_index.php?user_stories"><i class="fa-solid fa-folder-open"></i><label>My Stories</label></a></li>
             <li class="list-items"><a href="user_index.php?insert_story"><i class="fa-solid fa-pen-to-square"></i><label>Write Story</label></a></li>
-            <li class="list-items"><a href=""><i class="fa-regular fa-user-pen"></i><label>Edit Account</label></a></li>
+            <li class="list-items"><a href="user_index.php?edit_account"><i class="fa-regular fa-user-pen"></i><label>Edit Account</label></a></li>
             <li class="list-items"><a href=""><i class="fa-solid fa-delete-left"></i><label>Delete Account</label></a></li>
             <li class="list-items"><a href="logout.php"><i class="fa-solid fa-right-from-bracket"></i><label>Log out</label></a></li>
 
@@ -91,7 +91,18 @@ echo "
         <input class="form-control me-2 search-item" type="search" placeholder="Search" aria-label="Search" name="search_data">
         <!--button class="btn btn-outline-light" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button-->
         <input type="submit" value="Search" class="btn bg-info " name="search_data_story">
-      </form></h1> <img src=../images/bg1.jpg class="user-img"/>
+      </form></h1> 
+      <!--img src=../images/bg1.jpg class="user-img"/-->
+      <?php
+      $username=$_SESSION['username'];
+      $user_img="select * from `user` where username='$username'";
+      $user_img=mysqli_query($con,$user_img);
+      $row_img=mysqli_fetch_array($user_img);
+      $user_img=$row_img['user_image'];
+      echo "
+      <img src='./user_images/$user_img' class='user-img'/>
+      ";
+      ?>
                 </header>
                         <main>
 <!--write story-->
@@ -146,10 +157,18 @@ echo "<div class='col-md-3 mb-2 m-5 card-container'>
        include('user_stories.php');
     }
     ?>
+    <div class="row">
+      <?php
+    if(isset($_GET['edit_account'])){
+
+       include('edit_account.php');
+    }
+    ?>   
+    </div>
 </div>
     <!--footer-->
  <!--footer-->
- <section class="footer">
+ <section class="footer" style="height: 60vh;">
  <div class="share">
   <a href="#" class="fab fa-facebook"></a>
    <a href="#" class="fab fa-twitter"></a>

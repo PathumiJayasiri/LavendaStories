@@ -109,7 +109,7 @@ header {
   padding: 10px;
   width: 100%;
   display: flex;
-  justify-content: space-between;
+
   align-items: center;
 }
 
@@ -153,7 +153,8 @@ header {
 
 header img {
   height: 40px;
-  border-radius: 100%;
+  width: 40px;
+  border-radius: 50%;
 }
 
 header h1 {

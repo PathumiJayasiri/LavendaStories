@@ -1,0 +1,10 @@
+<?php
+      $username=$_SESSION['username'];
+      $user_img="select * from `user` where username='$username'";
+      $user_img=mysqli_query($con,$user_img);
+      $row_img=mysqli_fetch_array($user_img);
+      $user_img=$row_img['user_image'];
+      echo "
+      <img src='./user_images/$user_img class='user-img''>
+      ";
+      ?>

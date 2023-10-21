@@ -186,6 +186,7 @@ section {
 }
 
 .footer {
+  position: fixed;
   background: var(--black);
   text-align: center;
   bottom: 0;
