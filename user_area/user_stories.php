@@ -37,7 +37,7 @@
 <h2>My Saved Stories</h2>
 <hr>
 </div>
-<div class="row">
+
    <h2>My All Stories</h2>
    <hr>
  <?php

@@ -1,12 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 
-* {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  box-sizing: border-box;
-}
-
 body {
   background-color: #eff2f5;
   overflow: hidden;
@@ -243,10 +236,9 @@ main {
     ); /* Subtract header height from viewport height */
     overflow-y: auto;
   }
-  .footer-user {
-    position: fixed;
-    bottom: 0;
+  .footer {
     width: 100%;
+    height: fit-content;
   }
 }
 
