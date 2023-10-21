@@ -1,7 +1,7 @@
 <?php
 
 include('../DbConnector/connect.php');
-
+session_start();
 
 ?>
 <!DOCTYPE html>
@@ -62,7 +62,7 @@ echo "
                     </ul>
                     </li>
                                 <li class="list-items"><a href=""><i class="fa-solid fa-list"></i><label>All Stories</label></a></li>
-            <li class="list-items"><a href=""><i class="fa-solid fa-folder-open"></i><label>My Stories</label></a></li>
+            <li class="list-items"><a href="user_index.php?user_stories"><i class="fa-solid fa-folder-open"></i><label>My Stories</label></a></li>
             <li class="list-items"><a href="user_index.php?insert_story"><i class="fa-solid fa-pen-to-square"></i><label>Write Story</label></a></li>
             <li class="list-items"><a href=""><i class="fa-regular fa-user-pen"></i><label>Edit Account</label></a></li>
             <li class="list-items"><a href=""><i class="fa-solid fa-delete-left"></i><label>Delete Account</label></a></li>
@@ -93,8 +93,12 @@ echo "
         <input type="submit" value="Search" class="btn bg-info " name="search_data_story">
       </form></h1> <img src=../images/bg1.jpg class="user-img"/>
                 </header>
-                        <main>
-                             <div class="row">
+                        <section>
+<!--write story-->
+ <!--4 child-->
+
+<div class="container my-5">
+                                 <div class="row">
 
                             <?php
                     global $con;
@@ -129,21 +133,40 @@ echo "<div class='col-md-3 mb-2 m-5 card-container'>
   </div>";   
 }}?>   
                              </div>
-<!--write story-->
- <!--4 child-->
 
-<div class="container my-5">
     <?php
     if(isset($_GET['insert_story'])){
 
        include('insert_story.php');
     }
     ?>
-</div>
-    <!--footer-->
-  <?php include("../DbConnector/footer.php");?>
+    <?php
+    if(isset($_GET['user_stories'])){
 
-</main>
+       include('user_stories.php');
+    }
+    ?>
+</div>
+                        </section>
+    <!--footer-->
+ <!--footer-->
+ <section class="footer">
+ <div class="share">
+  <a href="#" class="fab fa-facebook"></a>
+   <a href="#" class="fab fa-twitter"></a>
+    <a href="#" class="fab fa-instagram"></a>
+     <a href="#" class="fab fa-linkedin"></a>
+ </div>
+ <div class="links">
+  <a href="#">home</a>
+  <a href="#">category</a>
+  <a href="#">about us</a>
+  <a href="#">contact us</a>
+ </div>
+   <div class="credit">created by <span>IMAGINATION web designer</span> |all rights reserved</div>
+
+ </section>
+
 
             </div>
         

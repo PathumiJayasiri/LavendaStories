@@ -169,7 +169,7 @@ header h1 {
   background-color: #ffffff;
   margin: 2%;
   padding: 20px;
-  height: 84%;
+  height: 100%;
   overflow-y: auto;
 }
 
@@ -190,7 +190,7 @@ header h1 {
 }
 
 main {
-  margin-top: 90px;
+  overflow-y: auto;
 }
 .rotate {
   transform: rotate(90deg);
@@ -231,6 +231,18 @@ main {
 
   .backdrop.showBackdrop {
     left: 0;
+  }
+  main {
+    width: 100%;
+    min-height: calc(
+      100vh - 10%
+    ); /* Subtract header height from viewport height */
+    overflow-y: auto;
+  }
+  .footer-user {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
   }
 }
 

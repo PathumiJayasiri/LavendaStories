@@ -1,10 +1,43 @@
-<?php
-//include_once 'submit.php';
-include('../DbConnector/connect.php');
+<!DOCTYPE html>
 
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User dashboard</title>
+    <link rel='stylesheet' href="user_style.css" />
+    <link rel="stylesheet" href="../style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+    <!--boostrap css link-->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    
+    <!--font auwsom link-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<!--add CKEDITOR library-->
+<script src="https://cdn.ckeditor.com/4.16.2/full/ckeditor.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <?php
+    $username=$_SESSION['username'];
+    $get_user="select * from `user` where username='$username'";
+    $rs=mysqli_query($con,$get_user);
+    $row_fetch=mysqli_fetch_array($rs);
+    $user_id=$row_fetch['user_id'];
+    
+    ?>
+
+<?php
 
 //if form is submitted
 if(isset($_POST['submit'])){
+        
+
     $writter_name=$_POST['writter_name'];
     
     $story_tit = $_POST['story_title']; // Corrected to 'story_title'
@@ -26,7 +59,7 @@ $editorContent=$_POST['editor'];
 
 //move_uploaded_file($tem_story_img,"./story_cover_images/$story_img");
 
-        $insert_story=("INSERT INTO `view_stories` (writter_name,story_title,story_description,category_id,cover_image,content,created) VALUES ('$writter_name','$story_tit','$story_descri','$story_cat','$story_img1','$editorContent',NOW()) ");
+        $insert_story=("INSERT INTO `view_stories` (user_id,writter_name,story_title,story_description,category_id,cover_image,content,created) VALUES ('$user_id','$writter_name','$story_tit','$story_descri','$story_cat','$story_img1','$editorContent',NOW()) ");
         $result_query=mysqli_query($con,$insert_story);
 
         if($result_query){
@@ -255,3 +288,5 @@ function nextPrev(n) {
     </script>
            
    
+</body>
+</html>
