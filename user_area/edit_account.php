@@ -1,3 +1,15 @@
+<?php
+if(isset($_GET['edit_account'])){
+   $user_username=$_SESSION['username'];
+   $select_query="select* from `user` where username='$user_username'";
+   $rs=mysqli_query($con,$select_query);
+   $row_fetch=mysqli_fetch_array($rs);
+$user_id =$row_fetch['user_id'];
+$username =$row_fetch['username'];
+$user_email =$row_fetch['user_email'];
+$user_mobile =$row_fetch['user_mobile'];
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,11 +21,11 @@
     <h1 class="text-center mb-4">Edit Account</h1>
     <form action="" method="post" enctype="multipart/form-data" class="text-center">
      <div class="form-outline mb-4">
-        <input type="text" class="form-control w-50 m-auto" name="user_username">
+        <input type="text" class="form-control w-50 m-auto" name="user_username" value="<?php echo $user_username?>">
 
      </div>   
           <div class="form-outline mb-4">
-        <input type="email" class="form-control w-50 m-auto" name="user_email">
+        <input type="email" class="form-control w-50 m-auto" name="user_email" value="<?php echo $user_email?>">
         
      </div>   
 
@@ -23,7 +35,7 @@
  " class="profile-img">
      </div>   
      <div class="form-outline mb-4">
-        <input type="text" class="form-control w-50 m-auto" name="user_mobile">
+        <input type="text" class="form-control w-50 m-auto" name="user_mobile" value="<?php echo $user_mobile?>">
         
      </div>   
         <input type="submit" class="btn bg-info py-2 px-3" value="Update" name="user_update">
