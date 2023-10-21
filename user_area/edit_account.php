@@ -24,7 +24,7 @@ if(isset($_POST['user_update'])){
                         where user_id='$update_id'";
                         $rs_query_update=mysqli_query($con,$update_data);
                         if($rs_query_update){
-                           echo "<script>alert('Data updated')</script>";
+                           echo "<script type='text/javascript'>alert('Data updated')</script>";
                                                       echo "<script>window.open('logout.php','_self')</script>";
 
                         }
