@@ -55,7 +55,7 @@ while($row=mysqli_fetch_assoc($result_query)){
 $date=$row['created'];
 echo "<div class='col-md-3 mb-2 m-5 card-container'>
     <div class='card'>
-  <img src='./admin_area/story_cover_images/$story_image' class='card-img-top' alt='...'>
+  <img src='./user_area/story_cover_images/$story_image' class='card-img-top' alt='...'>
   <div class='card-body'>
     <h3 class='card-title'>$story_title</h5>
 <p class='card-text'>$story_description</p>
@@ -95,7 +95,7 @@ while($row=mysqli_fetch_assoc($result_query)){
 $date=$row['created'];
 echo "<div class='col-md-3 mb-2 m-5 card-container'>
     <div class='card ' >
-  <img src='./admin_area/story_cover_images/$story_image' class='card-img-top' alt='...'>
+  <img src='./user_area/story_cover_images/$story_image' class='card-img-top' alt='...'>
   <div class='card-body'>
     <h3 class='card-title'>$story_title</h5>
 <p class='card-text'>$story_description</p>
@@ -129,7 +129,7 @@ while($row=mysqli_fetch_assoc($result_query)){
 $date=$row['created'];
 echo "<div class='col-md-3 mb-2 m-5 card-container'>
     <div class='card'>
-  <img src='./admin_area/story_cover_images/$story_image' class='card-img-top' alt='...'>
+  <img src='./user_area/story_cover_images/$story_image' class='card-img-top' alt='...'>
   <div class='card-body'>
     <h3 class='card-title'>$story_title</h5>
 <p class='card-text'>$story_description</p>
@@ -167,7 +167,7 @@ while($row=mysqli_fetch_assoc($result_query)){
 $date=$row['created'];
 echo "<div class='col-md-3 mb-2 m-5 card-container'>
     <div class='card'>
-  <img src='./admin_area/story_cover_images/$story_image' class='card-img-top' alt='...'>
+  <img src='./user_area/story_cover_images/$story_image' class='card-img-top' alt='...'>
   <div class='card-body'>
     <h3 class='card-title'>$story_title</h5>
 <p class='card-text'>$story_description</p>
@@ -203,7 +203,7 @@ echo "
 
   <div class='row'>
    <div class='card' style='width: 18rem;'>
-  <img src='./admin_area/story_cover_images/$story_image' class='card-img-top'>
+  <img src='./user_area/story_cover_images/$story_image' class='card-img-top'>
   <div class='card-body'>
     <h5 class='card-title'>Card title</h5>
     <p class='card-text'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>

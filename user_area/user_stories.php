@@ -31,6 +31,8 @@
     $user_id=$row_fetch['user_id'];
     
     ?>
+    <div class="container">
+
 <div class="row">
 <h2>My Saved Stories</h2>
 <hr>
@@ -60,10 +62,7 @@ echo "
   <div class='row'>
    <div class='card' style='width: 18rem;'>
   <img src='story_cover_images/$story_image' class='card-img-top'>
-  <div class='card-body'>
-    <h5 class='card-title'>Card title</h5>
-    <p class='card-text'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-  </div>
+ 
 </div>
   <div class='content'>
 <div class='form-outline mb-4 w-50 m-auto h-auto'>
@@ -104,7 +103,7 @@ echo "
 
 <div class='form-outline mb-4 w-50 m-auto'>
 $content
-       
+     <div>  
         
 </div>
 
@@ -115,5 +114,45 @@ $content
   }
  ?>
 </div>
+</div>
+
+  <!--boostrap css link-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<!--custom js file link--> 
+<script>
+var currentTab = 0;
+showTab(currentTab);
+
+function showTab(n) {
+  var x = document.getElementsByClassName("tab");
+  for (var i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  x[n].style.display = "block";
+
+  // Update button visibility based on the current tab
+  if (n === 0) {
+   
+    document.getElementById("nextBtn").style.display = "inline";
+
+  } else if (n === x.length - 1) {
+    document.getElementById("nextBtn").style.display = "none";
+  
+  } else {
+    document.getElementById("nextBtn").style.display = "inline";
+   
+  }
+
+}
+
+function nextPrev(n) {
+  var x = document.getElementsByClassName("tab");
+  x[currentTab].style.display = "none";
+  currentTab = currentTab + n;
+  showTab(currentTab);
+}
+
+</script>
+
 </body>
 </html>

@@ -109,6 +109,8 @@ li label.hideMenuList {
 }
 
 header {
+  z-index: 1000;
+  position: fixed;
   background-color: #13131a;
   height: 10%;
   padding: 10px;
@@ -190,7 +192,9 @@ header h1 {
 }
 
 main {
+  margin-top: 90px;
   overflow-y: auto;
+  height: 100vh;
 }
 .rotate {
   transform: rotate(90deg);

@@ -93,7 +93,7 @@ echo "
         <input type="submit" value="Search" class="btn bg-info " name="search_data_story">
       </form></h1> <img src=../images/bg1.jpg class="user-img"/>
                 </header>
-                        <section>
+                        <main>
 <!--write story-->
  <!--4 child-->
 
@@ -147,7 +147,6 @@ echo "<div class='col-md-3 mb-2 m-5 card-container'>
     }
     ?>
 </div>
-                        </section>
     <!--footer-->
  <!--footer-->
  <section class="footer">
@@ -167,6 +166,8 @@ echo "<div class='col-md-3 mb-2 m-5 card-container'>
 
  </section>
 
+
+                        </main>
 
             </div>
         
