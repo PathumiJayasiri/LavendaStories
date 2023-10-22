@@ -14,7 +14,6 @@ session_start();
     <title>User dashboard</title>
     <link rel='stylesheet' href="../user_style.css" />
     <link rel="stylesheet" href="../style.css">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
     <!--boostrap css link-->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -37,10 +36,13 @@ session_start();
                 <ul style="list-style: none;">
             <li class="list-items"><a href="" class="active"><i class="fa-regular fa-user"></i><label>My Account</label></a></li>
                     <li><a class="sub-btn"><i class="fa-solid fa-book"></i><label>Categories<i class="fa-solid fa-angle-right dropdown"></i></label></a>
-                    <ul class="sub-menu" style="list-style: none;">
-                        
-    <?php
-//getting category in home page
+                    <hr>
+                    <ul class="" style="list-style: none;">
+                           <li class="list-items"><a href=""><label>View Categories</label></a></li>
+                           <li class="list-items"><a href="admin_index.php?insert_category"><label>Isert Categories</label></a></li>
+
+    <!--?php
+//getting category 
 
     global $con;
 $select_query="Select * from `categories`";
@@ -57,13 +59,19 @@ echo "
 ";
 }
 
-?>
+?-->
                   </li>      
                     </ul>
                     </li>
-                                <li class="list-items"><a href=""><i class="fa-solid fa-list"></i><label>All Stories</label></a></li>
-            <li class="list-items"><a href="user_index.php?user_stories"><i class="fa-solid fa-folder-open"></i><label>My Stories</label></a></li>
-            <li class="list-items"><a href="user_index.php?insert_story"><i class="fa-solid fa-pen-to-square"></i><label>Write Story</label></a></li>
+            <li class=""><a><i class="fa-solid fa-folder-open"></i><label>Stories</label></a>
+                        <hr>
+
+            <ul style="list-style: none;">
+            <li class="list-items"><a href=""><label>View Stories</label></a></li>
+            <li class="list-items"><a href=""><label>Insert Stories</label></a></li>
+
+            </ul>
+            </li>
             <li class="list-items"><a href="user_index.php?edit_account"><i class="fa-regular fa-user-pen"></i><label>Edit Account</label></a></li>
             <li class="list-items"><a href="user_index.php?delete_user_acc"><i class="fa-solid fa-delete-left"></i><label>Delete Account</label></a></li>
             <li class="list-items"><a href="logout.php"><i class="fa-solid fa-right-from-bracket"></i><label>Log out</label></a></li>
@@ -120,7 +128,7 @@ echo "
                 </header>
                         <main>
 <!--write story-->
- <!--4 child-->
+ <!--search story start-->
 
 <div class="container my-5">
                                  <div class="row">
@@ -157,7 +165,9 @@ echo "<div class='col-md-3 mb-2 m-5 card-container'>
 </div>
   </div>";   
 }}?>   
-                             </div>
+ </div>
+<!--search story end-->
+
 
     <?php
     if(isset($_GET['insert_story'])){
@@ -171,6 +181,14 @@ echo "<div class='col-md-3 mb-2 m-5 card-container'>
        include('user_stories.php');
     }
     ?>
+    <div class="container my-5">
+    <?php
+    if(isset($_GET['insert_category'])){
+        include('insert_categories.php');
+    }
+    ?>
+</div>
+
     <div class="row">
       <?php
     if(isset($_GET['edit_account'])){
