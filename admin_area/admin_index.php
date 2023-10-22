@@ -11,7 +11,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User dashboard</title>
+    <title>Admin dashboard</title>
     <link rel='stylesheet' href="../user_style.css" />
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
@@ -30,6 +30,44 @@ session_start();
 <body>
     
     <div class="menu-wrapper">
+                        <header class="user-nav d-flex m-auto">
+                    <div class="menu-button" id='desktop'>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <div class="menu-button" id='mobile'>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+          
+<div class="d-flex m-4" >
+    
+                    <h1> <form class="d-flex search-form" role="search" action="user_index.php" method="get"> 
+        <input class="form-control me-2 search-item" type="search" placeholder="Search" aria-label="Search" name="search_data">
+        <!--button class="btn btn-outline-light" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button-->
+        <input type="submit" value="Search" class="btn bg-info " name="search_data_story">
+      </form></h1>
+     <div style="margin-left: 20px;" >
+                   <?php
+      $username=$_SESSION['username'];
+      $user_img="select * from `user` where username='$username'";
+      $user_img=mysqli_query($con,$user_img);
+      $row_img=mysqli_fetch_array($user_img);
+      $user_img=$row_img['user_image'];
+      echo "
+        <img src='./user_images/$user_img' class='user-img' style='width:40px;height: 40px;border-radius:50%'/>
+      ";
+      ?></div>
+      <!--img src=../images/bg1.jpg class="user-img"/-->
+     
+      </div>
+      
+            
+
+                </header>
+
         <div class="sidebar-header">
             <div class="sideBar">
                 <div><img src=https://drive.google.com/uc?export=view&id=1aWmbSZADIAOqZZ-TZ6IxTcCO72rDiUn1 class="user-img"/></div>
@@ -38,7 +76,7 @@ session_start();
                     <li><a class="sub-btn"><i class="fa-solid fa-book"></i><label>Categories<i class="fa-solid fa-angle-right dropdown"></i></label></a>
                     <hr>
                     <ul class="" style="list-style: none;">
-                           <li class="list-items"><a href=""><label>View Categories</label></a></li>
+                           <li class="list-items"><a href="admin_index.php?view_categories"><label>View Categories</label></a></li>
                            <li class="list-items"><a href="admin_index.php?insert_category"><label>Isert Categories</label></a></li>
 
     <!--?php
@@ -77,55 +115,11 @@ echo "
             <li class="list-items"><a href="logout.php"><i class="fa-solid fa-right-from-bracket"></i><label>Log out</label></a></li>
 
                 </ul>
-                <ul>
-                    <hr>
-                    <div style="justify-content: left;">
-                   <?php
-      $username=$_SESSION['username'];
-      $user_img="select * from `user` where username='$username'";
-      $user_img=mysqli_query($con,$user_img);
-      $row_img=mysqli_fetch_array($user_img);
-      $user_img=$row_img['user_image'];
-      echo "
-        <img src='./user_images/$user_img' class='user-img' style='width:40px;height: 40px;border-radius:50%'/>
-      ";
-      ?></div>
-                </ul> 
+                
                 <span class="cross-icon"><i class="fas fa-times"></i></span>
             </div>
             <div class="backdrop"></div>
             <div class="content">
-                <header class="user-nav d-flex m-auto">
-                    <div class="menu-button" id='desktop'>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                    <div class="menu-button" id='mobile'>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-            <div class=""></div>
-      <div class=""></div>
-      <div class=""></div>
-            <div class=""></div>
-
-<div class="d-flex m-5">
-                    <h1> <form class="d-flex search-form" role="search" action="user_index.php" method="get"> 
-        <input class="form-control me-2 search-item" type="search" placeholder="Search" aria-label="Search" name="search_data">
-        <!--button class="btn btn-outline-light" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button-->
-        <input type="submit" value="Search" class="btn bg-info " name="search_data_story">
-      </form></h1>
-      
-      <!--img src=../images/bg1.jpg class="user-img"/-->
-     
-      </div>
-      <div class=""></div>
-      <div class=""></div>
-            
-
-                </header>
                         <main>
 <!--write story-->
  <!--search story start-->
@@ -187,6 +181,13 @@ echo "<div class='col-md-3 mb-2 m-5 card-container'>
         include('insert_categories.php');
     }
     ?>
+        <?php
+    if(isset($_GET['view_categories'])){
+
+       include('view_categories.php');
+    }
+    ?>
+
 </div>
 
     <div class="row">

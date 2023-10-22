@@ -31,6 +31,42 @@ session_start();
 <body>
     
     <div class="menu-wrapper">
+                      <header class="user-nav d-flex m-auto">
+                    <div class="menu-button" id='desktop'>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <div class="menu-button" id='mobile'>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+
+<div class="d-flex m-4">
+                    <h1> <form class="d-flex search-form" role="search" action="user_index.php" method="get"> 
+        <input class="form-control me-2 search-item" type="search" placeholder="Search" aria-label="Search" name="search_data">
+        <!--button class="btn btn-outline-light" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button-->
+        <input type="submit" value="Search" class="btn bg-info " name="search_data_story">
+      </form></h1>
+                          <div style="margin-left: 20px;" >
+                   <?php
+      $username=$_SESSION['username'];
+      $user_img="select * from `user` where username='$username'";
+      $user_img=mysqli_query($con,$user_img);
+      $row_img=mysqli_fetch_array($user_img);
+      $user_img=$row_img['user_image'];
+      echo "
+        <img src='./user_images/$user_img' class='user-img' style='width:40px;height: 40px;border-radius:50%'/>
+      ";
+      ?></div>
+
+      <!--img src=../images/bg1.jpg class="user-img"/-->
+     
+      </div>
+
+                </header>
+
         <div class="sidebar-header">
             <div class="sideBar">
                 <div><img src=https://drive.google.com/uc?export=view&id=1aWmbSZADIAOqZZ-TZ6IxTcCO72rDiUn1 class="user-img"/></div>
@@ -52,7 +88,7 @@ while($row=mysqli_fetch_assoc($result_query)){
  $category_title=$row['category_title'];
    $category_image=$row['category_image'];
 echo "
-   <li class=''>
+   <li class='list-items'>
  <a href=''>$category_title</a></li>
 ";
 }
@@ -69,55 +105,11 @@ echo "
             <li class="list-items"><a href="logout.php"><i class="fa-solid fa-right-from-bracket"></i><label>Log out</label></a></li>
 
                 </ul>
-                <ul>
-                    <hr>
-                    <div style="justify-content: left;">
-                   <?php
-      $username=$_SESSION['username'];
-      $user_img="select * from `user` where username='$username'";
-      $user_img=mysqli_query($con,$user_img);
-      $row_img=mysqli_fetch_array($user_img);
-      $user_img=$row_img['user_image'];
-      echo "
-        <img src='./user_images/$user_img' class='user-img' style='width:40px;height: 40px;border-radius:50%'/>
-      ";
-      ?></div>
-                </ul> 
+              
                 <span class="cross-icon"><i class="fas fa-times"></i></span>
             </div>
             <div class="backdrop"></div>
             <div class="content">
-                <header class="user-nav d-flex m-auto">
-                    <div class="menu-button" id='desktop'>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                    <div class="menu-button" id='mobile'>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-            <div class=""></div>
-      <div class=""></div>
-      <div class=""></div>
-            <div class=""></div>
-
-<div class="d-flex m-5">
-                    <h1> <form class="d-flex search-form" role="search" action="user_index.php" method="get"> 
-        <input class="form-control me-2 search-item" type="search" placeholder="Search" aria-label="Search" name="search_data">
-        <!--button class="btn btn-outline-light" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button-->
-        <input type="submit" value="Search" class="btn bg-info " name="search_data_story">
-      </form></h1>
-      
-      <!--img src=../images/bg1.jpg class="user-img"/-->
-     
-      </div>
-      <div class=""></div>
-      <div class=""></div>
-            
-
-                </header>
                         <main>
 <!--write story-->
  <!--4 child-->
