@@ -41,43 +41,45 @@
    $content=$row_stories['content'];
 $date=$row_stories['created'];
 
-echo "
+?>
 <form>
 <section class='about' id='about'>
    <div class='tab'>
 
   <div class='row'>
    <div class='card' style='width: 18rem;'>
-  <img src='story_cover_images/$story_image' class='card-img-top'>
+  <img src=story_cover_images/<?php echo $story_image?> class='card-img-top'>
  
 </div>
   <div class='content'>
 <div class='form-outline mb-4 w-50 m-auto h-auto'>
       <!--title-->
     <label for='story_title' class='form-label bg-info'>
-        Story Title: <h3 class='card-title'>$story_title</h5>
+        Story Title: <h3 class='card-title'><?php echo $story_title?></h5>
 
     </label>
 </div>
     <!--description-->
     <div class='form-outline mb-4 w-50 m-auto'>
     <label for='story_description' class='form-label bg-info'>
-        Story description: <div>$story_description</div>
+        Story description: <div><?php echo $story_description?></div>
     </label>
     </div>
     <div class='form-outline mb-4 w-50 m-auto'>
       
     <label for='published_date' class='form-label bg-info'>
-        Published Date: <h3 class='card-title'>$date</h5> 
+        Published Date: <h3 class='card-title'><?php echo $date?></h5> 
   
     </label>
+</div>
+  <div class='form-outline mb-4 w-50 m-auto'>
+      
+    <a href="user_index.php?edit_story"><input type="submit" value="Edit"></a>
 </div>
 
      </div>
   </div>
-   </div>
-</section>
-<div style='overflow: hidden;'>
+  <div style='overflow: hidden;'>
       <div style='float: right;'>
         <div style='overflow:auto;'>
           <div style='float:right;'>
@@ -86,10 +88,14 @@ echo "
         </div>
       </div>
     </div>
-    <div class='tab'>
+
+   </div>
+   
+</section>
+<div class='tab'>
 
 <div class='form-outline mb-4 w-50 m-auto'>
-$content
+<?php echo $content?>
      <div>  
         <div style='overflow: hidden;'>
       <div style='float: right;'>
@@ -100,12 +106,14 @@ $content
           </div>
           </div>
           </div>
+     </div>
+
 </div>
 
   </form>
 
-";
 
+<?php
   }
  ?>
 </div>

@@ -177,8 +177,16 @@ echo "<div class='col-md-3 mb-2 m-5 card-container'>
 
        include('delete_user_acc.php');
     }
-    ?>   
+    ?>  
+            <?php
+    if(isset($_GET['edit_story'])){
+
+       include('edit_story.php');
+    }
+    ?>
+ 
     </div>
+
 
 </div>
     <!--footer-->

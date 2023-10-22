@@ -32,7 +32,7 @@ $created=$row['created'];
         <h5 class="text-center">Date:
             <label for=""><?php echo $created?></label>
         </h5>
-      <div class="m-auto d-flex w-50"> <input type="submit" value="Read" name="read">
+      <div class="m-auto d-flex w-50"> <a href="admin_index.php?edit_story"><input type="submit" value="Edit" name="edit"></a>
               <input type="submit" value="Delete" name="delete"></div>
 
     </td></tr>
