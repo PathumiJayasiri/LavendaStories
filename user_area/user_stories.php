@@ -91,7 +91,15 @@ echo "
 <div class='form-outline mb-4 w-50 m-auto'>
 $content
      <div>  
-        
+        <div style='overflow: hidden;'>
+      <div style='float: right;'>
+        <div style='overflow:auto;'>
+          <div style='float:left;'>
+            <button type='button' id='prevBtn' onclick='nextPrev(-1)'>Previous</button>
+          </div>
+          </div>
+          </div>
+          </div>
 </div>
 
   </form>
@@ -119,13 +127,18 @@ function showTab(n) {
 
   // Update button visibility based on the current tab
   if (n === 0) {
-   
+       document.getElementById("prevBtn").style.display = "none";
+
     document.getElementById("nextBtn").style.display = "inline";
 
   } else if (n === x.length - 1) {
+        document.getElementById("prevBtn").style.display = "inline";
+
     document.getElementById("nextBtn").style.display = "none";
   
   } else {
+        document.getElementById("prevBtn").style.display = "inline";
+
     document.getElementById("nextBtn").style.display = "inline";
    
   }
