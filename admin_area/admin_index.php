@@ -105,7 +105,7 @@ echo "
                         <hr>
 
             <ul style="list-style: none;">
-            <li class="list-items"><a href=""><label>View Stories</label></a></li>
+            <li class="list-items"><a href="admin_index.php?view_stories"><label>View Stories</label></a></li>
             <li class="list-items"><a href=""><label>Insert Stories</label></a></li>
 
             </ul>
@@ -185,6 +185,12 @@ echo "<div class='col-md-3 mb-2 m-5 card-container'>
     if(isset($_GET['view_categories'])){
 
        include('view_categories.php');
+    }
+    ?>
+        <?php
+    if(isset($_GET['view_stories'])){
+
+       include('view_stories.php');
     }
     ?>
 
