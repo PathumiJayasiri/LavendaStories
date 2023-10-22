@@ -14,23 +14,23 @@ $writter_name=$row['writter_name'];
 $category_id=$row['category_id'];
 $cover_image=$row['cover_image'];
 $content=$row['content'];
-$story_id=$row['story_id'];
-$story_id=$row['story_id'];
+$story_title=$row['story_title'];
+$created=$row['created'];
 
 
 ?>
 
     <tr>
     <td class="d-flex ">
-        <img src="./category_images/<?php echo $category_image?>" alt="" class="m-auto" style="width: 100px;height: 100px;object-fit:contain;">
-</td><td class="m-auto m-5"> <h5 class="text-center">Category Title:
-            <label for=""><?php echo $category_title?></label>
+        <img src="../user_area/story_cover_images/<?php echo $cover_image?>" alt="" class="m-auto" style="width: 100px;height: 100px;object-fit:contain;">
+</td><td class="m-auto m-5"> <h5 class="text-center">Story Title:
+            <label for=""><?php echo $story_title?></label>
         </h5>
-<h5 class="text-center">Category Title:
-            <label for=""><?php echo $category_title?></label>
+<h5 class="text-center">Writter Name:
+            <label for=""><?php echo $writter_name?></label>
         </h5>
-        <h5 class="text-center">Category Title:
-            <label for=""><?php echo $category_title?></label>
+        <h5 class="text-center">Date:
+            <label for=""><?php echo $created?></label>
         </h5>
       <div class="m-auto d-flex w-50"> <input type="submit" value="Read" name="read">
               <input type="submit" value="Delete" name="delete"></div>
