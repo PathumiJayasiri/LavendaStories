@@ -24,7 +24,8 @@ $created=$row['created'];
     <td class="d-flex ">
         <img src="../user_area/story_cover_images/<?php echo $cover_image?>" alt="" class="m-auto" style="width: 100px;height: 100px;object-fit:contain;">
 </td><td class="m-auto m-5"> <h5 class="text-center">Story Title:
-            <label for=""><?php echo $story_title?></label>
+            <label for=""><?php echo $story_title?>
+</label>
         </h5>
 <h5 class="text-center">Writter Name:
             <label for=""><?php echo $writter_name?></label>
@@ -34,7 +35,6 @@ $created=$row['created'];
         </h5>
       <div class="m-auto d-flex w-50"> <a href="admin_index.php?edit_story"><input type="submit" value="Edit" name="edit"></a>
               <input type="submit" value="Delete" name="delete"></div>
-
     </td></tr>
     <?php }?>
 </tbody>
