@@ -29,7 +29,7 @@ session_start();
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
     <!--boostrap css link-->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!--font auwsom link-->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
@@ -85,6 +85,8 @@ session_start();
                 <div><img src=https://drive.google.com/uc?export=view&id=1aWmbSZADIAOqZZ-TZ6IxTcCO72rDiUn1 class="user-img"/></div>
                 <ul style="list-style: none;">
             <li class="list-items"><a href="" class="active"><i class="fa-regular fa-user"></i><label>My Account</label></a></li>
+                        <li class="list-items"><a href="admin_index.php?user_list" class="active"><i class="fa-regular fa-user"></i><label>Users</label></a></li>
+
                     <li><a class="sub-btn"><i class="fa-solid fa-book"></i><label>Categories<i class="fa-solid fa-angle-right dropdown"></i></label></a>
                     <hr>
                     <ul class="" style="list-style: none;">
@@ -118,7 +120,7 @@ echo "
 
             <ul style="list-style: none;">
             <li class="list-items"><a href="admin_index.php?view_stories"><label>View Stories</label></a></li>
-            <li class="list-items"><a href=""><label>Insert Stories</label></a></li>
+            
 
             </ul>
             </li>
@@ -174,6 +176,13 @@ echo "<div class='col-md-3 mb-2 m-5 card-container'>
  </div>
 <!--search story end-->
 
+<div>
+        <?php
+    if(isset($_GET['user_list'])){
+
+       include('user_list.php');
+    }
+    ?>  
 
     <?php
     if(isset($_GET['insert_story'])){
@@ -238,7 +247,7 @@ echo "<div class='col-md-3 mb-2 m-5 card-container'>
        include('delete_category.php');
     }
     ?>  
-
+</div>
 </div>
     <!--footer-->
  <!--footer-->
@@ -269,7 +278,9 @@ echo "<div class='col-md-3 mb-2 m-5 card-container'>
     </div>
      <!--boostrap css link-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="../index.js"></script>
     
 </body>
