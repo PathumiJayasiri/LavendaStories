@@ -15,3 +15,13 @@
    <div class="credit">created by <span>IMAGINATION web designer</span> |all rights reserved</div>
 
  </section>
+ <style>
+  .footer {
+  width: 100%;
+  position: relative;
+  background: var(--black);
+  text-align: center;
+  bottom: 0;
+}
+
+ </style>

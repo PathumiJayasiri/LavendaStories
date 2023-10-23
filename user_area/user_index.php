@@ -230,3 +230,13 @@ echo "<div class='col-md-3 mb-2 m-5 card-container'>
 </body>
 
 </html>
+<style>
+  .footer {
+  width: 100%;
+  position: relative;
+  background: var(--black);
+  text-align: center;
+  bottom: 0;
+}
+
+</style>

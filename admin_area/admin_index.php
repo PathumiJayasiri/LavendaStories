@@ -14,6 +14,18 @@ session_start();
     <title>Admin dashboard</title>
     <link rel='stylesheet' href="../user_style.css" />
     <link rel="stylesheet" href="../style.css">
+<style>
+  .footer {
+  width: 100%;
+  position: relative;
+  background: var(--black);
+  text-align: center;
+  bottom: 0;
+}
+
+</style>
+
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
     <!--boostrap css link-->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -175,7 +187,7 @@ echo "<div class='col-md-3 mb-2 m-5 card-container'>
        include('user_stories.php');
     }
     ?>
-    <div class="container my-5">
+    
     <?php
     if(isset($_GET['insert_category'])){
         include('insert_categories.php');
@@ -194,40 +206,38 @@ echo "<div class='col-md-3 mb-2 m-5 card-container'>
     }
     ?>
 
-</div>
 
-    <div class="row">
+
+    
       <?php
     if(isset($_GET['edit_account'])){
 
        include('edit_account.php');
     }
     ?>   
-    </div>
-        <div class="row">
+    
+  
       <?php
     if(isset($_GET['delete_user_acc'])){
 
        include('delete_user_acc.php');
     }
-    ?>   
-    </div>
-<div class="row">
+    ?>  
+
       <?php
     if(isset($_GET['edit_category'])){
 
        include('edit_category.php');
     }
     ?>   
-    </div>
-    <div class="row">
+
+  
       <?php
     if(isset($_GET['delete_category'])){
 
        include('delete_category.php');
     }
-    ?>   
-    </div>
+    ?>  
 
 </div>
     <!--footer-->
