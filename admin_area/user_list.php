@@ -26,14 +26,14 @@ $user_image=$row['user_image'];
 <h4>$username</h4>
 <h5 class='text-secondary'>$user_email<h5>
         </div>
-                     <a href='admin_index.php?delete_category=<?php echo $user_id?>' type='button' class='text-light' data-toggle='modal'
+                     <a href='admin_index.php?delete_user=$user_id' type='button' class='text-light' data-toggle='modal'
               data-target='#exampleModal'>
               <input type='submit' value='Delete' name='delete' ></a></div>
 
 </div>
 <hr>
     ";
- };
+ }
 }
 ?>
         
@@ -51,14 +51,14 @@ $user_image=$row['user_image'];
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-body">
-    <h5>Are you sure yoo want to delete this category?</h5>      
+    <h5>Are you sure yoo want to delete this user?</h5>      
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal"><a href="./admin_index.php?view_categories" 
+        <button type="button" class="btn btn-secondary" data-dismiss="modal"><a href="./admin_index.php?user_list" 
         class="text-light text-decoration-none">No</a></button>
         <button type="button" class="btn btn-primary">
-            <a href="admin_index.php?delete_category=<?php echo $category_id?>" class="text-light ">
+            <a href="admin_index.php?delete_user=<?php echo $user_id?>" class="text-light ">
               Yes</a></button>
       </div>
     </div>

@@ -247,6 +247,12 @@ echo "<div class='col-md-3 mb-2 m-5 card-container'>
        include('delete_category.php');
     }
     ?>  
+    <?php
+    if(isset($_GET['delete_user'])){
+
+       include('delete_user.php');
+    }
+    ?>  
 </div>
 </div>
     <!--footer-->
