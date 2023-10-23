@@ -8,3 +8,14 @@
       <img src='./user_images/$user_img class='user-img''>
       ";
       ?>
+
+    $edit_id=$_GET['edit_story'];
+    $query="select*from `view_stories` where story_id=$edit_id";
+    $rs=mysqli_query($con,$query);
+    $row=mysqli_fetch_assoc($rs);
+    $writter_name=$row['writter_name'];
+    $story_title=$row['story_title'];
+    $category=$row['category_id'];
+    $story_img=$row['cover_image'];
+    $story_description=$row['story_description'];
+    $contents=$row['content'];

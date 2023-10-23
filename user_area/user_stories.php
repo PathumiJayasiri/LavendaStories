@@ -74,7 +74,7 @@ $date=$row_stories['created'];
 </div>
   <div class='form-outline mb-4 w-50 m-auto'>
       
-    <a href="user_index.php?edit_story"><input type="submit" value="Edit"></a>
+      <div class=""> <a href='user_index.php?edit_story'>Edit</a>
 </div>
 
      </div>
