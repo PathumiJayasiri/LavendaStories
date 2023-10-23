@@ -1,3 +1,12 @@
+    <?php
+    $username=$_SESSION['username'];
+    $get_user="select * from `user` where username='$username'";
+    $rs=mysqli_query($con,$get_user);
+    $row_fetch=mysqli_fetch_array($rs);
+    $user_id=$row_fetch['user_id'];
+    
+    ?>
+
 <?php
 if(isset($_GET['edit_story'])){
     $edit_id=$_GET['edit_story'];
@@ -29,16 +38,16 @@ $category_title=$row_cat['category_title'];
 
         <div class="form-outline w-50 m-auto mb-4">
             <label for="writter_name"  class="form-label">Writter Name</label>
-            <input type="text" id="writter_name" class="form-control" value="<?php echo $writter_name?>">
+            <input type="text" id="writter_name" name="writter_name" class="form-control" value="<?php echo $writter_name?>" required>
         </div>
                 <div class="form-outline w-50 m-auto mb-4">
             <label for="story_title"  class="form-label">Story Title</label>
-            <input type="text" id="story_title" class="form-control" value="<?php echo $story_title?>">
+            <input type="text" id="story_title" name="story_title" class="form-control" value="<?php echo $story_title?>" required>
         </div>
 
         <div class="form-outline w-50 m-auto mb-4">
             <label for="category"  class="form-label">Categoty</label>
-<select name="category" class="form-select">
+<select name="category" class="form-select" required>
     <option value="<?php echo $category_title?>"><?php echo $category_title?></option>
     <?php
         //category
@@ -56,13 +65,13 @@ echo "<option value='$category_id'>$category_title</option>";
         <div class="form-outline w-50 m-auto mb-4">
             <label for="story_img"  class="form-label">Story Cover Image</label>
             <div class="d-flex">
-            <input type="file" id="story_img" class="form-control">
+            <input type="file" id="story_img" class="form-control" name="story_img" required>
             <img src="./story_cover_images/<?php echo $story_img?>" alt="" style="width: 100px;height: 100px;object-fit:contain">
             </div>
         </div>
                         <div class="form-outline w-50 m-auto mb-4">
             <label for="story_description"  class="form-label">Story Description</label>
-            <input type="text" id="story_description" class="form-control" value="<?php echo $story_description?>">
+            <input type="text" id="story_description" class="form-control" name="story_description" value="<?php echo $story_description?>" required>
         </div>
 
   <div style='overflow: hidden;'>
@@ -77,8 +86,8 @@ echo "<option value='$category_id'>$category_title</option>";
             </div>
             <div class="tab">
                                 <div class="form-outline w-50 m-auto mb-4">
-            <label for="story_title"  class="form-label">Story Title</label>
-               <textarea name="content" id="content" cols="80" rows="10"  class="form-control">
+            <label for="story_title"  class="form-label"><?php echo $story_title?></label>
+               <textarea name="content" id="content" cols="80" rows="10"  class="form-control" required>
                 <?php echo $content?>
             </textarea>
         </div>
@@ -145,3 +154,26 @@ function nextPrev(n) {
             CKEDITOR.replace('content');
         });
     </script>
+<?php
+//edit story
+if(isset($_POST['edit_story'])){
+    $writter_name=$_POST['writter_name'];
+        $story_title=$_POST['story_title'];
+    $category=$_POST['category'];
+    $story_img=$_FILES['story_img']['name'];
+        $story_temp_img=$_FILES['story_img']['tmp_name'];
+    $story_description=$_POST['story_description'];
+    $content=$_POST['content'];
+
+move_uploaded_file($story_temp_img,"./story_cover_images/$story_img");
+    $update_query="update `view_stories` set user_id='$user_id',writter_name='$writter_name',story_title='$story_title',
+    story_description='$story_description',category_id='$category',cover_image='$story_img',content='$content',created=NOW() where story_id=$edit_id";
+$rs_update=mysqli_query($con,$update_query);
+    if($rs_update){
+        echo "<script>alert('Story Updated successfully.')</script>";
+                echo "<script>window.open('./user_stories.php','_self')<script>";
+
+    }
+}
+
+?>

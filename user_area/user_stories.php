@@ -1,15 +1,3 @@
-<!DOCTYPE html>
-
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User dashboard</title>
-    
-</head>
-
-<body>
     <?php
     $username=$_SESSION['username'];
     $get_user="select * from `user` where username='$username'";
@@ -75,6 +63,8 @@ $date=$row_stories['created'];
   <div class='form-outline mb-4 w-50 m-auto'>
       
       <div class=""> <a href='user_index.php?edit_story=<?php echo $story_id ?>'>Edit</a>
+            <div class=""> <a href='user_index.php?delete_story=<?php echo $story_id ?>'>Delete</a>
+
 </div>
 
      </div>
@@ -90,7 +80,8 @@ $date=$row_stories['created'];
     </div>
 
    </div>
-   
+  </div>
+   </div>
 </section>
 <div class='tab'>
 
@@ -109,7 +100,7 @@ $date=$row_stories['created'];
      </div>
 
 </div>
-
+</div>
   </form>
 
 
@@ -117,10 +108,10 @@ $date=$row_stories['created'];
   }
  ?>
 </div>
-</div>
 
   <!--boostrap css link-->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" 
+integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 <!--custom js file link--> 
 <script>
 var currentTab = 0;
@@ -162,5 +153,3 @@ function nextPrev(n) {
 
 </script>
 
-</body>
-</html>
