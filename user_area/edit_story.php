@@ -11,6 +11,13 @@ if(isset($_GET['edit_story'])){
     $story_description=$row['story_description'];
     $content=$row['content'];
 
+
+
+    //category
+    $select_cat="select*from `categories` where category_id =$category";
+    $rs_cat=mysqli_query($con,$select_cat);
+$row_cat=mysqli_fetch_assoc($rs_cat);
+$category_title=$row_cat['category_title'];
 }
 ?>
 
@@ -32,7 +39,18 @@ if(isset($_GET['edit_story'])){
         <div class="form-outline w-50 m-auto mb-4">
             <label for="category"  class="form-label">Categoty</label>
 <select name="category" class="form-select">
-    <option value=""><?php echo $category?></option>
+    <option value="<?php echo $category_title?>"><?php echo $category_title?></option>
+    <?php
+        //category
+    $select_cat_all="select*from `categories`";
+    $rs_cat_all=mysqli_query($con,$select_cat_all);
+while($row_cat_all=mysqli_fetch_assoc($rs_cat_all)){
+$category_title=$row_cat_all['category_title'];
+$category_id=$row_cat_all['category_id'];
+echo "<option value='$category_id'>$category_title</option>";
+
+};
+    ?>
 </select>
         </div>
         <div class="form-outline w-50 m-auto mb-4">
