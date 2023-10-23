@@ -20,8 +20,8 @@ $category_image=$row['category_image'];
             <label for=""><?php echo $category_title?></label>
         </h4>
 
-      <div class="m-auto d-flex w-50"> <input type="submit" value="Edit" name="edit">
-              <input type="submit" value="Delete" name="delete"></div>
+      <div class="m-auto d-flex w-50"> <a href="admin_index.php?edit_category=<?php echo $category_id?>"><input type="submit" value="Edit" name="edit"></a>
+             <a href="admin_index.php?delete_category=<?php echo $category_id?>"> <input type="submit" value="Delete" name="delete"></a></div>
 
     </td></tr>
     <?php }?>

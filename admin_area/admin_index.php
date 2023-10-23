@@ -212,6 +212,22 @@ echo "<div class='col-md-3 mb-2 m-5 card-container'>
     }
     ?>   
     </div>
+<div class="row">
+      <?php
+    if(isset($_GET['edit_category'])){
+
+       include('edit_category.php');
+    }
+    ?>   
+    </div>
+    <div class="row">
+      <?php
+    if(isset($_GET['delete_category'])){
+
+       include('delete_category.php');
+    }
+    ?>   
+    </div>
 
 </div>
     <!--footer-->
