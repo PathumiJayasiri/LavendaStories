@@ -166,7 +166,6 @@ else{
     </div>
 
 </div>
-  <?php include("../DbConnector/footer.php");?>
 
 </body>
 </html>

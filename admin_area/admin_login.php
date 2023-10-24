@@ -1,3 +1,36 @@
+<?php
+include('../DbConnector/connect.php');
+
+if(isset($_POST['admin_login'])){
+  $message=null;
+$admin_username=$_POST['username'];
+$admin_password=$_POST['password'];
+
+$select_query="select * from `admin` where username='$admin_username'";
+$rs=mysqli_query($con,$select_query);
+$row_count=mysqli_num_rows($rs);
+$row_data=mysqli_fetch_assoc($rs);
+if($row_count>0){
+  $_SESSION['username']=$admin_username;
+if(password_verify($admin_password,$row_data['admin_password'])){
+  if($row_count==1){
+      $_SESSION['username']=$admin_username;
+
+echo "<script>alert('Login successful')</script>";
+echo "<script>window.open('admin_index.php','_self')</script>";
+
+
+  }else{
+
+  }
+}
+}else{
+$message="<h6 class='text-danger'>Invalid username or password<h6>";
+
+}
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,19 +55,21 @@
     </h2>
     <div class="row d-flex justify-content-center ">
        
-<div class="col-lg-6 col-xl-4">
+<div class="col-lg-6 col-xl-4" >
 <form action="" method="post">
+    <?php if (isset($message)) { echo $message; } ?>
+
 <div class="form-outline mb-4">
 <label for="username" class="form-label">Username</label>
-<input type="text" id="username" name="username" placeholder="Enter your username" class="form-control" required>
+<input type="text" id="username" name="username" placeholder="Enter your username" class="form-control" required autocomplete="off">
         </div>
 <div class="form-outline mb-4">
 <label for="password" class="form-label">Password</label>
-<input type="password" id="password" name="password" placeholder="Enter password" class="form-control" required>
+<input type="password" id="password" name="password" placeholder="Enter password" class="form-control" required autocomplete="off">
         </div>
         <div class="">
-<input type="submit" value="Register" class="bg-info py-2 px-3" name="admin-regi">
-<p class="pt-1 small fw-bold">Don't have an account? <a href="admin_registration.php">Sign_up</a></p>
+<input type="submit" value="Login" class="bg-info py-2 px-3" name="admin_login">
+<p class="pt-1 small fw-bold">Don't you have an account? <a href="admin_registration.php">Sign up</a></p>
         </div>
             </form>
 
