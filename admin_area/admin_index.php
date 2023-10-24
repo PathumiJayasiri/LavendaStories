@@ -125,7 +125,7 @@ echo "
             </ul>
             </li>
             <li class="list-items"><a href="admin_index.php?edit_admin_account"><i class="fa-regular fa-user-pen"></i><label>Edit Account</label></a></li>
-            <li class="list-items"><a href="user_index.php?delete_user_acc"><i class="fa-solid fa-delete-left"></i><label>Delete Account</label></a></li>
+            <li class="list-items"><a href="admin_index.php?delete_account"><i class="fa-solid fa-delete-left"></i><label>Delete Account</label></a></li>
             <li class="list-items"><a href="logout.php"><i class="fa-solid fa-right-from-bracket"></i><label>Log out</label></a></li>
 
                 </ul>
@@ -227,9 +227,9 @@ echo "<div class='col-md-3 mb-2 m-5 card-container'>
     
   
       <?php
-    if(isset($_GET['delete_user_acc'])){
+    if(isset($_GET['delete_account'])){
 
-       include('delete_user_acc.php');
+       include('delete_account.php');
     }
     ?>  
 

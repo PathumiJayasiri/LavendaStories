@@ -1,27 +1,27 @@
 <?php
-if(isset($_GET['edit_account'])){
-   $user_username=$_SESSION['username'];
-   $select_query="select* from `user` where username='$user_username'";
+if(isset($_GET['edit_admin_account'])){
+   $admin_username=$_SESSION['username'];
+   $select_query="select* from `admin` where username='$admin_username'";
    $rs=mysqli_query($con,$select_query);
    $row_fetch=mysqli_fetch_array($rs);
-$user_id =$row_fetch['user_id'];
+$admin_id =$row_fetch['admin_id'];
 $username =$row_fetch['username'];
-$user_email =$row_fetch['user_email'];
-$user_mobile =$row_fetch['user_mobile'];
+$admin_email =$row_fetch['admin_email'];
+$admin_mobile =$row_fetch['admin_mobile'];
 
-if(isset($_POST['user_update'])){
+if(isset($_POST['admin_update'])){
    $update_id=$user_id;
-   $username=$_POST['user_username'];
-      $user_email=$_POST['user_email'];
+   $username=$_POST['admin_username'];
+      $admin_email=$_POST['admin_email'];
 
-         $user_mobile=$_POST['user_mobile'];
+         $admin_mobile=$_POST['admin_mobile'];
 
-            $user_img=$_FILES['user_img']['name'];
-                        $user_tem_img=$_FILES['user_img']['tmp_name'];
-                        move_uploaded_file($user_tem_img,"./user_images/$user_img");
+            $admin_img=$_FILES['admin_img']['name'];
+                        $admin_tem_img=$_FILES['admin_img']['tmp_name'];
+                        move_uploaded_file($admin_tem_img,"./admin_images/$admin_img");
 
-                        $update_data="update `user` set username='$username',user_email='$user_email',user_image='$user_img',user_mobile='$user_mobile' 
-                        where user_id='$update_id'";
+                        $update_data="update `admin` set username='$username',admin_email='$admin_email',admin_image='$admin_img',admin_mobile='$admin_mobile' 
+                        where admin_id='$update_id'";
                         $rs_query_update=mysqli_query($con,$update_data);
                         if($rs_query_update){
                            echo "<script type='text/javascript'>alert('Data updated')</script>";
@@ -44,24 +44,24 @@ if(isset($_POST['user_update'])){
     <h1 class="text-center mb-4">Edit Account</h1>
     <form action="" method="post" enctype="multipart/form-data" class="text-center">
      <div class="form-outline mb-4">
-        <input type="text" class="form-control w-50 m-auto" name="user_username" value="<?php echo $user_username?>">
+        <input type="text" class="form-control w-50 m-auto" name="admin_username" value="<?php echo $admin_username?>">
 
      </div>   
           <div class="form-outline mb-4">
-        <input type="email" class="form-control w-50 m-auto" name="user_email" value="<?php echo $user_email?>">
+        <input type="email" class="form-control w-50 m-auto" name="user_email" value="<?php echo $admin_email?>">
         
      </div>   
 
           <div class="form-outline mb-4 d-flex w-50 m-auto">
-        <input type="file" class="form-control " name="user_img">
-        <img src="./user_images/<?php echo $user_img;?>" alt="" style="width: 100px;height: 100px; object-fit: contain;
+        <input type="file" class="form-control " name="admin_img">
+        <img src="./admin_images/<?php echo $admin_img;?>" alt="" style="width: 100px;height: 100px; object-fit: contain;
  " class="profile-img">
      </div>   
      <div class="form-outline mb-4">
-        <input type="text" class="form-control w-50 m-auto" name="user_mobile" value="<?php echo $user_mobile?>">
+        <input type="text" class="form-control w-50 m-auto" name="admin_mobile" value="<?php echo $admin_mobile?>">
         
      </div>   
-        <input type="submit" class="btn bg-info py-2 px-3" value="Update" name="user_update">
+        <input type="submit" class="btn bg-info py-2 px-3" value="Update" name="admin_update">
 
     </form>
 </body>
