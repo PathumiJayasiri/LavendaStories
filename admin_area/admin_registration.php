@@ -63,20 +63,20 @@ else{
     <title>Admin Registration</title>
 </head>
 <body>
-   <div class="container-fluid m-3">
+   <div class=" container justify-content-center my-2 p-0">
         
-    <h2 class="text-center mb-4">
+    <h2 class="text-center mb-4 title">
         Admin Registration
     </h2>
     <div class="row d-flex justify-content-center ">
-        <div class="col-lg-6 col-xl-5">
-            <img src="../images/bg1.jpg" alt="" class="img-fluid">
+        <div class="col-lg-6 col-xl-5 left">
+            <img src="../images/HD-wallpaper-abstract-mac-lights-blue-colors-trip-thumbnail.jpg" style="height: 670px;width:90%" alt="" class="img-fluid">
         </div>
-<div class="col-lg-6 col-xl-4">
+<div class="col-lg-5 col-xl-5 formcontainer mx-2 p-4">
 <form action="" method="post" enctype="multipart/form-data">
     <?php if (isset($message)) { echo $message; } ?>
 
-<div class="form-outline mb-4">
+<div class="form-outline mb-4 ">
 <label for="username" class="form-label">Username</label>
 <input type="text" id="username" name="username" placeholder="Enter your username" class="form-control" required autocomplete="off">
         </div>
@@ -94,15 +94,16 @@ else{
         </div>
 <div class="form-outline mb-4">
 <label for="admin_pro_img" class="form-label">Profile Image</label>
-<input type="file" id="admin_pro_img" name="admin_pro_img"class="form-control" required>
+<input type="file" id="admin_pro_img" name="admin_pro_img"class="form-control" required style="background-color: aqua;">
         </div>
 <div class="form-outline mb-4">
 <label for="contact" class="form-label">Contact Number</label>
 <input type="text" id="contact" name="contact" placeholder="Enter mobile number" class="form-control" required autocomplete="off">
         </div>
         <div class="">
-<input type="submit" value="Register" class="bg-info py-2 px-3" name="admin_regi">
-<p class="pt-1 small fw-bold">Have an account? <a href="admin_login.php">Login</a></p>
+<input type="submit" value="Register" class="btn bg-info py-2 px-3" name="admin_regi" >
+<p class="pt-1 small fw-bold my-2" style="  color: rgb(175, 249, 244);
+">Have an account? <a href="admin_login.php">Login</a></p>
         </div>
             </form>
 
