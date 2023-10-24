@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@100;300;500;700&family=Sen:wght@400;700;800&display=swap");
 :root {
-  --main-color: #7fd3d3;
+  --main-color: aqua;
   --black: #13131a;
   --bg: #010103;
   --border: 0.1rem solid rgba(25, 255, 255, 0.3);
