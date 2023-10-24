@@ -42,26 +42,6 @@ body {
   border: 2px solid aqua;
   background-color: #13131a;
 }
-.logincontainer {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 350px;
-  min-height: 200px;
-  background: #13131a;
-  border-radius: 20px 20px 20px 20px;
-  border: 2px solid aqua;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
-  padding: 40px;
-}
-.logincontainer label {
-  color: aqua;
-}
-.logincontainer input {
-  border: 2px solid aqua;
-  background-color: #13131a;
-}
 .btn {
   width: 100%;
 }

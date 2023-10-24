@@ -49,14 +49,14 @@ $message="<h6 class='text-danger'>Invalid username or password<h6>";
     <title>Admin Login</title>
 </head>
 <body>
-   <div class="container justify-content-center col-lg-4 col-xl-4" style="margin-top: 10%;" >
+   <div class="container justify-content-center col-lg-5 col-xl-5" style="margin-top: 10%;" >
         
     <h2 class="text-center mb-4 title">
         Login
     </h2>
   
        
-<div class="col-lg-6 col-xl-6 formcontainer m-auto " >
+<div class="col-lg-6 col-xl-6 col-md-6 formcontainer m-auto " >
 <form action="" method="post">
     <?php if (isset($message)) { echo $message; } ?>
 
@@ -69,8 +69,8 @@ $message="<h6 class='text-danger'>Invalid username or password<h6>";
 <input type="password" id="password" name="password" placeholder="Enter password" class="form-control" required autocomplete="off">
         </div>
         <div class="">
-<input type="submit" value="Login" class="bg-info py-2 px-3" name="admin_login">
-<p class="pt-1 small fw-bold" style="  color: rgb(175, 249, 244);">Don't you have an account? <a href="admin_registration.php">Sign up</a></p>
+<input type="submit" value="Login" class="bg-info py-2 px-3 btn" name="admin_login">
+<p class="pt-2 small fw-bold" style="  color: rgb(175, 249, 244);">Don't you have an account?<a href="admin_registration.php"> Sign up</a></p>
         </div>
             </form>
 

@@ -102,7 +102,7 @@ else{
         </div>
         <div class="">
 <input type="submit" value="Register" class="btn bg-info py-2 px-3" name="admin_regi" >
-<p class="pt-1 small fw-bold my-2" style="  color: rgb(175, 249, 244);
+<p class="pt-2 small fw-bold my-2" style="  color: rgb(175, 249, 244);
 ">Have an account? <a href="admin_login.php">Login</a></p>
         </div>
             </form>
