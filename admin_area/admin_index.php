@@ -64,12 +64,12 @@ session_start();
      <div style="margin-left: 20px;" >
                    <?php
       $username=$_SESSION['username'];
-      $user_img="select * from `user` where username='$username'";
-      $user_img=mysqli_query($con,$user_img);
-      $row_img=mysqli_fetch_array($user_img);
-      $user_img=$row_img['user_image'];
+      $admin_img="select * from `admin` where username='$username'";
+      $admin_img=mysqli_query($con,$admin_img);
+      $row_img=mysqli_fetch_array($admin_img);
+      $admin_img=$row_img['admin_image'];
       echo "
-        <img src='./user_images/$user_img' class='user-img' style='width:40px;height: 40px;border-radius:50%'/>
+        <img src='./admin_images/$admin_img' class='admin-img' style='width:40px;height: 40px;border-radius:50%'/>
       ";
       ?></div>
       <!--img src=../images/bg1.jpg class="user-img"/-->

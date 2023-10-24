@@ -1,4 +1,5 @@
 <?php
+session_start();
 include('../DbConnector/connect.php');
 
 if(isset($_POST['admin_login'])){
@@ -11,24 +12,24 @@ $rs=mysqli_query($con,$select_query);
 $row_count=mysqli_num_rows($rs);
 $row_data=mysqli_fetch_assoc($rs);
 if($row_count>0){
-  $_SESSION['username']=$admin_username;
+
 if(password_verify($admin_password,$row_data['admin_password'])){
-  if($row_count==1){
       $_SESSION['username']=$admin_username;
 
-echo "<script>alert('Login successful')</script>";
-echo "<script>window.open('admin_index.php','_self')</script>";
+      echo "<script>alert('Login successful')</script>";
+       echo "<script>window.open('admin_index.php','_self')</script>";
 
 
   }else{
+     $message="<h6 class='text-danger'>Invalid username or password<h6>";
 
   }
-}
+
 }else{
 $message="<h6 class='text-danger'>Invalid username or password<h6>";
+}
+}
 
-}
-}
 ?>
 
 <!DOCTYPE html>
