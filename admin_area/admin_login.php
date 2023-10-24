@@ -32,7 +32,7 @@
         </div>
 <div class="form-outline mb-4">
 <label for="password" class="form-label">Password</label>
-<input type="text" id="password" name="password" placeholder="Enter password" class="form-control" required>
+<input type="password" id="password" name="password" placeholder="Enter password" class="form-control" required>
         </div>
         <div class="">
 <input type="submit" value="Register" class="bg-info py-2 px-3" name="admin-regi">

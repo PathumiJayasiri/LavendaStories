@@ -32,15 +32,15 @@
         </div>
         <div class="form-outline mb-4">
 <label for="email" class="form-label">Email</label>
-<input type="text" id="email" name="email" placeholder="Enter your email" class="form-control" required>
+<input type="email" id="email" name="email" placeholder="Enter your email" class="form-control" required>
         </div>
 <div class="form-outline mb-4">
 <label for="password" class="form-label">Password</label>
-<input type="text" id="password" name="password" placeholder="Enter password" class="form-control" required>
+<input type="password" id="password" name="password" placeholder="Enter password" class="form-control" required>
         </div>
 <div class="form-outline mb-4">
 <label for="confirm_password" class="form-label">Confirm Password</label>
-<input type="text" id="confirm_password" name="confirm_password" placeholder="Confirm password" class="form-control" required>
+<input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm password" class="form-control" required>
         </div>
 <div class="form-outline mb-4">
 <label for="admin_pro_img" class="form-label">Profile Image</label>
