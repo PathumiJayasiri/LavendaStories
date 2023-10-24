@@ -21,9 +21,7 @@
         Login
     </h2>
     <div class="row d-flex justify-content-center ">
-        <div class="col-lg-6 col-xl-5">
-            <img src="../images/bg1.jpg" alt="" class="img-fluid">
-        </div>
+       
 <div class="col-lg-6 col-xl-4">
 <form action="" method="post">
 <div class="form-outline mb-4">
