@@ -18,7 +18,7 @@ session_start();
     <!--font auwsom link-->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-<body class="bg-black">
+<body class="">
   <!--navbar-->
   <header class="header">
   <div class="container-fluid p-0">
@@ -46,10 +46,6 @@ session_start();
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#contact">Contact</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="#"><i class="fa-solid fa-cart-shopping"></i><sup>1</sup></a>
         </li>
 
         
@@ -91,13 +87,13 @@ session_start();
 </section>
    <!--home section end-->
      <!--about section start-->
-<section class="about" id="about">
+<section class="about " id="about">
   <h1 class="heading">
     <span>about</span> us
   </h1>
-  <div class="row">
-  <div class="image">
-    <img src="./images/bg1.jpg" alt="">
+  <div class="row ">
+  <div class="image ">
+    <img src="./images/bg1.jpg" alt="" class="col-md-2">
 
   </div>
   <div class="content">

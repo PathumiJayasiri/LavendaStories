@@ -71,6 +71,7 @@ else{
     <div class="row d-flex justify-content-center ">
         <div class="col-lg-6 col-xl-5 left">
             <img src="../images/HD-wallpaper-abstract-mac-lights-blue-colors-trip-thumbnail.jpg" style="height: 670px;width:90%" alt="" class="img-fluid">
+
         </div>
 <div class="col-lg-5 col-xl-5 formcontainer mx-2 p-4">
 <form action="" method="post" enctype="multipart/form-data">

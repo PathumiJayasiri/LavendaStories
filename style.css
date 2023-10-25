@@ -33,7 +33,9 @@ html::-webkit-scrollbar-thumb {
   background: #fff;
   border-radius: 5rem;
 }
-
+body {
+  background-color: #f1f3c4;
+}
 section {
   padding: 2rem 7%;
 }
