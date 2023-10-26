@@ -167,7 +167,7 @@ while($row=mysqli_fetch_assoc($result_query)){
 $date=$row['created'];
 echo "<div class='col-md-3 mb-2 m-5 card-container'>
     <div class='card'>
-  <img src='./user_area/story_cover_images/$story_image' class='card-img-top' alt='...'>
+  <img src='./story_cover_images/$story_image' class='card-img-top' alt='...'>
   <div class='card-body'>
     <h3 class='card-title'>$story_title</h5>
 <p class='card-text'>$story_description</p>

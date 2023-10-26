@@ -89,7 +89,7 @@ while($row=mysqli_fetch_assoc($result_query)){
    $category_image=$row['category_image'];
 echo "
    <li class='list-items'>
- <a href=''>$category_title</a></li>
+ <a href='user_index.php?category_stories=$category_id'><label>$category_title</label></a></li>
 ";
 }
 
@@ -190,7 +190,12 @@ echo "<div class='col-md-3 mb-2 m-5 card-container'>
        include('delete_story.php');
     }
     ?>
+<?php
+    if(isset($_GET['category_stories'])){
 
+       include('category_stories.php');
+    }
+    ?>
     </div>
 
 
