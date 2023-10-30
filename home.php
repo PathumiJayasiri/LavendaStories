@@ -52,6 +52,7 @@ html::-webkit-scrollbar-thumb {
 }
 
 section {
+  height: 100vh;
   padding: 2rem 7%;
 }
 .heading {

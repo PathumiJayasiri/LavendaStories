@@ -1,0 +1,282 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #eff2f5;
+  overflow: hidden;
+  font-family: "Open Sans", sans-serif;
+}
+
+.sideBar {
+  position: relative;
+  z-index: 20;
+  height: 100vh;
+  width: 25%;
+  color: white;
+  background-color: #001629;
+  transition: 0.3s ease-in-out;
+  overflow-y: auto;
+}
+
+.sideBar.widthChange {
+  width: 8%;
+  text-align: center;
+}
+
+.sideBar img {
+  position: absolute;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.sideBar div {
+  position: relative;
+  height: 10vh;
+}
+
+.sideBar li {
+  padding: 20px 20px 20px 10px;
+  transition: 0.3s ease-in-out;
+}
+.sideBar .sub-menu {
+  padding: 10px;
+
+  color: #ffffff;
+}
+li label.hideMenuList {
+  display: none;
+}
+.sideBar li a {
+  font-size: medium;
+  color: #ffffff;
+}
+.sideBar li .dropdown {
+  position: absolute;
+  right: 15px;
+  margin: 10px;
+  transition: 0.3s ease;
+}
+.sideBar .sub-menu {
+  background: #c7c7c7;
+  display: none;
+}
+.sideBar .sub-menu a {
+  padding-left: 80px;
+}
+
+.sideBar li i {
+  margin-right: 8px;
+  color: #eff2f5;
+}
+
+.sideBar .list-items:hover {
+  background-color: #0092ff;
+  border-radius: 30rem 0rem 0rem 30rem;
+}
+
+.selected {
+  background-color: #0092ff;
+  border-radius: 30rem 0rem 0rem 30rem;
+}
+
+.sideBar span {
+  position: absolute;
+  color: #ffffff;
+  top: 20px;
+  right: 20px;
+}
+
+.sideBar .cross-icon {
+  display: none;
+  color: #001629;
+}
+
+.sidebar-header {
+  display: flex;
+}
+
+.content {
+  width: 100%;
+  height: 100vh;
+}
+
+header {
+  z-index: 1000;
+  position: fixed;
+  background-color: #13131a;
+  height: 10%;
+  padding: 10px;
+  width: 100%;
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+}
+
+#mobile {
+  display: none;
+}
+
+.menu-button {
+  position: relative;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+}
+
+.menu-button div:nth-child(1) {
+  position: absolute;
+  height: 4px;
+  border-radius: 20px;
+  background-color: #c7c7c7;
+  width: 100%;
+}
+
+.menu-button div:nth-child(2) {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 4px;
+  border-radius: 20px;
+  background-color: #c7c7c7;
+  width: 80%;
+}
+
+.menu-button div:nth-child(3) {
+  position: absolute;
+  height: 4px;
+  border-radius: 20px;
+  bottom: 0;
+  background-color: #c7c7c7;
+  width: 100%;
+}
+.profile-img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+header h1 {
+  color: #0092ff;
+}
+
+.content-data {
+  background-color: #ffffff;
+  margin: 2%;
+  padding: 20px;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.sideBar.showMenu {
+  left: 0;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #ccc;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0092ff;
+}
+
+main {
+  margin-top: 90px;
+  overflow-y: auto;
+  height: 100vh;
+}
+.rotate {
+  transform: rotate(90deg);
+}
+@media (max-width: 1200px) {
+  .sideBar {
+    width: 30%;
+  }
+}
+
+@media (max-width: 900px) {
+  #desktop {
+    display: none;
+  }
+
+  #mobile {
+    display: block;
+  }
+
+  .sideBar {
+    position: absolute;
+    width: 30%;
+    top: 0;
+    left: -100%;
+  }
+
+  .sideBar .cross-icon {
+    display: block;
+  }
+  .backdrop {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.4);
+    top: 0;
+    left: -100%;
+    height: 100vh;
+    width: 100%;
+  }
+
+  .backdrop.showBackdrop {
+    left: 0;
+  }
+  main {
+    width: 100%;
+    min-height: calc(
+      100vh - 10%
+    ); /* Subtract header height from viewport height */
+    overflow-y: auto;
+  }
+}
+
+@media (max-width: 700px) {
+  .sideBar {
+    width: 40%;
+  }
+  .sideBar .sub-menu {
+    display: none;
+  }
+}
+
+@media (max-width: 400px) {
+  .sideBar {
+    width: 60%;
+  }
+
+  header h1 {
+    font-size: 20px;
+  }
+
+  #mobile {
+    height: 25px;
+  }
+  .sideBar .sub-menu {
+    display: none;
+  }
+}
+
+@media (max-width: 320px) {
+  .sideBar {
+    width: 80%;
+  }
+  .sideBar .sub-menu {
+    display: none;
+  }
+}
