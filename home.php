@@ -51,10 +51,7 @@ html::-webkit-scrollbar-thumb {
   border-radius: 5rem;
 }
 
-section {
-  height: 100vh;
-  padding: 2rem 7%;
-}
+
 .heading {
   text-align: center;
   color: #fff;
@@ -87,10 +84,11 @@ section {
   padding-top: 0%;
 }
 .logo {
-  height: 5%;
-  width: 5%;
+  height: 80px;
+  width: 80px;
   margin-top: 1rem;
-  margin-bottom: 1rem;
+object-fit: contain;
+  border-radius: 50%;
 }
 .header a {
   margin: 0 1rem;
@@ -112,7 +110,7 @@ section {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  background: url(./images/file.jpg) no-repeat;
+  background: url(./images/Blue\ Geometric\ Business\ Facebook\ Cover.jpg) no-repeat;
   background-size: cover;
   background-position: center;
   width: 100%;
@@ -280,14 +278,14 @@ section {
     <!--font auwsom link-->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-<body class="bg-black">
+<body style="background: #ccc;">
   <!--navbar-->
   <header class="header">
   <div class="container-fluid p-0">
     <!--first child-->
     <nav class="navbar navbar-expand-lg">
   <div class="container-fluid ">
-   <img src="./images/Logo.jpeg" alt="" class="logo">
+   <img src="./images/Logo.jpg" alt="" class="logo">
     <button class="navbar-toggler bg-info" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
