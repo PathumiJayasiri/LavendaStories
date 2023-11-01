@@ -17,7 +17,8 @@ session_start();
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@100;300;500;700&family=Sen:wght@400;700;800&display=swap");
 :root {
-  --main-color: aqua;
+  ---row:#9B939F;
+  --main-color: #F0D5F5;
   --black: #13131a;
   --bg: #010103;
   --border: 0.1rem solid rgba(25, 255, 255, 0.3);
@@ -110,7 +111,7 @@ object-fit: contain;
   min-height: 100vh;
   display: flex;
   align-items: center;
-  background: url(./images/Blue\ Geometric\ Business\ Facebook\ Cover.jpg) no-repeat;
+  background: url(./images/Untitled\ design.jpg) no-repeat;
   background-size: cover;
   background-position: center;
   width: 100%;
@@ -133,7 +134,7 @@ object-fit: contain;
 .about .row {
   display: flex;
   align-items: center;
-  background: var(--bg);
+  background: var(---row);
   flex-wrap: wrap;
 }
 .about .row .image {
@@ -278,7 +279,7 @@ object-fit: contain;
     <!--font auwsom link-->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-<body style="background: #ccc;">
+<body style="background: var(--main-color);">
   <!--navbar-->
   <header class="header">
   <div class="container-fluid p-0">
