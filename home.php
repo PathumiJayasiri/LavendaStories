@@ -89,11 +89,14 @@ html::-webkit-scrollbar-thumb {
   padding-top: 0%;
 }
 .logo {
-  height: 80px;
-  width: 80px;
-  margin-top: 1rem;
-object-fit: contain;
-  border-radius: 50%;
+  text-transform: lowercase;
+ font-size: 2.5rem;
+ color: var(--main-color);
+ 
+}
+.logo span{
+  color: #B034D2;
+font-family:cursive;
 }
 .header a {
   margin: 0 1rem;
@@ -101,9 +104,12 @@ object-fit: contain;
   color: var(--main-color);
 }
 .navbar a:hover {
+  background: #9B939F;
   color: var(--main-color);
-  border-bottom: 0.1rem solid var(--main-color);
+  border-radius: 20px 20px 20px 20px;
   padding-bottom: 0.5rem;
+   padding-top: 0.5rem;
+
 }
 .navbar .nav-link-home {
   margin: 0 1rem;
@@ -295,7 +301,8 @@ object-fit: contain;
     <!--first child-->
     <nav class="navbar navbar-expand-lg">
   <div class="container-fluid ">
-   <img src="./images/Logo.jpg" alt="" class="logo">
+   <div class="logo">lavendar<span>Stories</span></div>
+   <div>
     <button class="navbar-toggler bg-info" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -323,25 +330,28 @@ object-fit: contain;
       <form class="d-flex search-form" role="search" action="search_story.php" method="get"> 
         <input class="form-control me-2 search-item" type="search" placeholder="Search" aria-label="Search" name="search_data">
         <!--button class="btn btn-outline-light" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button-->
-        <input type="submit" value="Search" class="btn bg-info " name="search_data_story">
+        <input type="submit" value="Search" class="btn" style="background: #B034D2;" name="search_data_story">
       </form>
+      <div>
                       <?php
                       if(!isset($_SESSION['username'])){
                         
                         echo "<li class='nav-item'>      
-                            <a class='btn bg-info' href='./user_area/checkout.php'>Login</a>
+                            <a class='btn ' style='background: #B034D2;' href='./user_area/checkout.php'>Login</a>
                              </li>
                             ";
 
                       }else{
                                                 echo "<li class='nav-item'>      
-                            <a class='btn bg-info' href='./user_area/logout.php'>Logout</a>
+                            <a class='btn ' href='./user_area/logout.php'>Logout</a>
                              </li>
                             ";
 
                       }
                       ?>
+      </div>
     </div>
+   </div>
   </div>
 </nav>
   </div>
