@@ -358,46 +358,25 @@ font-family:cursive;
   </header>
 
   <!--home section start-->
-<section class="home" id="home">
-  <div class="content">
-    <h3>lavendar stories</h3>
-    <p>Free your self and share your story with the world</p>
-   <a href="#" class="btn " style="background: #B034D2;">View more</a>
-  </div>
-</section>
+
    <!--home section end-->
      <!--about section start-->
-<section class="about " id="about">
-  <h1 class="heading">
-    <span>about</span> us
-  </h1>
-  <div class="row ">
-  <div class="image ">
-    <img src="./images/limage2.jpg" alt="" class="col-md-2">
-
-  </div>
-  <div class="content">
-    <h3>Why IMAGINATION?</h3>
-    <p>"This website is dedicated to reaching out to individuals who are grappling with loneliness and engage in crafting creative, imaginative stories as a means to release their inner emotions and share them with the world. It serves as a safe haven where they can transform their feelings into words, allowing their unique narratives to resonate with a global audience. This platform empowers them to express themselves and connect with others who may appreciate their creativity and experiences."</p>
-  </div>
-  </div>
-</section>
   <!--about section ends-->
     <!--fourth child-->
-     <!--section class="category" id="category">
+     <section class="category"id="category" style="padding-top: 10%;">
     <div class="row">
          
       
  
  
-<h1 class="heading">Our <span>Categories</span> </h1>
+<h1 class="heading" >Our <span>Categories</span> </h1>
 
  
  <div class="row">
   
 
    
-<!?php
+<?php
 //getting category in home page
 
     global $con;
@@ -430,35 +409,22 @@ echo "<div class='col-md-3 mb-2 m-5 card-container'>
  
 
 
-     </section-->
+     </section>
 
-         <!--all stories-->
-     <section class="category" id="category">
-    <div class="row">
 
- <!--story  section-->
- 
-<h1 class="heading">all <span>stories</span> </h1>
-
- <!--row start-->
- <div class="row">
-  
-
-   <!--fetching cate-->
 <?php
 //call function
-getstory();
+
 get_unique_cat();
 ?>
  
 
-</div>
-</div>
+
     
  <!--row end-->
 
 
-     </section>
+    
  <!--footer-->
   <?php include("./DbConnector/footer.php");?>
 
