@@ -54,14 +54,18 @@ html::-webkit-scrollbar-thumb {
 
 
 .heading {
-  text-align: center;
-  color: #fff;
+  padding-top: 2rem;
+  padding-left: 20px;
+  background: #B034D2;
+  border-radius: 0px 50px 50px 0px;
+  text-align:start;
+  color: var(--main-color);
   text-transform: uppercase;
-  padding-bottom: 3.5rem;
+  padding-bottom: 2rem;
   font-size: 4rem;
 }
 .heading span {
-  color: var(--main-color);
+  color: var(--black);
   text-transform: uppercase;
 }
 .home .content.btn {
@@ -69,7 +73,7 @@ html::-webkit-scrollbar-thumb {
   display: inline-block;
   padding: 0.8rem 3rem;
   font-size: 3.7rem;
-  color: #eee;
+  color: var(--main-color);
 
   cursor: pointer;
 }
@@ -93,8 +97,8 @@ object-fit: contain;
 }
 .header a {
   margin: 0 1rem;
-  font-size: 1.6rem;
-  color: #fff;
+  font-size: 1.5rem;
+  color: var(--main-color);
 }
 .navbar a:hover {
   color: var(--main-color);
@@ -131,17 +135,22 @@ object-fit: contain;
   text-transform: uppercase;
   color: #fff;
 }
+
+
 .about .row {
   display: flex;
   align-items: center;
   background: var(---row);
   flex-wrap: wrap;
 }
-.about .row .image {
-  flex: 1 1 45rem;
-}
+
 .about .row .image img {
+   flex: 1 1 45rem;
   width: 100%;
+  height: 400px;;
+  object-fit: contain;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 .about .row .content {
   flex: 1 1 45rem;
@@ -149,11 +158,11 @@ object-fit: contain;
 }
 .about .row .content h3 {
   font-size: 3rem;
-  color: #fff;
+  color: var(--black);
 }
 .about .row .content p {
   font-size: 1.6rem;
-  color: #ccc;
+  color: var(--bg);
   padding: 1rem 0;
   line-height: 1.8;
 }
@@ -341,9 +350,9 @@ object-fit: contain;
   <!--home section start-->
 <section class="home" id="home">
   <div class="content">
-    <h3>Imagination</h3>
+    <h3>lavendar stories</h3>
     <p>Free your self and share your story with the world</p>
-   <a href="#" class="btn bg-info">View more</a>
+   <a href="#" class="btn " style="background: #B034D2;">View more</a>
   </div>
 </section>
    <!--home section end-->
@@ -354,7 +363,7 @@ object-fit: contain;
   </h1>
   <div class="row ">
   <div class="image ">
-    <img src="./images/face-shadow-line-imagination-light-purple-lighted-mask-wallpaper-preview.jpg" alt="" class="col-md-2">
+    <img src="./images/limage2.jpg" alt="" class="col-md-2">
 
   </div>
   <div class="content">
