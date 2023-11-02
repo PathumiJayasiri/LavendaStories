@@ -31,6 +31,7 @@ session_start();
     
     <div class="menu-wrapper">
                       <header class="user-nav d-flex m-auto">
+                        <div class="d-flex">
                     <div class="menu-button" id='desktop'>
                         <div></div>
                         <div></div>
@@ -41,12 +42,14 @@ session_start();
                         <div></div>
                         <div></div>
                     </div>
+                                                     <div class="logo " style="padding-left: 10px;">lavendar<span>Stories</span></div>
 
+                        </div>
 <div class="d-flex m-4">
                     <h1> <form class="d-flex search-form" role="search" action="../search_story.php" method="get"> 
         <input class="form-control me-2 search-item" type="search" placeholder="Search" aria-label="Search" name="search_data">
         <!--button class="btn btn-outline-light" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button-->
-        <input type="submit" value="Search" class="btn bg-info " name="search_data_story">
+        <input type="submit" value="Search" class="btn " name="search_data_story" style="background: #B034D2;" >
       </form></h1>
                           <div style="margin-left: 20px;" >
                    <?php
