@@ -36,15 +36,15 @@ html::-webkit-scrollbar-thumb {
 }
 
 .heading {
-  padding-top: 2rem;
+  padding-top: 1rem;
   padding-left: 20px;
   background: #b034d2;
   border-radius: 0px 50px 50px 0px;
   text-align: start;
   color: var(--main-color);
   text-transform: uppercase;
-  padding-bottom: 2rem;
-  font-size: 4rem;
+  padding-bottom: 1rem;
+  font-size: 3rem;
 }
 .heading span {
   color: var(--black);
@@ -195,7 +195,9 @@ html::-webkit-scrollbar-thumb {
   font-size: 1.5rem;
   margin: 2rem;
 }
-
+.footer {
+  height: 100vh;
+}
 .footer .share {
   padding: 1rem 0;
 }

@@ -17,7 +17,7 @@ if(password_verify($admin_password,$row_data['admin_password'])){
       $_SESSION['username']=$admin_username;
 
       echo "<script>alert('Login successful')</script>";
-       echo "<script>window.open('admin_index.php','_self')</script>";
+       echo "<script>window.open('admin_index.php?user_list','_self')</script>";
 
 
   }else{

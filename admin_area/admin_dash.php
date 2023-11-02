@@ -19,3 +19,143 @@
 
 </body>
 </html>
+
+
+<style>
+  .values {
+  padding: 30px 30px 0 30px;
+  display: flex;
+justify-content: space-between;
+align-items: center;
+flex-wrap: wrap;
+}
+.values .val-box {
+  background: #eee;
+  width: 235px;
+  padding: 16px 20px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+}
+.values .val-box i {
+font-size: 25px;
+width: 60px;
+height: 60px;
+line-height: 60px;
+border-radius: 50%;
+text-align: center;
+margin-right: 50px;
+}
+.values .val-box h3{
+font-size: 18px;
+font-weight: 600;
+}
+.values .val-box span{
+  font-size: 15px;
+  color: #828282;
+}
+</style>
+<section>
+<!--boxes-->
+<div class="values">
+  <div class="val-box">
+   <i class="fa-solid fa-users"></i>
+   <div class="">
+    <h3>200</h3>
+    <span>Users</span>
+   </div> 
+  </div>
+  <div class="val-box">
+   <i class="fa-solid fa-users"></i>
+   <div class="">
+    <h3>200</h3>
+    <span>Users</span>
+   </div> 
+  </div>
+  <div class="val-box">
+   <i class="fa-solid fa-users"></i>
+   <div class="">
+    <h3>200</h3>
+    <span>Users</span>
+   </div> 
+  </div>
+   <div class="val-box">
+   <i class="fa-solid fa-users"></i>
+   <div class="">
+    <h3>200</h3>
+    <span>Users</span>
+   </div> 
+  </div>
+
+</div>
+
+
+<h3 class="text-center">All Users</h3>
+    <form action="" class="bordered">
+
+<?php
+ $get_user="select*from `user` ";
+ $rs=mysqli_query($con,$get_user);
+ $row=mysqli_num_rows($rs);
+
+ if(empty($row)){
+                echo "<h3 class='text-danger' text-center>No users</h3>";
+
+ }else{
+    while($row=mysqli_fetch_assoc($rs)){
+  $user_id =$row['user_id'];
+      
+$username=$row['username'];
+$user_email=$row['user_email'];
+$user_image=$row['user_image'];
+
+    
+    echo "
+<div class='d-flex'>
+        <img src='../user_area/user_images/$user_image' class='m-auto' style='width: 100px;height: 100px;object-fit:contain;'>
+        <div>
+<h4>$username</h4>
+<h5 class='text-secondary'>$user_email<h5>
+        </div>
+                     <a href='admin_index.php?delete_user=$user_id' type='button' class='text-light' data-toggle='modal'
+              data-target='#exampleModal'>
+              <input type='submit' value='Delete' name='delete' ></a></div>
+
+</div>
+<hr>
+    ";
+ }
+}
+?>
+        
+    </form>
+    
+
+
+<!-- Button trigger modal -->
+<!--button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Launch demo modal
+</button-->
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+    <h5>Are you sure yoo want to delete this user?</h5>      
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal"><a href="./admin_index.php?user_list" 
+        class="text-light text-decoration-none">No</a></button>
+        <button type="button" class="btn btn-primary">
+            <a href="admin_index.php?delete_user=<?php echo $user_id?>" class="text-light ">
+              Yes</a></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</section>

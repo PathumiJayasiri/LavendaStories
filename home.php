@@ -54,14 +54,14 @@ html::-webkit-scrollbar-thumb {
 
 
 .heading {
-  padding-top: 2rem;
+  padding-top: 1rem;
   padding-left: 20px;
   background: #B034D2;
   border-radius: 0px 50px 50px 0px;
   text-align:left;
   color: var(--main-color);
   text-transform: uppercase;
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
   font-size: 4rem;
 }
 .heading span {

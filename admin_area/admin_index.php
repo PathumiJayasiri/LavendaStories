@@ -14,21 +14,25 @@ session_start();
     <title>Admin dashboard</title>
     <link rel='stylesheet' href="../user_style.css" />
     <link rel="stylesheet" href="../style.css">
+
 <style>
-  @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
-
-  
-
+  .footer {
+    padding-bottom: 0px;
+  height: 100%;
+  position: fixed;
+}
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 
 * {
   margin: 0;
   padding: 0;
   list-style: none;
   box-sizing: border-box;
+ 
 }
 
 body {
-  background-color: #eff2f5;
+  
   overflow: hidden;
   font-family: "Open Sans", sans-serif;
 }
@@ -39,7 +43,7 @@ body {
   height: 100vh;
   width: 25%;
   color: white;
-  background-color: #001629;
+  background-color: #13131a;
   transition: 0.3s ease-in-out;
   overflow-y: auto;
 }
@@ -47,14 +51,6 @@ body {
 .sideBar.widthChange {
   width: 8%;
   text-align: center;
-}
-
-.sideBar img {
-  position: absolute;
-  height: 100%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 
 .sideBar div {
@@ -98,13 +94,22 @@ li label.hideMenuList {
 }
 
 .sideBar .list-items:hover {
-  background-color: #0092ff;
+  background-color: #f0d5f5;
   border-radius: 30rem 0rem 0rem 30rem;
+  
+}
+.sideBar .list-items a:hover {
+  color: black;
+}
+.sideBar i:hover {
+  color: black;
 }
 
 .selected {
-  background-color: #0092ff;
+  background-color: #f0d5f5;
   border-radius: 30rem 0rem 0rem 30rem;
+    color: black;
+
 }
 
 .sideBar span {
@@ -209,24 +214,18 @@ header h1 {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #0092ff;
+  background:#f0d5f5;
 }
 
 main {
   margin-top: 90px;
-  overflow-y: auto;
+ background: #f0d5f5;
   height: 100vh;
 }
 .rotate {
   transform: rotate(90deg);
 }
-.footer {
-  width: 100%;
-  position: relative;
-  background: var(--black);
-  text-align: center;
-  bottom: 0;
-}
+
 @media (max-width: 1200px) {
   .sideBar {
     width: 30%;
@@ -308,10 +307,7 @@ main {
   }
 }
 
-
-
 </style>
-
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
     <!--boostrap css link-->
@@ -330,23 +326,28 @@ main {
     
     <div class="menu-wrapper">
                         <header class="user-nav d-flex m-auto">
+                          <div class="d-flex">
                     <div class="menu-button" id='desktop'>
                         <div></div>
                         <div></div>
                         <div></div>
+                        
                     </div>
+
                     <div class="menu-button" id='mobile'>
                         <div></div>
                         <div></div>
                         <div></div>
                     </div>
-          
+                    
+                                 <div class="logo " style="padding-left: 10px;">lavendar<span>Stories</span></div>
+                          </div>
 <div class="d-flex m-4" >
     
                     <h1> <form class="d-flex search-form" role="search" action="user_index.php" method="get"> 
         <input class="form-control me-2 search-item" type="search" placeholder="Search" aria-label="Search" name="search_data">
         <!--button class="btn btn-outline-light" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button-->
-        <input type="submit" value="Search" class="btn bg-info " name="search_data_story">
+        <input type="submit" value="Search" class="btn " name="search_data_story" style="background: #B034D2;" name="search_data_story">
       </form></h1>
      <div style="margin-left: 20px;" >
                    <?php
@@ -369,13 +370,15 @@ main {
 
         <div class="sidebar-header">
             <div class="sideBar">
-                <div><img src=https://drive.google.com/uc?export=view&id=1aWmbSZADIAOqZZ-TZ6IxTcCO72rDiUn1 class="user-img"/></div>
+                <div></div>
+                
                 <ul style="list-style: none;">
-            <li class="list-items"><a href="" class="active"><i class="fa-regular fa-user"></i><label>My Account</label></a></li>
-                        <li class="list-items"><a href="admin_index.php?user_list" class="active"><i class="fa-regular fa-user"></i><label>Users</label></a></li>
+                
+            <li class="list-items"><a href="admin_index.php?user_list"><i class="fa-regular fa-user"></i><label>Dashboard</label></a></li>
+                       
 
                     <li><a class="sub-btn"><i class="fa-solid fa-book"></i><label>Categories<i class="fa-solid fa-angle-right dropdown"></i></label></a>
-                    <hr>
+                    <hr style="color: #c7c7c7;">
                     <ul class="" style="list-style: none;">
                            <li class="list-items"><a href="admin_index.php?view_categories"><label>View Categories</label></a></li>
                            <li class="list-items"><a href="admin_index.php?insert_category"><label>Isert Categories</label></a></li>
@@ -414,6 +417,7 @@ echo "
             <li class="list-items"><a href="admin_index.php?edit_admin_account"><i class="fa-regular fa-user-pen"></i><label>Edit Account</label></a></li>
             <li class="list-items"><a href="admin_index.php?delete_account"><i class="fa-solid fa-delete-left"></i><label>Delete Account</label></a></li>
             <li class="list-items"><a href="logout.php"><i class="fa-solid fa-right-from-bracket"></i><label>Log out</label></a></li>
+<hr>
 
                 </ul>
                 
@@ -542,24 +546,10 @@ echo "<div class='col-md-3 mb-2 m-5 card-container'>
     ?>  
 </div>
 </div>
-    <!--footer-->
- <!--footer-->
- <section class="footer" style="height: 60vh;">
- <div class="share">
-  <a href="#" class="fab fa-facebook"></a>
-   <a href="#" class="fab fa-twitter"></a>
-    <a href="#" class="fab fa-instagram"></a>
-     <a href="#" class="fab fa-linkedin"></a>
- </div>
- <div class="links">
-  <a href="#">home</a>
-  <a href="#">category</a>
-  <a href="#">about us</a>
-  <a href="#">contact us</a>
- </div>
-   <div class="credit">created by <span>IMAGINATION web designer</span> |all rights reserved</div>
+  <!--footer-->
+  <?php include("../DbConnector/footer.php");?>   
 
- </section>
+
 
 
                         </main>
