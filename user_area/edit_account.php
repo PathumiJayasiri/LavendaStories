@@ -38,10 +38,10 @@ if(isset($_POST['user_update'])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>edit account</title>
+    <title>My Account</title>
 </head>
 <body>
-    <h1 class="text-center mb-4">Edit Account</h1>
+    <h1 class="text-center mb-4">My Account</h1>
     <form action="" method="post" enctype="multipart/form-data" class="text-center">
      <div class="form-outline mb-4">
         <input type="text" class="form-control w-50 m-auto" name="user_username" value="<?php echo $user_username?>">

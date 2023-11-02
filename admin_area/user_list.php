@@ -106,7 +106,8 @@ font-size: 14px;
 }
 @media (max-width: 769px) {
   .values .val-box {
-padding16px 20px: 10px 20px 10px 0;
+  
+margin-top: 10px 20px 10px 0;
 }
 
 }

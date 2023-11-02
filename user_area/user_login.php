@@ -16,7 +16,7 @@ if(password_verify($user_password,$row_data['user_password'])){
       $_SESSION['username']=$user_username;
 
 echo "<script>alert('Login successful')</script>";
-echo "<script>window.open('user_index.php','_self')</script>";
+echo "<script>window.open('user_index.php?display_all_stories','_self')</script>";
 
 
   }else{
@@ -60,7 +60,7 @@ $message="<h6 class='text-danger'>Invalid username or password<h6>";
 </head>
 
 
-<body class="bg-black">
+<body>
 
   
 <!--navbar ends-->

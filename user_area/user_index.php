@@ -1,5 +1,4 @@
 <?php
-
 include('../DbConnector/connect.php');
 session_start();
 
@@ -44,7 +43,7 @@ session_start();
                     </div>
 
 <div class="d-flex m-4">
-                    <h1> <form class="d-flex search-form" role="search" action="user_index.php" method="get"> 
+                    <h1> <form class="d-flex search-form" role="search" action="../search_story.php" method="get"> 
         <input class="form-control me-2 search-item" type="search" placeholder="Search" aria-label="Search" name="search_data">
         <!--button class="btn btn-outline-light" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button-->
         <input type="submit" value="Search" class="btn bg-info " name="search_data_story">
@@ -71,7 +70,7 @@ session_start();
             <div class="sideBar">
                 <div><img src=https://drive.google.com/uc?export=view&id=1aWmbSZADIAOqZZ-TZ6IxTcCO72rDiUn1 class="user-img"/></div>
                 <ul style="list-style: none;">
-            <li class="list-items"><a href="" class="active"><i class="fa-regular fa-user"></i><label>My Account</label></a></li>
+            <li class="list-items"><a href="user_index.php?edit_account" class="active"><i class="fa-regular fa-user"></i><label>My Account</label></a></li>
                     <li><a class="sub-btn"><i class="fa-solid fa-book"></i><label>Categories<i class="fa-solid fa-angle-right dropdown"></i></label></a>
                     <ul class="sub-menu" style="list-style: none;">
                         
@@ -100,7 +99,6 @@ echo "
                                 <li class="list-items"><a href=""><i class="fa-solid fa-list"></i><label>All Stories</label></a></li>
             <li class="list-items"><a href="user_index.php?user_stories"><i class="fa-solid fa-folder-open"></i><label>My Stories</label></a></li>
             <li class="list-items"><a href="user_index.php?insert_story"><i class="fa-solid fa-pen-to-square"></i><label>Write Story</label></a></li>
-            <li class="list-items"><a href="user_index.php?edit_account"><i class="fa-regular fa-user-pen"></i><label>Edit Account</label></a></li>
             <li class="list-items"><a href="user_index.php?delete_user_acc"><i class="fa-solid fa-delete-left"></i><label>Delete Account</label></a></li>
             <li class="list-items"><a href="logout.php"><i class="fa-solid fa-right-from-bracket"></i><label>Log out</label></a></li>
 

@@ -30,7 +30,7 @@ $insert_query="insert into `user`(username,user_email,user_password,user_image,u
 $query_execute=mysqli_query($con,$insert_query);
 if($query_execute){
     echo "<script>alert('data successfully inserted')</script>";
-}
+ echo "<script>window.open('checkout.php','_self')</script>";}
 else{
      die (mysqli_error($con));
 
@@ -66,31 +66,28 @@ else{
     <!--first child-->
     <nav class="navbar navbar-expand-lg">
   <div class="container-fluid ">
-   <img src="../images/Logo.jpeg" alt="" class="logo">
+   <div class="logo">lavendar<span>Stories</span></div>
+   <div>
     <button class="navbar-toggler bg-info" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link-home active" aria-current="page" href="../home.php">Home</a>
+          <a class="nav-link-home active" aria-current="page" href="home.php">Home</a>
         </li>
         
         <li class="nav-item">
-          <a class="nav-link" href="../home.php?#about">About</a>
+          <a class="nav-link" href="#about">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../home.php?#category">categories</a>
+          <a class="nav-link" href="categories.php">categories</a>
         </li>
                 <li class="nav-item">
-          <a class="nav-link" href="../display_all_stories.php">Stories</a>
+          <a class="nav-link" href="display_all_stories.php">Stories</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../home.php?#contact">Contact</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="#"><i class="fa-solid fa-cart-shopping"></i><sup>1</sup></a>
+          <a class="nav-link" href="#contact">Contact</a>
         </li>
 
         
@@ -98,19 +95,24 @@ else{
       <form class="d-flex search-form" role="search" action="search_story.php" method="get"> 
         <input class="form-control me-2 search-item" type="search" placeholder="Search" aria-label="Search" name="search_data">
         <!--button class="btn btn-outline-light" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button-->
-        <input type="submit" value="Search" class="btn bg-info " name="search_data_story">
+        <input type="submit" value="Search" class="btn" style="background: #B034D2;" name="search_data_story">
       </form>
-              <li class="nav-item">
-          <a class="btn bg-info" href="./user_area/user_login.php">LOgin</a>
+      <div>
+                     
+                        
+                        <li class='nav-item'>      
+                            <a class='btn ' style='background: #B034D2;' href='checkout.php'>Login</a>
+                             </li>
+                            
 
-        </li>
+                    
+      </div>
     </div>
+   </div>
   </div>
 </nav>
   </div>
   </header>
-  
-
 <!--navbar ends-->
 
 

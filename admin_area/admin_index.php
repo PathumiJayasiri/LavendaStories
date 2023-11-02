@@ -1,6 +1,6 @@
 <?php
-
 include('../DbConnector/connect.php');
+
 session_start();
 
 ?>
@@ -344,10 +344,10 @@ main {
                           </div>
 <div class="d-flex m-4" >
     
-                    <h1> <form class="d-flex search-form" role="search" action="user_index.php" method="get"> 
+                    <h1> <form class="d-flex search-form" role="search" action="../search_story.php" method="get"> 
         <input class="form-control me-2 search-item" type="search" placeholder="Search" aria-label="Search" name="search_data">
         <!--button class="btn btn-outline-light" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button-->
-        <input type="submit" value="Search" class="btn " name="search_data_story" style="background: #B034D2;" name="search_data_story">
+        <input type="submit" value="Search" class="btn " name="search_data_story" style="background: #B034D2;" >
       </form></h1>
      <div style="margin-left: 20px;" >
                    <?php
@@ -544,6 +544,9 @@ echo "<div class='col-md-3 mb-2 m-5 card-container'>
        include('delete_user.php');
     }
     ?>  
+    <?php
+//call function
+?>
 </div>
 </div>
   <!--footer-->
