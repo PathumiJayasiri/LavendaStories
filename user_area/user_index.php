@@ -96,7 +96,7 @@ echo "
                   </li>      
                     </ul>
                     </li>
-                                <li class="list-items"><a href=""><i class="fa-solid fa-list"></i><label>All Stories</label></a></li>
+                                <li class="list-items"><a href="user_index.php?display_all_stories"><i class="fa-solid fa-list"></i><label>All Stories</label></a></li>
             <li class="list-items"><a href="user_index.php?user_stories"><i class="fa-solid fa-folder-open"></i><label>My Stories</label></a></li>
             <li class="list-items"><a href="user_index.php?insert_story"><i class="fa-solid fa-pen-to-square"></i><label>Write Story</label></a></li>
             <li class="list-items"><a href="user_index.php?delete_user_acc"><i class="fa-solid fa-delete-left"></i><label>Delete Account</label></a></li>
@@ -192,6 +192,12 @@ echo "<div class='col-md-3 mb-2 m-5 card-container'>
     if(isset($_GET['category_stories'])){
 
        include('category_stories.php');
+    }
+    ?>
+    <?php
+    if(isset($_GET['display_all_stories'])){
+
+       include('display_all_stories.php');
     }
     ?>
     </div>
