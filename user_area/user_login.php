@@ -1,6 +1,4 @@
 <?php
-session_start();
-include('../DbConnector/connect.php');
 
 if(isset($_POST['user_login'])){
   $message=null;

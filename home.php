@@ -58,7 +58,7 @@ html::-webkit-scrollbar-thumb {
   padding-left: 20px;
   background: #B034D2;
   border-radius: 0px 50px 50px 0px;
-  text-align:start;
+  text-align:left;
   color: var(--main-color);
   text-transform: uppercase;
   padding-bottom: 2rem;
@@ -125,8 +125,11 @@ font-family:cursive;
   background-size: cover;
   background-position: center;
   width: 100%;
+  object-fit: contain;
 }
 .home .content {
+  padding-left: 20px;
+  text-align: center;
   max-width: 60rem;
 }
 .home .content p {
@@ -139,7 +142,8 @@ font-family:cursive;
 .home .content h3 {
   font-size: 6rem;
   text-transform: uppercase;
-  color: #fff;
+  color: var(--main-color);
+  border: #B034D2;
 }
 
 
@@ -367,21 +371,41 @@ font-family:cursive;
 </section>
    <!--home section end-->
      <!--about section start-->
-<section class="about " id="about">
+<section class="about p-5" id="about">
   <h1 class="heading">
     <span>about</span> us
   </h1>
   <div class="row ">
-  <div class="image ">
-    <img src="./images/limage2.jpg" alt="" class="col-md-2">
+  <div class="image col-md-6">
+    <img src="./images/limage2.jpg" alt="">
 
   </div>
-  <div class="content">
+  <div class="content col-md-6">
     <h3>Why IMAGINATION?</h3>
     <p>"This website is dedicated to reaching out to individuals who are grappling with loneliness and engage in crafting creative, imaginative stories as a means to release their inner emotions and share them with the world. It serves as a safe haven where they can transform their feelings into words, allowing their unique narratives to resonate with a global audience. This platform empowers them to express themselves and connect with others who may appreciate their creativity and experiences."</p>
   </div>
   </div>
 </section>
+<section class="category p-5" id="category">
+ <h1 class="heading">all <span>stories</span> </h1>
+
+  <div class="row ">
+   <div class="row">
+  
+
+   <!--fetching cate-->
+<?php
+//call function
+getstory();
+get_unique_cat();
+?>
+ 
+
+</div>
+
+  </div>
+</section>
+
   <!--about section ends-->
     <!--fourth child-->
      <!--section class="category" id="category">
@@ -433,32 +457,7 @@ echo "<div class='col-md-3 mb-2 m-5 card-container'>
      </section-->
 
          <!--all stories-->
-     <section class="category" id="category">
-    <div class="row">
-
- <!--story  section-->
- 
-<h1 class="heading">all <span>stories</span> </h1>
-
- <!--row start-->
- <div class="row">
-  
-
-   <!--fetching cate-->
-<?php
-//call function
-getstory();
-get_unique_cat();
-?>
- 
-
-</div>
-</div>
     
- <!--row end-->
-
-
-     </section>
  <!--footer-->
   <?php include("./DbConnector/footer.php");?>
 
