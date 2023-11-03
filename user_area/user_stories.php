@@ -32,7 +32,7 @@ echo "<div class='col-md-3 mb-2 m-5 card-container'>
 <p class='card-text'>$story_description</p>
      <a href='../full_story.php?story_id=$story_id' class='btn btn-secondary'>Read more</a>
       <a href='user_index.php?edit_saved_story=$story_id' class='btn btn-secondary'>Edit</a>
-     <a href=user_index.php?delete_story=$story_id' class='btn btn-secondary'>Delete</a>
+     <a href=user_index.php?delete_saved_story=$story_id' class='btn btn-secondary'>Delete</a>
 
      </div>
 </div>

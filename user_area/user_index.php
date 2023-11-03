@@ -491,6 +491,12 @@ echo "<div class='col-md-3 mb-2 m-5 card-container'>
        include('delete_story.php');
     }
     ?>
+     <?php
+    if(isset($_GET['delete_saved_story'])){
+
+       include('delete_saved_story.php');
+    }
+    ?>
 <?php
     if(isset($_GET['category_stories'])){
 
