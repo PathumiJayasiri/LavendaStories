@@ -89,18 +89,18 @@ $editorContent=$_POST['editor'];
 
 //move_uploaded_file($tem_story_img,"./story_cover_images/$story_img");
 
-        $insert_story=("INSERT INTO `view_stories` (user_id,writter_name,story_title,story_description,category_id,cover_image,content,created) VALUES ('$user_id','$writter_name','$story_tit','$story_descri','$story_cat','$story_img1','$editorContent',NOW()) ");
+        $insert_story=("INSERT INTO `saved_stories` (user_id,writter_name,story_title,story_description,category_id,cover_image,content,created) VALUES ('$user_id','$writter_name','$story_tit','$story_descri','$story_cat','$story_img1','$editorContent',NOW()) ");
         $result_query=mysqli_query($con,$insert_story);
 
         if($result_query){
-                   echo "<script>alert('successfully inserted the story')</script>";
+                   echo "<script>alert('successfully saved the story')</script>";
                    
 
         }else{
-                   echo "<script>alert('not successfully inserted the story')</script>";
+                   echo "<script>alert('not successfully saved the story')</script>";
         }
     }else{
-         echo "<script>alertPleace fill all the fields</script>";
+         echo "<script>alert('Pleace fill all the fields')</script>";
          
     }
 
