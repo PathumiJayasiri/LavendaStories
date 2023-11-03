@@ -1,10 +1,10 @@
-    <?php
+ <?php
     $username=$_SESSION['username'];
     $get_user="select * from `user` where username='$username'";
     $rs=mysqli_query($con,$get_user);
     $row_fetch=mysqli_fetch_array($rs);
     $user_id=$row_fetch['user_id'];
-    
+
     ?>
 
 <?php
@@ -15,7 +15,7 @@ if(isset($_GET['edit_saved_story'])){
     $row=mysqli_fetch_assoc($rs);
     $writter_name=$row['writter_name'];
     $story_title=$row['story_title'];
-    $category=$row['category_id'];
+    $category_saved_id=$row['category_id'];
     $story_img=$row['cover_image'];
     $story_description=$row['story_description'];
     $content=$row['content'];
@@ -23,10 +23,10 @@ if(isset($_GET['edit_saved_story'])){
 
 
     //category
-    $select_cat="select*from `categories` where category_id =$category";
-    $rs_cat=mysqli_query($con,$select_cat);
-$row_cat=mysqli_fetch_assoc($rs_cat);
-$category_title=$row_cat['category_title'];
+    $select_saved_cat="select*from `categories` where category_id=$category_saved_id";
+    $rs_saved_cat=mysqli_query($con,$select_saved_cat);
+$row_saved_cat=mysqli_fetch_assoc($rs_saved_cat);
+$category_saved_title=$row_saved_cat['category_title'];
 }
 ?>
 
@@ -48,15 +48,15 @@ $category_title=$row_cat['category_title'];
         <div class="form-outline w-50 m-auto mb-4">
             <label for="category"  class="form-label">Categoty</label>
 <select name="category" class="form-select" required>
-    <option value="<?php echo $category_title?>"><?php echo $category_title?></option>
+    <option value="<?php echo $category_saved_title?>"><?php echo $category_saved_title?></option>
     <?php
         //category
     $select_cat_all="select*from `categories`";
     $rs_cat_all=mysqli_query($con,$select_cat_all);
 while($row_cat_all=mysqli_fetch_assoc($rs_cat_all)){
-$category_title=$row_cat_all['category_title'];
+$category_saved_title=$row_cat_all['category_title'];
 $category_id=$row_cat_all['category_id'];
-echo "<option value='$category_id'>$category_title</option>";
+echo "<option value='$category_id'>$category_saved_title</option>";
 
 };
     ?>
@@ -131,12 +131,12 @@ function showTab(n) {
         document.getElementById("prevBtn").style.display = "inline";
 
     document.getElementById("nextBtn").style.display = "none";
-  
+
   } else {
         document.getElementById("prevBtn").style.display = "inline";
 
     document.getElementById("nextBtn").style.display = "inline";
-   
+
   }
 
 }

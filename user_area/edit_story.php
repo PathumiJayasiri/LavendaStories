@@ -23,7 +23,7 @@ if(isset($_GET['edit_story'])){
 
 
     //category
-    $select_cat="select*from `categories` where category_id =$category";
+    $select_cat="select*from `categories` where category_id=$category";
     $rs_cat=mysqli_query($con,$select_cat);
 $row_cat=mysqli_fetch_assoc($rs_cat);
 $category_title=$row_cat['category_title'];
@@ -50,7 +50,7 @@ $category_title=$row_cat['category_title'];
 <select name="category" class="form-select" required>
     <option value="<?php echo $category_title?>"><?php echo $category_title?></option>
     <?php
-        //category
+      //category
     $select_cat_all="select*from `categories`";
     $rs_cat_all=mysqli_query($con,$select_cat_all);
 while($row_cat_all=mysqli_fetch_assoc($rs_cat_all)){

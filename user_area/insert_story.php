@@ -202,7 +202,7 @@ while($row=mysqli_fetch_assoc($result_query)){
           </div>
           <div style="float:right;">
           <input type="submit" name="save" value="Save"  class="btn btn-outline-success btn-info mb-3 px-3">
-           <input type="submit" name="submit" value="Submit" id="submitBtn" class="btn btn-outline-success btn-info mb-3 px-3" onclick="nextPrev(1)">
+           <input type="submit" name="submit" value="Publish" id="submitBtn" class="btn btn-outline-success btn-info mb-3 px-3" onclick="nextPrev(1)">
             <!--button type="button" id="submitBtn" name="submit" onclick="nextPrev(1)">Submit</button-->
           </div>
         </div>
