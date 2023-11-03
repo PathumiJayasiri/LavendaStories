@@ -68,11 +68,8 @@ $editorContent=$_POST['editor'];
 <?php
 
 //if form is saved
-if(isset($_POST['save'])){
-       
-
+if(isset($_POST['save'])){  
     $writter_name=$_POST['writter_name'];
-    
     $story_tit = $_POST['story_title']; // Corrected to 'story_title'
     $story_descri = $_POST['story_description']; // Corrected to 'story_descri'
     $story_cat = $_POST['story_category'];
