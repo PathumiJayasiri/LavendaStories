@@ -478,6 +478,12 @@ echo "<div class='col-md-3 mb-2 m-5 card-container'>
        include('edit_story.php');
     }
     ?>
+     <?php
+    if(isset($_GET['edit_saved_story'])){
+
+       include('edit_saved_story.php');
+    }
+    ?>
              <?php
     if(isset($_GET['delete_story'])){
 

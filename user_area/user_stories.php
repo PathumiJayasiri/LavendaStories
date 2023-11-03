@@ -11,9 +11,39 @@
 <div class="row">
 <h2>My Saved Stories</h2>
 <hr>
+<?php
+  $get_user_story="select * from `saved_stories` where user_id=$user_id";
+  $rs_stories=mysqli_query($con,$get_user_story);
+  while($row_stories=mysqli_fetch_assoc($rs_stories))
+  {
+    $story_id=$row_stories['saved_story_id'];
+  $writter_name=$row_stories['writter_name'];
+ $story_title=$row_stories['story_title'];
+  $story_description=$row_stories['story_description'];
+ $category_id=$row_stories['category_id'];
+   $story_image=$row_stories['cover_image'];
+   $content=$row_stories['content'];
+$date=$row_stories['created'];
+echo "<div class='col-md-3 mb-2 m-5 card-container'>
+    <div class='card ' >
+  <img src='./story_cover_images/$story_image' class='card-img-top' alt='...'>
+  <div class='card-body'>
+    <h3 class='card-title'>$story_title</h5>
+<p class='card-text'>$story_description</p>
+     <a href='../full_story.php?story_id=$story_id' class='btn btn-secondary'>Read more</a>
+      <a href='user_index.php?edit_saved_story=$story_id' class='btn btn-secondary'>Edit</a>
+     <a href=user_index.php?delete_story=$story_id' class='btn btn-secondary'>Delete</a>
+
+     </div>
+</div>
+  </div>
+  ";
+}
+?>
+
 </div>
 
-   <h2>My All Stories</h2>
+   <h2>My Published Stories</h2>
    <hr>
  <?php
   $get_user_story="select * from `view_stories` where user_id=$user_id";
