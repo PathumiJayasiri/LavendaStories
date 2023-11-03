@@ -65,10 +65,55 @@ $editorContent=$_POST['editor'];
 }
 
 ?>
+<?php
+
+//if form is saved
+if(isset($_POST['save'])){
+       
+
+    $writter_name=$_POST['writter_name'];
+    
+    $story_tit = $_POST['story_title']; // Corrected to 'story_title'
+    $story_descri = $_POST['story_description']; // Corrected to 'story_descri'
+    $story_cat = $_POST['story_category'];
+$editorContent=$_POST['editor'];
+    // File handling for image upload
+    if (!empty($_FILES['story_img']['name'])) {
+        $story_img1 = $_FILES['story_img']['name'];
+        $temp_story_img = $_FILES['story_img']['tmp_name'];
+
+        move_uploaded_file($temp_story_img, "./story_cover_images/$story_img1");
+    } else {
+        $story_img1 = ''; // Set to an empty string if no file is uploaded
+    }
+
+//check where empty
+    if(!empty($writer_name)||!empty($story_tit)||!empty($story_descri)||!empty($story_cat)||!empty($story_img1)||!empty($editorContent)){
+
+//move_uploaded_file($tem_story_img,"./story_cover_images/$story_img");
+
+        $insert_story=("INSERT INTO `view_stories` (user_id,writter_name,story_title,story_description,category_id,cover_image,content,created) VALUES ('$user_id','$writter_name','$story_tit','$story_descri','$story_cat','$story_img1','$editorContent',NOW()) ");
+        $result_query=mysqli_query($con,$insert_story);
+
+        if($result_query){
+                   echo "<script>alert('successfully inserted the story')</script>";
+                   
+
+        }else{
+                   echo "<script>alert('not successfully inserted the story')</script>";
+        }
+    }else{
+         echo "<script>alertPleace fill all the fields</script>";
+         
+    }
+
+  
+}
+
+?>
 
 <div class="container">
         <h1 class="text-center bg-info">Write your Story</h1>
-
 
         <!--writing story-->
          <form action="" method="POST" enctype="multipart/form-data" class="border" style="color: wheat;" id="regForm">
