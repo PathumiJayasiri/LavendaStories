@@ -16,23 +16,24 @@
   $rs_stories=mysqli_query($con,$get_user_story);
   while($row_stories=mysqli_fetch_assoc($rs_stories))
   {
-    $story_id=$row_stories['saved_story_id'];
-  $writter_name=$row_stories['writter_name'];
- $story_title=$row_stories['story_title'];
-  $story_description=$row_stories['story_description'];
- $category_id=$row_stories['category_id'];
-   $story_image=$row_stories['cover_image'];
-   $content=$row_stories['content'];
-$date=$row_stories['created'];
+    $story_saved_id=$row_stories['saved_story_id'];
+  $saved_writter_name=$row_stories['writter_name'];
+ $saved_story_title=$row_stories['story_title'];
+  $saved_story_description=$row_stories['story_description'];
+ $saved_category_id=$row_stories['category_id'];
+   $saved_story_image=$row_stories['cover_image'];
+   $saved_content=$row_stories['content'];
+$saved_date=$row_stories['created'];
 echo "<div class='col-md-3 mb-2 m-5 card-container'>
     <div class='card ' >
-  <img src='./story_cover_images/$story_image' class='card-img-top' alt='...'>
+  <img src='./story_cover_images/$saved_story_image' class='card-img-top' alt='...'>
   <div class='card-body'>
-    <h3 class='card-title'>$story_title</h5>
-<p class='card-text'>$story_description</p>
-     <a href='../full_story.php?story_id=$story_id' class='btn btn-secondary'>Read more</a>
-      <a href='user_index.php?edit_saved_story=$story_id' class='btn btn-secondary'>Edit</a>
-     <a href=user_index.php?delete_saved_story=$story_id' class='btn btn-secondary'>Delete</a>
+    <h3 class='card-title'>$saved_story_title</h5>
+<p class='card-text'>$saved_story_description</p>
+     <a href='../full_story.php?story_saved_id=$story_saved_id' class='btn btn-secondary'>Read more</a>
+      <a href='user_index.php?edit_saved_story=$story_saved_id' class='btn btn-secondary'>Edit</a>
+     <a href=user_index.php?delete_saved_story=$story_saved_id' class='btn btn-secondary'
+      data-toggle='modal' data-target='#exampleModalusersavedstory'>Delete</a>
 
      </div>
 </div>
@@ -58,85 +59,25 @@ echo "<div class='col-md-3 mb-2 m-5 card-container'>
    $story_image=$row_stories['cover_image'];
    $content=$row_stories['content'];
 $date=$row_stories['created'];
-
-?>
-<form>
-<section class='about' id='about'>
-   <div class='tab'>
-
-  <div class='row'>
-   <div class='card' style='width: 18rem;'>
-  <img src=story_cover_images/<?php echo $story_image?> class='card-img-top'>
- 
-</div>
-  <div class='content'>
-<div class='form-outline mb-4 w-50 m-auto h-auto'>
-      <!--title-->
-    <label for='story_title' class='form-label bg-info'>
-        Story Title: <h3 class='card-title'><?php echo $story_title?></h5>
-
-    </label>
-</div>
-    <!--description-->
-    <div class='form-outline mb-4 w-50 m-auto'>
-    <label for='story_description' class='form-label bg-info'>
-        Story description: <div><?php echo $story_description?></div>
-    </label>
-    </div>
-    <div class='form-outline mb-4 w-50 m-auto'>
-      
-    <label for='published_date' class='form-label bg-info'>
-        Published Date: <h3 class='card-title'><?php echo $date?></h5> 
-  
-    </label>
-</div>
-  <div class='form-outline mb-4 w-50 m-auto'>
-      
-      <div class=""> <a href='user_index.php?edit_story=<?php echo $story_id ?>'>Edit</a>
-            <div class=""> <a href='user_index.php?delete_story=<?php echo $story_id ?>'>Delete</a>
-
-</div>
+echo "<div class='col-md-3 mb-2 m-5 card-container'>
+    <div class='card ' >
+  <img src='./story_cover_images/$story_image' class='card-img-top' alt='...'>
+  <div class='card-body'>
+    <h3 class='card-title'>$story_title</h5>
+<p class='card-text'>$story_description</p>
+<h3 class='card-title'>$date</h5>
+     <a href='../full_story.php?story_id=$story_id' class='btn btn-secondary'>Read more</a>
+      <a href='user_index.php?edit_story=$story_id' class='btn btn-secondary'>Edit</a>
+     <a href=user_index.php?delete_story=$story_id' class='btn btn-secondary'
+      data-toggle='modal' data-target='#exampleModaluserpublishstory'>Delete</a>
 
      </div>
-  </div>
-  <div style='overflow: hidden;'>
-      <div style='float: right;'>
-        <div style='overflow:auto;'>
-          <div style='float:right;'>
-            <button type='button' id='nextBtn' onclick='nextPrev(1)'>Next</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-   </div>
-  </div>
-   </div>
-</section>
-<div class='tab'>
-
-<div class='form-outline mb-4 w-50 m-auto'>
-<?php echo $content?>
-     <div>  
-        <div style='overflow: hidden;'>
-      <div style='float: right;'>
-        <div style='overflow:auto;'>
-          <div style='float:left;'>
-            <button type='button' id='prevBtn' onclick='nextPrev(-1)'>Previous</button>
-          </div>
-          </div>
-          </div>
-          </div>
-     </div>
-
 </div>
-</div>
-  </form>
-
-
-<?php
+  </div>
+  ";
   }
- ?>
+?>
+
 </div>
 
   <!--boostrap css link-->
@@ -183,3 +124,39 @@ function nextPrev(n) {
 
 </script>
 
+<!-- Modal saved story -->
+<div class="modal fade" id="exampleModalusersavedstory" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+    <h5>Are you sure you want to delete this story?</h5>      
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal"><a href="./user_index.php?user_stories" 
+        class="text-light text-decoration-none">No</a></button>
+        <button type="button" class="btn btn-primary">
+            <a href="user_index.php?delete_saved_story=<?php echo $story_saved_id?>" class="text-light ">
+              Yes</a></button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal published story -->
+<div class="modal fade" id="exampleModaluserpublishstory" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+    <h5>Are you sure you want to delete this story?</h5>      
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal"><a href="./user_index.php?user_stories" 
+        class="text-light text-decoration-none">No</a></button>
+        <button type="button" class="btn btn-primary">
+            <a href="user_index.php?delete_story=<?php echo $story_id?>" class="text-light ">
+              Yes</a></button>
+      </div>
+    </div>
+  </div>
+</div>

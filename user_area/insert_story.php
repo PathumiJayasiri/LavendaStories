@@ -125,7 +125,7 @@ $editorContent=$_POST['editor'];
     <label for="writter_name" class="form-label">
         Writter Name
     </label>
-    <input type="text" name="writter_name" id="writter_name" class="form-control" placeholder="Enter Story Title" autocomplete="off" required>
+    <input type="text" name="writter_name" id="writter_name" class="form-control" placeholder="Enter writter name" autocomplete="off" required>
 </div>
 <div class="form-outline mb-4 w-50 m-auto">
       <!--title-->

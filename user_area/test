@@ -19,3 +19,58 @@
     $story_img=$row['cover_image'];
     $story_description=$row['story_description'];
     $contents=$row['content'];
+
+
+
+    <section class='about' id='about'>
+   <div class='tab'>
+
+  <div class='row'>
+   <div class='card' style='width: 18rem;'>
+  <img src=story_cover_images/<?php echo $story_image?> class='card-img-top'>
+ 
+</div>
+  <div class='content'>
+<div class='form-outline mb-4 w-50 m-auto h-auto'>
+      <!--title-->
+    <label for='story_title' class='form-label bg-info'>
+        Story Title: <h3 class='card-title'><?php echo $story_title?></h5>
+
+    </label>
+</div>
+    <!--description-->
+    <div class='form-outline mb-4 w-50 m-auto'>
+    <label for='story_description' class='form-label bg-info'>
+        Story description: <div><?php echo $story_description?></div>
+    </label>
+    </div>
+    <div class='form-outline mb-4 w-50 m-auto'>
+      
+    <label for='published_date' class='form-label bg-info'>
+        Published Date: <h3 class='card-title'><?php echo $date?></h5> 
+  
+    </label>
+</div>
+  <div class='form-outline mb-4 w-50 m-auto'>
+      
+      <div class=""> <a href='user_index.php?edit_story=<?php echo $story_id ?>'>Edit</a>
+            <div class=""> <a href='user_index.php?delete_story=<?php echo $story_id ?>'>Delete</a>
+
+</div>
+
+     </div>
+  </div>
+  <div style='overflow: hidden;'>
+      <div style='float: right;'>
+        <div style='overflow:auto;'>
+          <div style='float:right;'>
+            <button type='button' id='nextBtn' onclick='nextPrev(1)'>Next</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+   </div>
+  </div>
+   </div>
+</section>
