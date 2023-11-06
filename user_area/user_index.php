@@ -395,7 +395,7 @@ echo "
                                 <li class="list-items"><a href="user_index.php?display_all_stories"><i class="fa-solid fa-list"></i><label>All Stories</label></a></li>
             <li class="list-items"><a href="user_index.php?user_stories"><i class="fa-solid fa-folder-open"></i><label>My Stories</label></a></li>
             <li class="list-items"><a href="user_index.php?insert_story"><i class="fa-solid fa-pen-to-square"></i><label>Write Story</label></a></li>
-            <li class="list-items"><a href="user_index.php?delete_user_acc"><i class="fa-solid fa-delete-left"></i><label>Delete Account</label></a></li>
+            <li class="list-items"><a href="user_index.php?delete_user_acc" data-toggle="modal" data-target="#exampleModalauseracc"><i class="fa-solid fa-delete-left"></i><label>Delete Account</label></a></li>
             <li class="list-items"><a href="logout.php"><i class="fa-solid fa-right-from-bracket"></i><label>Log out</label></a></li>
 
                 </ul>
@@ -514,23 +514,9 @@ echo "<div class='col-md-3 mb-2 m-5 card-container'>
 
 </div>
     <!--footer-->
- <!--footer-->
- <section class="footer" style="height: 60vh;">
- <div class="share">
-  <a href="#" class="fab fa-facebook"></a>
-   <a href="#" class="fab fa-twitter"></a>
-    <a href="#" class="fab fa-instagram"></a>
-     <a href="#" class="fab fa-linkedin"></a>
- </div>
- <div class="links">
-  <a href="#">home</a>
-  <a href="#">category</a>
-  <a href="#">about us</a>
-  <a href="#">contact us</a>
- </div>
-   <div class="credit">created by <span>IMAGINATION web designer</span> |all rights reserved</div>
+  <!--footer-->
+  <?php include("../DbConnector/footer.php");?>   
 
- </section>
 
 
                         </main>
@@ -542,9 +528,34 @@ echo "<div class='col-md-3 mb-2 m-5 card-container'>
     </div>
      <!--boostrap css link-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
     <script src="../index.js"></script>
     
+<!-- Modal -->
+<div class="modal fade" id="exampleModalauseracc" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+    <h5>Are you sure yoo want to delete this category?</h5>      
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal"><a href="./user_index.php" 
+        class="text-light text-decoration-none">No</a></button>
+        <button type="button" class="btn btn-primary">
+            <a href="user_index.php?delete_user_acc" class="text-light ">
+              Yes</a></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
 </body>
 
 </html>

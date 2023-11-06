@@ -6,7 +6,7 @@ $rs=mysqli_query($con,$delete_query);
 if($rs){
     session_destroy();
      echo "<script>alert('Account successfully deleted')</script>";
-                                                      echo "<script>window.open('admin_registration.php','_self')</script>";
+    echo "<script>window.open('admin_registration.php','_self')</script>";
 }
 
 }
