@@ -415,7 +415,7 @@ echo "
             </ul>
             </li>
             <li class="list-items"><a href="admin_index.php?edit_admin_account"><i class="fa-regular fa-user-pen"></i><label>Edit Account</label></a></li>
-            <li class="list-items"><a href="admin_index.php?delete_account"><i class="fa-solid fa-delete-left"></i><label>Delete Account</label></a></li>
+            <li class="list-items"><a href="admin_index.php?delete_account" data-toggle="modal" data-target="#exampleModaladminacc"><i class="fa-solid fa-delete-left"></i><label>Delete Account</label></a></li>
             <li class="list-items"><a href="logout.php"><i class="fa-solid fa-right-from-bracket"></i><label>Log out</label></a></li>
 <hr>
 
@@ -569,6 +569,28 @@ echo "<div class='col-md-3 mb-2 m-5 card-container'>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="../index.js"></script>
     
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModaladminacc" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+    <h5>Are you sure yoo want to delete this category?</h5>      
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal"><a href="./admin_index.php" 
+        class="text-light text-decoration-none">No</a></button>
+        <button type="button" class="btn btn-primary">
+            <a href="admin_index.php?delete_account" class="text-light ">
+              Yes</a></button>
+      </div>
+    </div>
+  </div>
+</div>
+
 </body>
 
 </html>

@@ -32,6 +32,8 @@ values('$admin_username','$admin_email','$hash_password','$admin_image','$admin_
 $query_execute=mysqli_query($con,$insert_query);
 if($query_execute){
     echo "<script>alert('data successfully inserted')</script>";
+    echo "<script>window.open('admin_login.php','_self')</script>";
+
 }
 else{
      die (mysqli_error($con));
