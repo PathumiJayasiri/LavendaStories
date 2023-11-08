@@ -143,7 +143,25 @@ header {
   justify-content: space-between;
   align-items: center;
 }
-
+header a{
+  text-decoration: none;
+}
+ul{
+  list-style: none;
+}
+.containeruser{
+  max-width: 1170px;
+}
+.row{
+  display: flex;
+  flex-wrap: wrap;
+}
+.align-items-center{
+align-items: center;
+}
+.justify-content-between{
+justify-content: space-between;
+}
 #mobile {
   display: none;
 }
@@ -320,32 +338,59 @@ main {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
-<body>
+<body style="background: #f0d5f5;">
     
-    <div class="menu-wrapper">
-                      <header class="user-nav d-flex m-auto">
-                        <div class="d-flex">
-                    <div class="menu-button" id='desktop'>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                    <div class="menu-button" id='mobile'>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                                                     <div class="logo " style="padding-left: 10px;">lavendar<span>Stories</span></div>
+ 
+  <header class="header">
+  <div class="container">
+    <!--first child-->
+  <div class="row">
+   <div class="logo"><a href="#">lavendar<span>Stories</span></a> </div>
+   <div>
+    <button class="navbar-toggler bg-info" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
-                        </div>
-<div class="d-flex m-4">
-                    <h1> <form class="d-flex search-form" role="search" action="../search_story.php" method="get"> 
+            <li class="nav-item"><a class="nav-link" href="user_index.php?display_all_stories">All Stories</a></li>
+            <li class="nav-item"><a class="nav-link" href="user_index.php?user_stories">My Stories</a></li>
+            <li class="nav-item"><a class="nav-link" href="user_index.php?insert_story">Write Story</a></li>
+            <li class="nav-item"><a class="nav-link" href="user_index.php?delete_user_acc" data-toggle="modal" data-target="#exampleModalauseracc"><i class="fa-solid fa-delete-left"></i><label>Delete Account</label></a></li>
+            <li class="nav-item"><a class="nav-link" href="logout.php">Log out</a></li>
+    </ul>
+          <div>
+                      <?php
+                      if(!isset($_SESSION['username'])){
+                        
+                        echo "<li class='nav-item'>      
+                            <a class='btn ' style='background: #B034D2;' href='./user_area/checkout.php'>Login</a>
+                             </li>
+                            ";
+
+                      }else{
+                                                echo "<li class='nav-item'>      
+                            <a class='btn ' href='./user_area/logout.php'>Logout</a>
+                             </li>
+                            ";
+
+                      }
+                      ?>
+      </div>
+
+</div>
+   </div>
+  </div>
+</nav>
+  </div>
+  </header>
+                    <!--h1> <form class="d-flex search-form" role="search" action="../search_story.php" method="get"> 
         <input class="form-control me-2 search-item" type="search" placeholder="Search" aria-label="Search" name="search_data">
-        <!--button class="btn btn-outline-light" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button-->
-        <input type="submit" value="Search" class="btn " name="search_data_story" style="background: #B034D2;" >
+        <!-button class="btn btn-outline-light" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button-->
+        <!--input type="submit" value="Search" class="btn " name="search_data_story" style="background: #B034D2;" >
       </form></h1>
                           <div style="margin-left: 20px;" >
-                   <?php
+                   <!?php
       $username=$_SESSION['username'];
       $user_img="select * from `user` where username='$username'";
       $user_img=mysqli_query($con,$user_img);
@@ -356,11 +401,11 @@ main {
       ";
       ?></div>
 
-      <!--img src=../images/bg1.jpg class="user-img"/-->
+      <!-img src=../images/bg1.jpg class="user-img"/-->
      
-      </div>
+      <!--/div>
 
-                </header>
+                
 
         <div class="sidebar-header">
             <div class="sideBar">
@@ -370,7 +415,7 @@ main {
                     <li><a class="sub-btn"><i class="fa-solid fa-book"></i><label>Categories<i class="fa-solid fa-angle-right dropdown"></i></label></a>
                     <ul class="sub-menu" style="list-style: none;">
                         
-    <?php
+    <!?php
 //getting category in home page
 
     global $con;
@@ -402,7 +447,7 @@ echo "
                 </ul>
               
                 <span class="cross-icon"><i class="fas fa-times"></i></span>
-            </div>
+            </div-->
             <div class="backdrop"></div>
             <div class="content">
                         <main>
@@ -516,7 +561,6 @@ echo "<div class='col-md-3 mb-2 m-5 card-container'>
 </div>
     <!--footer-->
   <!--footer-->
-  <?php include("../DbConnector/footer.php");?>   
 
 
 

@@ -331,11 +331,7 @@ font-family:cursive;
 
         
       </ul>
-      <form class="d-flex search-form" role="search" action="search_story.php" method="get"> 
-        <input class="form-control me-2 search-item" type="search" placeholder="Search" aria-label="Search" name="search_data">
-        <!--button class="btn btn-outline-light" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button-->
-        <input type="submit" value="Search" class="btn" style="background: #B034D2;" name="search_data_story">
-      </form>
+     
       <div>
                       <?php
                       if(!isset($_SESSION['username'])){
