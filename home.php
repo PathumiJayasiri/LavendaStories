@@ -304,9 +304,9 @@ font-family:cursive;
   <div class="container-fluid p-0">
     <!--first child-->
     <nav class="navbar navbar-expand-lg">
-  <div class="container-fluid ">
+  
    <div class="logo">lavendar<span>Stories</span></div>
-   <div>
+   
     <button class="navbar-toggler bg-info" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
