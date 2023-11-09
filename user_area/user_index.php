@@ -87,6 +87,13 @@ a{
 .header .sub-menu{
   display: none;
 }
+.sub-btn i{
+  margin-left: 20px;
+}
+.rotate {
+  transform: rotate(90deg);
+}
+
 .nav-toggler{
 	height: 34px;
 	width: 44px;
@@ -215,7 +222,8 @@ echo "
         </div>
     </div>
  </header>
- 
+     <script src="../index.js"></script>
+
      <script>
       const navToggler = document.querySelector(".nav-toggler");
 navToggler.addEventListener("click", navToggle);
