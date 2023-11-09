@@ -7,7 +7,7 @@ session_start();
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Navbar - Html Css Javascript</title>
+  <title>User dashboard</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
@@ -173,13 +173,13 @@ a{
 
     </style>
 </head>
-<body>
+<body  style="background: #f0d5f5;">
 
  <header class="header">
     <div class="container">
         <div class="row align-items-center justify-content-between">
             <div class="logo">
-               <a href="#">logo</a>
+               <a href="#">lavendar<span>Stories</span></a>
             </div>
             <button type="button" class="nav-toggler">
                <span></span>
@@ -217,8 +217,32 @@ echo "
             <li><a href="user_index.php?insert_story">Write Story</a></li>
             <li><a  href="user_index.php?delete_user_acc" data-toggle="modal" data-target="#exampleModalauseracc">Delete Account</a></li>
             <li ><a href="logout.php">Log out</a></li>
+            
                </ul>
+              
+
             </nav>
+            <div class="">
+              <h1> <form class="d-flex search-form" role="search" action="../search_story.php" method="get"> 
+        <input class="form-control me-2 search-item" type="search" placeholder="Search" aria-label="Search" name="search_data">
+        <button class="btn btn-outline-light" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button-->
+        <input type="submit" value="Search" class="btn " name="search_data_story" style="background: #B034D2;" >
+      </form></h1>
+                          <div style="margin-left: 20px;" >
+                   <?php
+      $username=$_SESSION['username'];
+      $user_img="select * from `user` where username='$username'";
+      $user_img=mysqli_query($con,$user_img);
+      $row_img=mysqli_fetch_array($user_img);
+      $user_img=$row_img['user_image'];
+      echo "
+        <img src='./user_images/$user_img' class='user-img' style='width:40px;height: 40px;border-radius:50%'/>
+      ";
+      ?></div>
+
+     
+      </div>
+            </div>
         </div>
     </div>
  </header>
