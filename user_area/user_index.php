@@ -316,8 +316,36 @@ a{
     </style>
 </head>
 <body  style="background: #f0d5f5;">
-
- <header class="header">
+ <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+        </li>
+      </ul>
+ <!--header class="header">
     <div class="container">
         <div class="row user_nav_row align-items-center justify-content-between">
             <div class="logo col-md-2">
@@ -331,7 +359,7 @@ a{
                  <li><a class="sub-btn">Categories<i class="fa-solid fa-angle-right dropdown"></i></a>
                     <ul class="sub-menu" style="list-style: none;">
                         
-    <?php
+    <!?php
 //getting category in home page
 
     global $con;
@@ -359,22 +387,17 @@ echo "
             <li><a href="user_index.php?insert_story">Write Story</a></li>
             <li><a  href="user_index.php?delete_user_acc" data-toggle="modal" data-target="#exampleModalauseracc">Delete Account</a></li>
             <li ><a href="logout.php">Log out</a></li>
-            <li>
+            <li-->
                         
-              <h1> <form class="d-flex search-form" role="search" action="../search_story.php" method="get"> 
+               <form class="d-flex search-form" role="search" action="../search_story.php" method="get"> 
         <input class="form-control me-2 search-item" type="search" placeholder="Search" aria-label="Search" name="search_data">
-        <button class="btn btn-outline-light" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button-->
-        <input type="submit" value="Search" class="btn " name="search_data_story" style="background: #B034D2;" >
-      </form></h1> 
-    
-            </li>
-             
-               </ul>
-              
-
-            </nav>
-            <div class="">
-               <?php
+        <button class="btn btn-outline-light" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+        <!--input type="submit" value="Search" class="btn " name="search_data_story" style="background: #B034D2;" -->
+      </form>
+        <div class="nav-item dropstart p-2">
+               <a class="nav-link " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                
+                <?php
       $username=$_SESSION['username'];
       $user_img="select * from `user` where username='$username'";
       $user_img=mysqli_query($con,$user_img);
@@ -383,12 +406,22 @@ echo "
       echo "
         <img src='./user_images/$user_img' class='user-img' style='width:40px;height: 40px;border-radius:50%'/>
       ";
+      
       ?>
+      <ul class="dropdown-menu" >
+            <li><a class="dropdown-item" href="user_index.php?edit_account">My Profile</a></li>
+            <li><a class="dropdown-item" href="user_index.php?delete_user_acc" data-toggle="modal" data-target="#exampleModalauseracc">Delete Account</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="logout.php">Log out</a></li>
+          </ul>
+               </a>
+          
             </div>
-            </div>
-        </div>
-    </div>
- </header>
+
+              
+
+            </nav>
+           
                          <main>
 <!--write story-->
  <!--4 child-->
