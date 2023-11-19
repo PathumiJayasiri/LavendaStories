@@ -335,8 +335,25 @@ echo "
 ?>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="#">All</a></li>
+
           </ul>
         </li>
+<!--stories-->
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
+  Stories
+  </a>
+  <ul class="dropdown-menu" >
+<li class="list-items">
+  <a href="user_index.php?display_all_stories"  class="dropdown-item">All Stories</a>
+</li>
+<li>
+  <a href="user_index.php?user_stories" class="dropdown-item"
+  >My Stories</a>
+</li>
+  </ul>
+</li>
+          
         <li class="nav-item">
           <a class="nav-link" href="user_index.php?insert_story">Write Story</a>
         </li>
