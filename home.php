@@ -245,6 +245,9 @@ font-family:cursive;
   margin: 2rem;
 }
 
+.footer {
+  height: 40vh;
+}
 
 
 .footer .share {

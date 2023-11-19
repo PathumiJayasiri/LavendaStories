@@ -20,7 +20,7 @@ echo "<div class='col-md-3 mb-2 m-5 card-container'>
   <div class='card-body'>
     <h3 class='card-title'>$story_title</h5>
 <p class='card-text'>$story_description</p>
-     <a href='../full_story.php?story_id=$story_id' class='btn btn-secondary'>Read more</a>
+     <a href='full_story.php?story_id=$story_id' class='btn btn-secondary'>Read more</a>
   </div>
 </div>
   </div>";
