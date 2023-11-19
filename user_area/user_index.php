@@ -285,30 +285,11 @@ a{
   color: var(--main-color);
 }
 
-@media(max-width:991px){
-   .nav-toggler{
-   	display: block;
+@media (max-width: 768px) {
+   .nav-dropdown {
+      display: none !important; /* Hide the dropdown */
    }
-   .header .nav{
-   	width: 100%;
-   	padding:0;
-   	max-height: 0px;
-   	overflow: hidden;
-   	visibility: hidden;
-   	transition: all 0.5s ease;
-   }
-   .header .nav.open{
-   	visibility: visible;
-   }
-   .header .nav ul{
-   	padding:12px 15px 0;
-   	margin-top: 12px;
-   	border-top:1px solid rgba(255,255,255,0.2);
-   }
-   .header .nav ul li{
-   	display: block;
-   	margin:0;
-   }
+
 }
 
 
@@ -318,7 +299,7 @@ a{
 <body  style="background: #f0d5f5;">
  <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
+   <div class="logo">lavendar<span>Stories</span></div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -408,7 +389,7 @@ echo "
       ";
       
       ?>
-      <ul class="dropdown-menu" >
+      <ul class="dropdown-menu nav-dropdown" >
             <li><a class="dropdown-item" href="user_index.php?edit_account">My Profile</a></li>
             <li><a class="dropdown-item" href="user_index.php?delete_user_acc" data-toggle="modal" data-target="#exampleModalauseracc">Delete Account</a></li>
             <li><hr class="dropdown-divider"></li>
