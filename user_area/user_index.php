@@ -287,7 +287,7 @@ a{
 
 @media (max-width: 768px) {
    .nav-dropdown {
-      display: none !important; /* Hide the dropdown */
+      
    }
 
 }
@@ -304,7 +304,7 @@ a{
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="#">Home</a>
         </li>
@@ -357,9 +357,7 @@ echo "
         <li class="nav-item">
           <a class="nav-link" href="user_index.php?insert_story">Write Story</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-        </li>
+        
       </ul>
  <!--header class="header">
     <div class="container">
@@ -410,7 +408,7 @@ echo "
         <button class="btn btn-outline-light" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
         <!--input type="submit" value="Search" class="btn " name="search_data_story" style="background: #B034D2;" -->
       </form>
-        <div class="nav-item dropstart p-2">
+        <div class="nav-item p-2 dropdown">
                <a class="nav-link " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 
                 <?php
@@ -424,7 +422,7 @@ echo "
       ";
       
       ?>
-      <ul class="dropdown-menu nav-dropdown" >
+      <ul class="dropdown-menu dropdown-menu-lg-end"  >
             <li><a class="dropdown-item" href="user_index.php?edit_account">My Profile</a></li>
             <li><a class="dropdown-item" href="user_index.php?delete_user_acc" data-toggle="modal" data-target="#exampleModalauseracc">Delete Account</a></li>
             <li><hr class="dropdown-divider"></li>
@@ -434,8 +432,8 @@ echo "
           
             </div>
 
-              
-
+    </div>   
+    </div>
             </nav>
            
                          <main>
