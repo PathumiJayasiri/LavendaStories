@@ -123,6 +123,12 @@ a{
   font-size: 1.5rem;
   color: var(--main-color);
 }
+.navbar .nav-link.active{
+  color: var(--main-color);
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
+  padding-left: 0.5rem;
+}
 .navbar .nav-link:hover {
   background: #9b939f;
   color: var(--main-color);
@@ -237,7 +243,16 @@ a{
 .footer .credit span {
   color: var(--main-color);
 }
-
+@media (max-width: 450px) {
+  html {
+    font-size: 50%;
+  }
+}
+@media (max-width: 991px) {
+  html {
+    font-size: 55%;
+  }
+}
 @media (max-width: 768px) {
   
 }
@@ -257,7 +272,7 @@ a{
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page" href="./user_index.php">Home</a>
         </li>
       <!--categories-->
         <li class="nav-item dropdown">

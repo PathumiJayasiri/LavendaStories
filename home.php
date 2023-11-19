@@ -17,8 +17,9 @@ session_start();
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@100;300;500;700&family=Sen:wght@400;700;800&display=swap");
 :root {
-  ---row:#9B939F;
-  --main-color: #F0D5F5;
+    --color-1: #2f3240;
+      ---row: #9b939f;
+  --main-color: #f0d5f5;
   --black: #13131a;
   --bg: #010103;
   --border: 0.1rem solid rgba(25, 255, 255, 0.3);
@@ -98,24 +99,44 @@ html::-webkit-scrollbar-thumb {
   color: #B034D2;
 font-family:cursive;
 }
-.header a {
+/*header*/
+.navbar {
+  background: #13131a;
+  padding: 12px;
+  line-height: 1.5;
+  position: fixed;
+  width: 100%;
+
+  z-index: 1000;
+}
+.navbar .nav-link {
   margin: 0 1rem;
   font-size: 1.5rem;
   color: var(--main-color);
 }
-.navbar a:hover {
-  background: #9B939F;
+.navbar .nav-link.active {
+  color: var(--main-color);
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
+  padding-left: 0.5rem;
+}
+.navbar .nav-link:hover {
+  background: #9b939f;
   color: var(--main-color);
   border-radius: 20px 20px 20px 20px;
   padding-bottom: 0.5rem;
-   padding-top: 0.5rem;
-
+  padding-top: 0.5rem;
+  padding-left: 0.5rem;
 }
 .navbar .nav-link-home {
   margin: 0 1rem;
   font-size: 1.6rem;
 
   color: var(--main-color);
+}
+.navbar-toggler {
+  background-color:#B034D2;
+  color:var(---row) ;
 }
 .home {
   min-height: 100vh;
@@ -299,11 +320,65 @@ font-family:cursive;
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body style="background: var(--main-color);">
+ <nav class="navbar navbar-expand-lg fixed-top" >
+  <div class="container-fluid">
+   <div class="logo">lavendar<span>Stories</span></div>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+  style="  background-color: #2f3240;
+	color: #b034d2;
+">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+          <li class="nav-item">
+          <a class="nav-link "href="home.php">Home</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="#about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="categories.php">categories</a>
+        </li>
+                <li class="nav-item">
+          <a class="nav-link" href="display_all_stories.php">Stories</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact">Contact</a>
+        </li>
+      </ul>
+              
+              <div>
+                      <?php
+                      if(!isset($_SESSION['username'])){
+                        
+                        echo "<li class='nav-item'>      
+                            <a class='btn ' style='background: #B034D2;' href='./user_area/checkout.php'>Login</a>
+                             </li>
+                            ";
+
+                      }else{
+                                                echo "<li class='nav-item'>      
+                            <a class='btn ' href='./user_area/logout.php'>Logout</a>
+                             </li>
+                            ";
+
+                      }
+                      ?>
+      </div>
+
+
+    </div>   
+    </div>
+            </nav>
+           
+
   <!--navbar-->
-  <header class="header">
+  <!--header class="header">
   <div class="container-fluid p-0">
-    <!--first child-->
-    <nav class="navbar navbar-expand-lg">
+    <-!--first child-->
+    <!--nav class="navbar navbar-expand-lg">
   
    <div class="logo">lavendar<span>Stories</span></div>
    
@@ -333,7 +408,7 @@ font-family:cursive;
       </ul>
      
       <div>
-                      <?php
+                      <//?php
                       if(!isset($_SESSION['username'])){
                         
                         echo "<li class='nav-item'>      
@@ -355,7 +430,7 @@ font-family:cursive;
   </div>
 </nav>
   </div>
-  </header>
+  </header-->
 
   <!--home section start-->
 <section class="home" id="home">
