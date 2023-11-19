@@ -10,7 +10,7 @@ include('../functions/common_function.php');
     <title>story</title>
      <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
     <!--style css link-->
-<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="./style.css">
     
     <!--boostrap css link-->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -257,7 +257,7 @@ a{
     </style>
 
 </head>
-<body tyle="background: #f0d5f5;">
+<body class="bg-black">
   <!--navbar-->
  <nav class="navbar navbar-expand-lg fixed-top" >
   <div class="container-fluid">
@@ -336,7 +336,7 @@ echo "
       $row_img=mysqli_fetch_array($user_img);
       $user_img=$row_img['user_image'];
       echo "
-        <img src='./ user_images/$user_img' class='user-img' style='width:40px;height: 40px;border-radius:50%'/>
+        <img src='./user_images/$user_img' class='user-img' style='width:40px;height: 40px;border-radius:50%'/>
       ";
       
       ?>

@@ -66,7 +66,7 @@ echo "<div class='col-md-3 mb-2 m-5 card-container'>
     <h3 class='card-title'>$story_title</h5>
 <p class='card-text'>$story_description</p>
 <h3 class='card-title'>$date</h5>
-     <a href='../full_story.php?story_id=$story_id' class='btn btn-secondary'>Read more</a>
+     <a href='full_story.php?story_id=$story_id' class='btn btn-secondary'>Read more</a>
       <a href='user_index.php?edit_story=$story_id' class='btn btn-secondary'>Edit</a>
      <a href=user_index.php?delete_story=$story_id' class='btn btn-secondary'
       data-toggle='modal' data-target='#exampleModaluserpublishstory'>Delete</a>
