@@ -308,19 +308,37 @@ a{
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="#">Home</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
+      <!--categories-->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
+            Categories
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <?php
+//getting category in home page
+
+    global $con;
+$select_query="Select * from `categories`";
+$result_query=mysqli_query($con,$select_query);
+//$row=mysqli_fetch_assoc($result_query);
+//echo $row['category_title'];
+while($row=mysqli_fetch_assoc($result_query)){
+  $category_id=$row['category_id'];
+ $category_title=$row['category_title'];
+   $category_image=$row['category_image'];
+echo "
+   <li class='list-items' style='list-style: none;'>
+ <a href='user_index.php?category_stories=$category_id' class='dropdown-item'>$category_title</a></li>
+";
+}
+
+?>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li><a class="dropdown-item" href="#">All</a></li>
           </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="user_index.php?insert_story">Write Story</a>
         </li>
         <li class="nav-item">
           <a class="nav-link disabled" aria-disabled="true">Disabled</a>
