@@ -46,10 +46,10 @@ html::-webkit-scrollbar {
   width: 0.8rem;
 }
 html::-webkit-scrollbar-track {
-  background: transparent;
+  background: var(--black);
 }
 html::-webkit-scrollbar-thumb {
-  background: #fff;
+  background:var(--bg);
   border-radius: 5rem;
 }
 
@@ -137,6 +137,9 @@ font-family:cursive;
 .navbar-toggler {
   background-color:#B034D2;
   color:var(---row) ;
+}
+.navbar .btn{
+  background-color: #b034d2;
 }
 .home {
   min-height: 100vh;
@@ -320,7 +323,7 @@ font-family:cursive;
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body style="background: var(--main-color);">
- <nav class="navbar navbar-expand-lg fixed-top" >
+ <nav class="navbar navbar-expand-lg fixed-top p-4" >
   <div class="container-fluid">
    <div class="logo">lavendar<span>Stories</span></div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"

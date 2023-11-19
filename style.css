@@ -28,10 +28,10 @@ html::-webkit-scrollbar {
   width: 0.8rem;
 }
 html::-webkit-scrollbar-track {
-  background: transparent;
+  background: var(--black);
 }
 html::-webkit-scrollbar-thumb {
-  background: #fff;
+  background: var(--bg);
   border-radius: 5rem;
 }
 
