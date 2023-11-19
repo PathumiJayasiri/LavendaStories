@@ -109,95 +109,48 @@ a{
 	justify-content: space-between;
 }
 /*header*/
-.header{
-	background-color: var(--color-1);
-	padding: 12px 0;
+.navbar{
+  background: #13131a;
+	padding: 12px ;
 	line-height: 1.5;
+  position: fixed;
+  width: 100%;
+  
+  z-index: 1000;
+}
+.navbar .nav-link{
+  margin: 0 1rem;
+  font-size: 1.5rem;
+  color: var(--main-color);
+}
+.navbar .nav-link:hover {
+  background: #9b939f;
+  color: var(--main-color);
+  border-radius: 20px 20px 20px 20px;
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
+  padding-left: 0.5rem;
+}
+.navbar .nav-link-home {
+  margin: 0 1rem;
+  font-size: 1.6rem;
+
+  color: var(--main-color);
+}
+.navbar .dropdown-menu{
+  background-color: var(--color-1);
+  
+}
+.navbar .dropdown-menu a{
+  color: var(--main-color);
+}
+.navbar .dropdown-menu a:hover{
+  background-color: #9b939f;
 }
 
-.header .logo,
-.header .nav{
-	padding:0 15px;
-}
-.header .logo a{
-	font-size: 30px;
-	color: #ffffff;
-	text-transform: capitalize;
-}
-.header .nav ul li{
-	display: inline-block;
-	margin-left: 40px;
-}
-.header .nav ul li a{
-	display: block;
-	font-size: 16px;
-	text-transform: capitalize;
-	color: #ffffff;
-	padding: 10px 0;
-	transition: all 0.5s ease;
-}
-.header .nav ul li a.active,
-.header .nav ul li a:hover{
-	color: #f3a93d;
-}
-.header .sub-menu{
-  display: none;
-}
-.sub-btn i{
-  margin-left: 20px;
-}
-.rotate {
-  transform: rotate(90deg);
-}
-
-.nav-toggler{
-	height: 34px;
-	width: 44px;
-	background-color: #ffffff;
-	border-radius: 4px;
-	cursor: pointer;
-	border:none;
-	display: none;
-	margin-right: 15px;
-}
-.nav-toggler:focus{
-	outline: none;
-	box-shadow: 0 0 15px rgba(255,255,255,0.5);
-}
-.nav-toggler span{
-    height: 2px;
-    width: 20px;
-    background-color: var(--color-1);
-    display: block;
-    margin:auto;
-    position: relative;
-    transition: all 0.3s ease;
-}
-.nav-toggler.active span{
-	background-color: transparent;
-}
-.nav-toggler span::before,
-.nav-toggler span::after{
-	content: '';
-	position: absolute;
-	left:0;
-	top:0;
-	width: 100%;
-	height: 100%;
-	background-color: var(--color-1);
-	transition: all 0.3s ease;
-}
-.nav-toggler span::before{
-	transform: translateY(-6px);
-}
-.nav-toggler.active span::before{
-	transform: rotate(45deg);
-}
-.nav-toggler span::after{
-	transform: translateY(6px);
-}
-.nav-toggler.active span::after{
-	transform: rotate(135deg);
+.navbar-toggler{
+  background-color: #2f3240;
+	color: #b034d2;
 }
 .category .card-container {
   display: grid;
@@ -286,10 +239,7 @@ a{
 }
 
 @media (max-width: 768px) {
-   .nav-dropdown {
-      
-   }
-
+  
 }
 
 
@@ -297,7 +247,8 @@ a{
     </style>
 </head>
 <body  style="background: #f0d5f5;">
- <nav class="navbar navbar-expand-lg bg-body-tertiary">
+
+ <nav class="navbar navbar-expand-lg fixed-top" >
   <div class="container-fluid">
    <div class="logo">lavendar<span>Stories</span></div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -408,8 +359,8 @@ echo "
         <button class="btn btn-outline-light" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
         <!--input type="submit" value="Search" class="btn " name="search_data_story" style="background: #B034D2;" -->
       </form>
-        <div class="nav-item p-2 dropdown">
-               <a class="nav-link " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <div class="py-2 dropdown">
+               <a class=" " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 
                 <?php
       $username=$_SESSION['username'];
