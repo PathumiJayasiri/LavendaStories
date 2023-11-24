@@ -34,6 +34,9 @@ session_start();
 body{
 	font-family: sans-serif;
 	background-color: #e8eef3;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 *{
 	margin:0;
@@ -47,6 +50,7 @@ body{
 
 }
 html {
+  height: 1005;
   font-size: 70%;
   overflow-x: hidden;
   scroll-padding-top: 9rem;
@@ -203,7 +207,7 @@ a{
   margin: 2rem;
 }
 .footer {
-  height:40vh;
+margin-top: auto;
 }
 .footer .share {
   padding: 1rem 0;
@@ -261,7 +265,11 @@ a{
 
     </style>
 </head>
-<body  style="background: #f0d5f5;">
+<body  style="background: #f0d5f5;font-family: sans-serif;
+	min-height:100%;
+  display:flex;
+  flex-direction:column;
+  ">
 
  <nav class="navbar navbar-expand-lg fixed-top" >
   <div class="container-fluid">

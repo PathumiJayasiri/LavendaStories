@@ -28,8 +28,14 @@ session_start();
 
 }
 body{
+  background: var(--main-color);
 	font-family: sans-serif;
+  justify-content: center;
 	background-color: #e8eef3;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 *{
 	margin:0;
@@ -43,6 +49,7 @@ body{
 
 }
 html {
+  height: 100%;
   font-size: 70%;
   overflow-x: hidden;
   scroll-padding-top: 9rem;
@@ -57,6 +64,15 @@ html::-webkit-scrollbar-track {
 html::-webkit-scrollbar-thumb {
   background:var(--bg);
   border-radius: 5rem;
+}
+
+.container{
+  max-width: 700px;
+  background: #9b939f;
+  width: 100%;
+  padding: 25px 50px;
+  border-radius: 5px;
+  margin-top: 40%;
 }
 
 .heading {
@@ -89,10 +105,6 @@ ul{
 }
 a{
 	text-decoration: none;
-}
-.container{
-	max-width: 1170px;
-	margin:auto;
 }
 .row{
 	display: flex;
@@ -199,7 +211,7 @@ a{
   margin: 2rem;
 }
 .footer {
-  height:40vh;
+  margin-top: auto;
 }
 .footer .share {
   padding: 1rem 0;
@@ -258,7 +270,7 @@ a{
     </style>
 
 </head>
-<body class="bg-black">
+<body >
   <!--navbar-->
  <nav class="navbar navbar-expand-lg fixed-top" >
   <div class="container-fluid">
@@ -357,18 +369,12 @@ echo "
            
 
          <!--all stories-->
-     <section class="category" id="category">
-    <div class="row">
+     <section class="story_detailes" >
+      
+    <div class="container  mb-4 ">
 
  <!--story  section-->
- 
-
-
- <!--row start-->
- <div class="row px-1">
- <!--view card details-->
-
-
+ <form>
    <!--fetching cate-->
 <?php
 //call function
@@ -377,15 +383,16 @@ get_unique_cat();
 ?>
  
 
-</div>
+ </form>
+
+
+ <!--row start-->
 </div>
     
  <!--row end-->
 
 
      </section>
- <!--footer-->
-  <?php include("../DbConnector/footer.php");?>
 
  
   <!--boostrap css link-->
@@ -427,6 +434,8 @@ function nextPrev(n) {
 </script>
 
 
+ <!--footer-->
+  <?php include("../DbConnector/footer.php");?>
 
 </body>
 </html>

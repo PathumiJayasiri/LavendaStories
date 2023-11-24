@@ -1,5 +1,5 @@
 <?php
-include './DbConnector/connect.php';
+include '../DbConnector/connect.php';
 
 
 
@@ -197,27 +197,28 @@ while($row=mysqli_fetch_assoc($result_query)){
    $content=$row['content'];
 $date=$row['created'];
 echo "
-<form>
-<section class='about' id='about'>
+
+
+
    <div class='tab'>
 
-  <div class='row'>
+  <div class='story-image'>
    <div class='card' style='width: 18rem;'>
-  <img src='./user_area/story_cover_images/$story_image' class='card-img-top'>
+  <img src='../user_area/story_cover_images/$story_image' class='card-img-top'>
   <div class='card-body'>
     <h5 class='card-title'>Card title</h5>
     <p class='card-text'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
   </div>
 </div>
   <div class='content'>
-<div class='form-outline mb-4 w-50 m-auto'>
+<div class='writter_name'>
       
     <label for='writter_name' class='form-label bg-info'>
         Writter Name: <h3 class='card-title'>$writter_name</h5> 
   
     </label>
 </div>
-<div class='form-outline mb-4 w-50 m-auto'>
+<div class='story_title'>
       <!--title-->
     <label for='story_title' class='form-label bg-info'>
         Story Title: <h3 class='card-title'>$story_title</h5>
@@ -225,7 +226,7 @@ echo "
     </label>
 </div>
     <!--description-->
-    <div class='form-outline mb-4 w-50 m-auto'>
+    <div class='story_detail'>
     <label for='story_description' class='form-label bg-info'>
         Story description: <div>$story_description</div>
     </label>
@@ -250,7 +251,7 @@ $content
         
 </div>
 
-  </form>
+  
   
   
   
