@@ -67,15 +67,27 @@ html::-webkit-scrollbar-thumb {
   border-radius: 5rem;
 }
 
-.container{
-  max-width: 700px;
+.container .stoy_details_tab{
+  max-width: 1000px;
   background: #9b939f;
   width: 100%;
   padding: 25px 50px;
   border-radius: 5px;
   margin-top: 20%;
 }
+.container .stoy_content_tab{
+  max-width: 700px;
+  background: #9b939f;
+  width: 100vh;
+  padding: 25px 50px;
+  border-radius: 5px;
+  margin-top: 20%;
+  height: 100vh;
+}
+
 .container form .stoy_details{
+    max-width: 700px;
+
   display: flex;
     flex-wrap: wrap;
 justify-content: space-between;
@@ -293,21 +305,48 @@ color: var(--main-color);
 .footer .credit span {
   color: var(--main-color);
 }
-@media (max-width: 450px) {
+@media (max-width: 430px) {
+.navbar{
+  margin-bottom: 20%;
+}
+  .footer {
+  width: auto;
+  margin-top: auto;
+  height: 50vh;
+;
+}
+
   html {
     font-size: 50%;
   }
   .container{
-  max-width: 100%;
+  max-width: 700px;
   justify-content: center;
   }
   form .stoy_details .story_labels{
 margin-bottom: 15px;
 width:100%;
 }
+.container form{
+    margin-top: 20%;
+
+}
 .container form .stoy_details{
+
+
   max-height: 300px;
   overflow-y: scroll;
+}
+form .btn_next{
+  height: 10%;
+  width: 40%;
+}
+form .btn_next button{
+  letter-spacing: 1px;
+  font-weight: 500;
+  font-size: 10px;
+  height: 90%;
+  width: 50%;
 }
 
 }
@@ -315,9 +354,24 @@ width:100%;
   html {
     font-size: 55%;
   }
+  .container form .stoy_content_tab{
+    max-height: 300px;
+margin-top: 20%;
+    overflow-y: scroll;
+width: 700px;
+}
+
 }
 @media (max-width: 768px) {
-  
+    .container form .stoy_content_tab{
+    max-height: 300px;
+margin-top: 20%;
+width: 100%;
+max-width: 700px;
+}
+.container form{
+  margin-top: 20%;
+}
 }
 
 
@@ -459,7 +513,7 @@ $date=$row['created'];
 
 
 
-   <div class='tab'>
+   <div class='tab stoy_details_tab'>
 <div class='stoy_details'>
   <div class='story-image p-5'>
    <div class='card' style='width: 20rem;height:100%,'>
@@ -502,26 +556,34 @@ $date=$row['created'];
   </div>
   
    </div>
+   </div>
+    <div class='tab stoy_content_tab'>
 
-    <div class='tab'>
-
-<div class='form-outline mb-4 w-50 m-auto'>
+<div class='form-outline mt-5' >
 <?php echo $content?>
-       
+         <div style="overflow: hidden;">
+      <div style="float: right;">
+        <div style="overflow:auto;">
+          <div style="float:left;">
+            <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+          </div>
+        </div>
+      </div>
+</div>
         
 </div>
 
   
   
     </div>
-  
-  
+   
+   </form>
+
   <?php
 get_unique_cat();
 ?>
  
 
- </form>
 
 
  <!--row start-->
@@ -549,13 +611,18 @@ function showTab(n) {
 
   // Update button visibility based on the current tab
   if (n === 0) {
-   
+       document.getElementById("prevBtn").style.display = "none";
+
     document.getElementById("nextBtn").style.display = "inline";
 
   } else if (n === x.length - 1) {
+        document.getElementById("prevBtn").style.display = "inline";
+
     document.getElementById("nextBtn").style.display = "none";
   
   } else {
+        document.getElementById("prevBtn").style.display = "inline";
+
     document.getElementById("nextBtn").style.display = "inline";
    
   }
