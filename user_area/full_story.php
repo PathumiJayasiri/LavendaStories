@@ -21,14 +21,15 @@ session_start();
       :root{
     --color-1: #2f3240;
       ---row: #9b939f;
-  --main-color: #f0d5f5;
+  --main-color:#f0d5f5;
   --black: #13131a;
   --bg: #010103;
   --border: 0.1rem solid rgba(25, 255, 255, 0.3);
+  --sub:#b034d2;
 
 }
 body{
-  background: var(--main-color);
+    background: red;
 	font-family: sans-serif;
   justify-content: center;
 	background-color: #e8eef3;
@@ -78,14 +79,43 @@ html::-webkit-scrollbar-thumb {
   display: flex;
     flex-wrap: wrap;
 justify-content: space-between;
+  padding: 25px ;
+
 }
 form .stoy_details .story_labels{
-margin: 20px 0 12px 12px;
+margin: 20px 20px 12px 50px;
 width:calc(100%/2 -20px);
 }
 .stoy_details .story_labels label{
+  font-size:medium;
+  display: block;
   font-weight: 500;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+}
+.stoy_details .story_labels h3{
+  font-family: cursive;
+  font-weight: 600;
+}
+form .btn_next{
+  height: 10%;
+  margin: 45px 0;
+}
+form .btn_next button{
+  border-radius: 15px;
+  border: none;
+  letter-spacing: 1px;
+  font-weight: 500;
+  font-size: 15px;
+  height: 100%;
+  width: 100%;
+  outline: none;
+  color: var(--bg);
+  background: linear-gradient(135deg,var(---row),var(--main-color),var(--sub));
+}
+form .btn_next input:hover{
+    background: linear-gradient(-135deg,var(---row),var(--main-color),var(--sub));
+
 }
 .heading {
   padding-top: 1rem;
@@ -108,7 +138,7 @@ width:calc(100%/2 -20px);
   color: var(--main-color);
 }
 .logo span {
-  color: #b034d2;
+  color: var(--sub);
   font-family: cursive;
 }
 
@@ -252,7 +282,7 @@ a{
   padding: 0.7rem;
 }
 .footer .links a:hover {
-  background-color: var(--main-color);
+color: var(--main-color);
 }
 .footer .credit {
   font-size: 1rem;
@@ -267,6 +297,19 @@ a{
   html {
     font-size: 50%;
   }
+  .container{
+  max-width: 100%;
+  justify-content: center;
+  }
+  form .stoy_details .story_labels{
+margin-bottom: 15px;
+width:100%;
+}
+.container form .stoy_details{
+  max-height: 300px;
+  overflow-y: scroll;
+}
+
 }
 @media (max-width: 991px) {
   html {
@@ -418,49 +461,48 @@ $date=$row['created'];
 
    <div class='tab'>
 <div class='stoy_details'>
-  <div class='story-image'>
-   <div class='card' style='width: 18rem;'>
+  <div class='story-image p-5'>
+   <div class='card' style='width: 20rem;height:100%,'>
   <img src='../user_area/story_cover_images/<?php echo $story_image?>' class='card-img-top'>
-  <div class='card-body'>
-    <h5 class='card-title'>Card title</h5>
-    <p class='card-text'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-  </div>
+  <!--div class='card-body'>
+    <h5 class='card-title'></h5>
+    <p class='card-text'></p>
+  </div-->
 </div>
   </div>
   <div class="story_title">
 <div class='story_labels'>
       
-    <label for='writter_name' class='form-label bg-info'>
-        Writter Name: <h3 class='card-title'><?php echo  $writter_name?></h5> 
+    <label for='writter_name' class='form-label p-3'>
+        Writter Name: <h3 class=' mt-3'><?php echo  $writter_name?></h5> 
   
     </label>
 </div>
 <div class='story_labels'>
       <!--title-->
-    <label for='story_title' class='form-label bg-info'>
-        Story Title: <h3 class='card-title'><?php echo $story_title?></h5>
+    <label for='story_title' class='form-label p-3 '>
+        Story Title: <h3 class=' mt-3'><?php echo $story_title?></h5>
 
     </label>
 </div>
     <!--description-->
     <div class='story_labels'>
-    <label for='story_description' class='form-label bg-info'>
-        Story description: <div><?php echo $story_description?></div>
+    <label for='story_description' class='form-label p-3'>
+        Story description: <h3 class="mt-3"><?php echo $story_description?></h3>
     </label>
+       
     </div>  
-    </div>
-  </div>
-   </div>
-
-<div style='overflow: hidden;'>
-      <div style='float: right;'>
-        <div style='overflow:auto;'>
-          <div style='float:right;'>
+        <!--div class='story_labels btn_next'>
+            <input type='submit' id='nextBtn' onclick='nextPrev(1)' value="Next">
+          </div-->
+          <div class='story_labels btn_next'>
             <button type='button' id='nextBtn' onclick='nextPrev(1)'>Next</button>
           </div>
-        </div>
-      </div>
-    </div>
+       
+  </div>
+  
+   </div>
+
     <div class='tab'>
 
 <div class='form-outline mb-4 w-50 m-auto'>
@@ -471,7 +513,7 @@ $date=$row['created'];
 
   
   
-  
+    </div>
   
   
   <?php
@@ -483,11 +525,11 @@ get_unique_cat();
 
 
  <!--row start-->
-</div>
+
     
  <!--row end-->
 
-
+    </div>
      </section>
 
  
