@@ -72,9 +72,21 @@ html::-webkit-scrollbar-thumb {
   width: 100%;
   padding: 25px 50px;
   border-radius: 5px;
-  margin-top: 40%;
+  margin-top: 20%;
 }
-
+.container form .stoy_details{
+  display: flex;
+    flex-wrap: wrap;
+justify-content: space-between;
+}
+form .stoy_details .story_labels{
+margin: 20px 0 12px 12px;
+width:calc(100%/2 -20px);
+}
+.stoy_details .story_labels label{
+  font-weight: 500;
+  margin-bottom: 5px;
+}
 .heading {
   padding-top: 1rem;
   padding-left: 20px;
@@ -378,7 +390,91 @@ echo "
    <!--fetching cate-->
 <?php
 //call function
-view_story_details();
+   global $con;
+if(isset($_GET['story_id'])){
+    if(!isset($_GET['category'])){
+      $story_id=$_GET['story_id'];
+$select_query="Select * from `view_stories` where story_id=$story_id";
+$result_query=mysqli_query($con,$select_query);
+while($row=mysqli_fetch_assoc($result_query)){
+  $story_id=$row['story_id'];
+      $user_id=$row['user_id'];
+
+  $writter_name=$row['writter_name'];
+ $story_title=$row['story_title'];
+  $story_description=$row['story_description'];
+ $category_id=$row['category_id'];
+   $story_image=$row['cover_image'];
+   $content=$row['content'];
+$date=$row['created'];
+}
+    }
+}
+
+
+?>
+
+
+
+   <div class='tab'>
+<div class='stoy_details'>
+  <div class='story-image'>
+   <div class='card' style='width: 18rem;'>
+  <img src='../user_area/story_cover_images/<?php echo $story_image?>' class='card-img-top'>
+  <div class='card-body'>
+    <h5 class='card-title'>Card title</h5>
+    <p class='card-text'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+</div>
+  </div>
+  <div class="story_title">
+<div class='story_labels'>
+      
+    <label for='writter_name' class='form-label bg-info'>
+        Writter Name: <h3 class='card-title'><?php echo  $writter_name?></h5> 
+  
+    </label>
+</div>
+<div class='story_labels'>
+      <!--title-->
+    <label for='story_title' class='form-label bg-info'>
+        Story Title: <h3 class='card-title'><?php echo $story_title?></h5>
+
+    </label>
+</div>
+    <!--description-->
+    <div class='story_labels'>
+    <label for='story_description' class='form-label bg-info'>
+        Story description: <div><?php echo $story_description?></div>
+    </label>
+    </div>  
+    </div>
+  </div>
+   </div>
+
+<div style='overflow: hidden;'>
+      <div style='float: right;'>
+        <div style='overflow:auto;'>
+          <div style='float:right;'>
+            <button type='button' id='nextBtn' onclick='nextPrev(1)'>Next</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='tab'>
+
+<div class='form-outline mb-4 w-50 m-auto'>
+<?php echo $content?>
+       
+        
+</div>
+
+  
+  
+  
+  
+  
+  <?php
 get_unique_cat();
 ?>
  

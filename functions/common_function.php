@@ -201,7 +201,7 @@ echo "
 
 
    <div class='tab'>
-
+<div class='stoy_details'>
   <div class='story-image'>
    <div class='card' style='width: 18rem;'>
   <img src='../user_area/story_cover_images/$story_image' class='card-img-top'>
@@ -210,7 +210,7 @@ echo "
     <p class='card-text'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
   </div>
 </div>
-  <div class='content'>
+  
 <div class='writter_name'>
       
     <label for='writter_name' class='form-label bg-info'>
